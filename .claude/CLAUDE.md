@@ -161,7 +161,7 @@ make view       # abre PDF en macOS (Preview)
 - **Motor**: siempre XeLaTeX (no pdflatex, no lualatex)
 - **Estilos**: todos los cambios visuales van en `styles/resume.sty`
 - **Contenido**: cada sección en su archivo correspondiente en `sections/`
-- **ATS**: no agregar tablas complejas, columnas múltiples, cajas decorativas ni iconos incrustados
+- **ATS**: no agregar tablas complejas, columnas múltiples, cajas decorativas ni iconos incrustados en el cuerpo del CV. Excepción: iconos fontawesome5 (`\faEnvelope`, `\faLinkedin`, `\faGithub`, `\faWhatsapp`) permitidos solo en la línea de contacto del header (decisión explícita del candidato, 2026-07-14)
 - **Fuente**: Source Sans 3 via fontspec — no cambiar sin actualizar el README
 - **Páginas**: máximo 2 páginas A4 — verificar que el contenido no desborde
 - **Separador de contacto**: `\cvSep` (barra vertical con espacio)

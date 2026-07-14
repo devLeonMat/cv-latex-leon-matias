@@ -72,6 +72,9 @@
   pdfproducer = {XeLaTeX},
 }
 
+%% ── Icon font (contact line: email / LinkedIn / GitHub / WhatsApp) ──
+\RequirePackage{fontawesome5}
+
 %% ── List control ────────────────────────────────────────────
 \RequirePackage{enumitem}
 
@@ -139,6 +142,9 @@
 %% \cvSep  —  separator between contact items
 \newcommand{\cvSep}{\enspace\textbar\enspace}
 
+%% \cvIcon{fontawesome-command}  —  small accent-colored icon for contact line
+\newcommand{\cvIcon}[1]{{\color{cvAccent}#1}\,}
+
 %% ── Experience entry commands ─────────────────────────────────
 
 %% \cvEntry{Role}{Organization — Location}{Date range}
@@ -203,8 +209,9 @@
 
 %% ── Additional experience (condensed) ────────────────────────
 
-%% \cvMiniEntry{Role}{Company — Client}{Date range}
-\newcommand{\cvMiniEntry}[3]{%
+%% \cvMiniEntry{Role}{Company — Client}
+%%   No dates — role + project/client only.
+\newcommand{\cvMiniEntry}[2]{%
   \vspace{1pt}%
-  {\small\textbf{#1}\enspace\textbar\enspace\color{cvAccent}#2\color{cvText}\hfill\textbf{#3}}\par%
+  {\small\textbf{#1}\enspace\textbar\enspace\color{cvAccent}#2\color{cvText}}\par%
 }
