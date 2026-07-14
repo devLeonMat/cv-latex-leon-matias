@@ -25,8 +25,8 @@ jobs:
           root_file: resume.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
-          # Install Source Sans 3 font (via TeX Live package: sourcesanspro)
-          extra_packages: "sourcesanspro"
+          # Install Source Sans 3 font before compilation via tlmgr
+          pre_compile: "tlmgr install sourcesanspro"
 
       - name: Upload PDF as workflow artifact
         uses: actions/upload-artifact@v4
