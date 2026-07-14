@@ -47,15 +47,15 @@
 \setsansfont{TeX Gyre Heros}
 
 %% ── Color palette ───────────────────────────────────────────
-%%  Navy-blue professional scheme — neutral for ATS and print.
+%%  Plain black & white — matches candidate's prior ATS-safe PDF.
 \RequirePackage{xcolor}
 
-\definecolor{cvName}     {HTML}{0D1B2A}   %% Deep navy   — candidate name
-\definecolor{cvTitle}    {HTML}{1A3A5C}   %% Dark navy   — section headings, company names
-\definecolor{cvAccent}   {HTML}{1D5B9E}   %% Medium blue — section rules, links
-\definecolor{cvText}     {HTML}{2D3748}   %% Charcoal    — body text
-\definecolor{cvMuted}    {HTML}{64748B}   %% Slate gray  — dates, secondary labels
-\definecolor{cvRule}     {HTML}{93C5FD}   %% Sky blue    — horizontal rules under sections
+\definecolor{cvName}     {HTML}{000000}   %% Black — candidate name
+\definecolor{cvTitle}    {HTML}{000000}   %% Black — section headings, role titles
+\definecolor{cvAccent}   {HTML}{1B4F5C}   %% Dark teal — company/client line, links
+\definecolor{cvText}     {HTML}{000000}   %% Black — body text
+\definecolor{cvMuted}    {HTML}{333333}   %% Dark gray — secondary labels (Stack: line)
+\definecolor{cvRule}     {HTML}{000000}   %% Black — horizontal rules under sections
 
 %% ── Hyperref (links + PDF metadata) ─────────────────────────
 \RequirePackage{hyperref}
@@ -78,15 +78,15 @@
 %% ── Section heading formatting ──────────────────────────────
 \RequirePackage{titlesec}
 
-%%  SECTION NAME  (9.5pt, bold, uppercase, navy)
-%%  ──────────────── (sky-blue rule, 1.2pt)
+%%  SECTION NAME  (11pt, bold, uppercase, black)
+%%  ──────────────── (black rule, 0.8pt)
 \titleformat{\section}
-  {\normalfont\fontsize{9.5}{11}\selectfont\bfseries\color{cvTitle}}
+  {\normalfont\fontsize{11}{13}\selectfont\bfseries\color{cvTitle}}
   {}
   {0em}
   {\MakeUppercase}
   [\vspace{1pt}%
-   {\color{cvRule}\rule{\linewidth}{1.2pt}}%
+   {\color{cvRule}\rule{\linewidth}{0.8pt}}%
    \vspace{-5pt}]
 
 \titlespacing*{\section}
@@ -115,27 +115,25 @@
 %% ── Header commands ─────────────────────────────────────────
 
 %% \cvName{Full Name}
-%%   Renders the candidate name — large, bold, dark navy.
+%%   Renders the candidate name — large, bold, black.
 \newcommand{\cvName}[1]{%
-  {\fontsize{22}{26}\selectfont\bfseries\color{cvName}#1}\par%
+  {\fontsize{20}{24}\selectfont\bfseries\color{cvName}#1}\par%
 }
 
 %% \cvHeadTitle{Professional Title}
-%%   Renders the professional title below the name.
+%%   Renders the professional title below the name — bold, black.
 \newcommand{\cvHeadTitle}[1]{%
-  \vspace{3pt}%
-  {\fontsize{11}{13}\selectfont\color{cvTitle}#1}\par%
+  \vspace{2pt}%
+  {\fontsize{10.5}{13}\selectfont\bfseries\color{cvTitle}#1}\par%
 }
 
 %% \cvContact{text}
 %%   Renders a single-line contact block (plain text, ATS-safe).
-%%   Use \cvSep between items.
+%%   Use \cvSep between items. No rule — matches source PDF.
 \newcommand{\cvContact}[1]{%
-  \vspace{5pt}%
-  {\fontsize{9}{11}\selectfont\color{cvMuted}#1}\par%
-  \vspace{2pt}%
-  {\color{cvRule}\rule{\linewidth}{0.6pt}}%
   \vspace{4pt}%
+  {\fontsize{9.5}{11}\selectfont\color{cvText}#1}\par%
+  \vspace{6pt}%
 }
 
 %% \cvSep  —  separator between contact items
@@ -145,23 +143,23 @@
 
 %% \cvEntry{Role}{Organization — Location}{Date range}
 %%   Standard experience block header.
-%%   Role is bold; Organization is colored italic; Date is muted right-aligned.
+%%   Role and date are bold black; Organization is dark-teal accent.
 \newcommand{\cvEntry}[3]{%
-  \vspace{2pt}%
+  \vspace{3pt}%
   \noindent%
-  {\textbf{#1}\hfill{\footnotesize\color{cvMuted}#3}}\\[-3pt]%
-  {\small\color{cvTitle}\textit{#2}}%
+  {\bfseries#1\hfill\bfseries#3}\\[-2pt]%
+  {\small\color{cvAccent}#2}%
   \vspace{1pt}%
 }
 
 %% \cvEntryClient{Role}{Organization}{Client}{Project}{Date range}
-%%   Experience block with named client and project.
+%%   Experience block with named client and project — single accent line,
+%%   matching "Organization | Client | Project: X" from source PDF.
 \newcommand{\cvEntryClient}[5]{%
-  \vspace{2pt}%
+  \vspace{3pt}%
   \noindent%
-  {\textbf{#1}\hfill{\footnotesize\color{cvMuted}#5}}\\[-3pt]%
-  {\small\color{cvTitle}\textit{#2}}\\[-3pt]%
-  {\footnotesize\color{cvMuted}\textit{Client:}~\textbf{#3}\enspace\textbar\enspace\textit{Project:}~\textbf{#4}}%
+  {\bfseries#1\hfill\bfseries#5}\\[-2pt]%
+  {\small\color{cvAccent}#2\enspace\textbar\enspace#3\enspace\textbar\enspace\textbf{Project:}~#4}%
   \vspace{1pt}%
 }
 
@@ -198,8 +196,8 @@
 \newcommand{\cvEduEntry}[3]{%
   \vspace{2pt}%
   \noindent%
-  {\textbf{#1}\hfill{\footnotesize\color{cvMuted}#3}}\\[-3pt]%
-  {\small\color{cvTitle}\textit{#2}}%
+  {\textbf{#1}\hfill\bfseries#3}\\[-3pt]%
+  {\small#2}%
   \vspace{1pt}%
 }
 
@@ -208,5 +206,5 @@
 %% \cvMiniEntry{Role}{Company — Client}{Date range}
 \newcommand{\cvMiniEntry}[3]{%
   \vspace{1pt}%
-  {\small\textbf{#1}\enspace\textbar\enspace\textit{#2}\hfill{\footnotesize\color{cvMuted}#3}}\par%
+  {\small\textbf{#1}\enspace\textbar\enspace\color{cvAccent}#2\color{cvText}\hfill\textbf{#3}}\par%
 }
