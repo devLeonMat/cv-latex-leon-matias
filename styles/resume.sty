@@ -4,8 +4,8 @@
 %%  Engine    : XeLaTeX  (required for fontspec)
 %%  Compatible: Overleaf · VS Code + LaTeX Workshop · MacTeX
 %%
-%%  INSTALL FONTS (if compiling locally):
-%%    sudo tlmgr install sourcesanspro
+%%  Font: TeX Gyre Heros (Helvetica Neue clone)
+%%  Bundled in all TeX Live installs — no extra package needed.
 %% ============================================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{resume}[2026/07/14 v2.0 Roslin Leon Matias Resume Style]
@@ -29,18 +29,22 @@
 
 %% ── Font packages ───────────────────────────────────────────
 %%  fontspec loads OpenType/TrueType fonts via XeLaTeX.
-%%  Source Sans 3 (formerly Source Sans Pro) is available in
-%%  TeX Live via:  tlmgr install sourcesanspro
-%%  It is also available by default on Overleaf.
+%%
+%%  TeX Gyre Heros is a high-quality Helvetica Neue clone included
+%%  in every TeX Live distribution (Overleaf, MacTeX, CI — all work
+%%  out-of-the-box with zero extra installation).
+%%
+%%  To switch to Source Sans 3: install sourcesanspro via tlmgr and
+%%  replace TeX Gyre Heros → Source Sans 3 below.
 \RequirePackage{fontspec}
 
-\setmainfont{Source Sans 3}[
-  BoldFont       = {Source Sans 3 Bold},
-  ItalicFont     = {Source Sans 3 Italic},
-  BoldItalicFont = {Source Sans 3 Bold Italic},
+\setmainfont{TeX Gyre Heros}[
+  BoldFont       = {TeX Gyre Heros Bold},
+  ItalicFont     = {TeX Gyre Heros Italic},
+  BoldItalicFont = {TeX Gyre Heros Bold Italic},
   Scale          = 1.0,
 ]
-\setsansfont{Source Sans 3}
+\setsansfont{TeX Gyre Heros}
 
 %% ── Color palette ───────────────────────────────────────────
 %%  Navy-blue professional scheme — neutral for ATS and print.
