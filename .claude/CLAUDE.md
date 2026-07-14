@@ -53,9 +53,9 @@ cv-latex-leon-matias/
 
 | # | Empresa | Rol | Cliente/Proyecto | Período |
 |---|---------|-----|-----------------|---------|
-| 1 | IDM Technology | Senior Backend Engineer | Scotiabank Peru / Dynamic QR Payments | Mar 2026–Presente |
-| 2 | DaCodes | Lead Software Engineer | AgentCloud | Ene 2025–Feb 2026 |
-| 3 | Outcoding | Senior Full Stack Engineer | SambaSafety / Qorta | Mar 2023–Dic 2024 |
+| 1 | IDM Technology | Senior Fullstack Developer | Scotiabank Peru / Dynamic QR Payments | Mar 2026–Presente |
+| 2 | DaCodes | Lead Software Engineer | HealthCare / AgentCloud | Ene 2025–Feb 2026 |
+| 3 | ExSquared (antes Outcoding) | Senior Full Stack Engineer | SambaSafety / Qorta | Mar 2023–Dic 2024 |
 | 4 | Globant | Senior Full Stack Engineer | Banco GNB Paraguay | Jun 2022–May 2023 |
 
 ### Additional Experience (condensado)
