@@ -1,7 +1,7 @@
 # cv-latex-leon-matias — Claude Context
 
-CV profesional de **Roslin Leon Matias** en formato LaTeX.  
-Diseñado para compilar vía **GitHub Actions** (CI/CD) y publicar el PDF como Release Asset.
+CV profesional de **Roslin Leon Matias** en LaTeX.
+Diseñado para compilar con **XeLaTeX** vía GitHub Actions (CI/CD) y publicar el PDF como Release Asset.
 
 ---
 
@@ -9,64 +9,64 @@ Diseñado para compilar vía **GitHub Actions** (CI/CD) y publicar el PDF como R
 
 ```
 cv-latex-leon-matias/
-├── main.tex                  # Documento raíz — incluye secciones y configura el layout
+├── resume.tex                  # Documento raíz — header + \input de secciones
 ├── sections/
-│   ├── header.tex            # Nombre, contacto, links (LinkedIn, GitHub, email, WhatsApp)
-│   ├── summary.tex           # Resumen ejecutivo (≤4 líneas)
-│   ├── experience.tex        # Experiencia laboral (cronología inversa)
-│   ├── skills.tex            # Stack técnico agrupado por categoría
-│   ├── education.tex         # Educación y certificaciones
-│   └── projects.tex          # Proyectos destacados (opcional)
-├── assets/
-│   └── photo.jpeg            # Foto profesional (usada en header si aplica)
-├── .github/
-│   └── workflows/
-│       └── build-cv.yml      # CI: compila PDF con xelatex + publica release
-├── .claude/
-│   └── CLAUDE.md             # Este archivo
-├── .gitignore
-├── .editorconfig
-├── Makefile                  # Build local: `make` compila, `make clean` limpia
+│   ├── summary.tex             # Resumen profesional + strip de industrias
+│   ├── skills.tex              # Stack técnico (single-column, ATS-safe)
+│   ├── experience.tex          # Experiencia + Additional + Career Highlights
+│   ├── education.tex           # Grado universitario
+│   ├── certifications.tex      # AWS cert
+│   └── languages.tex           # Español / Inglés
+├── styles/
+│   └── resume.sty              # TODA la configuración: geometry, fuentes, colores, comandos
+├── assets/                     # Foto profesional (no usada en versión ATS)
+├── .github/workflows/
+│   └── build-cv.yml            # CI: compila PDF + publica Release
+├── .latexmkrc                  # Configura latexmk para usar XeLaTeX
+├── Makefile                    # Targets: make · make view · make clean
 └── README.md
 ```
 
 ---
 
-## Datos del candidato (fuente de verdad)
+## Candidato (fuente de verdad)
 
 | Campo | Valor |
 |-------|-------|
-| **Nombre** | Roslin Leon Matias |
-| **Título** | Lead Software Engineer |
+| **Nombre en CV** | LEON MATIAS ROSLIN |
+| **Título** | Lead Software Engineer \| Cloud Native Applications \| Java \| AWS \| React |
 | **Email** | leonmatias1991@gmail.com |
 | **WhatsApp** | +51 933 166 559 |
 | **LinkedIn** | https://www.linkedin.com/in/fs-leon-matias/ |
 | **GitHub** | https://github.com/devLeonMat |
-| **Ubicación** | Lima, Perú (Remote) |
+| **Ubicación** | Lima, Peru (Open to Remote) |
 | **Experiencia** | 12+ años |
-| **Industrias** | Healthcare · Banking · Insurance · Retail · Logistics |
-| **Certificación** | AWS Certified Solutions Architect |
-| **Educación** | Bachiller en Ing. de Sistemas — Universidad Nacional del Callao |
+| **Industrias** | Healthcare · Banking · Insurance · Financial Services · Retail · Logistics |
+| **Certificación** | AWS Certified Solutions Architect – Associate |
+| **Educación** | B.S. Systems Engineering — Universidad Nacional del Callao |
 
 ---
 
 ## Experiencia laboral
 
-### Actual / Reciente
+### Roles principales
 
-1. **Dacodes** — Lead Software Engineer · Ene 2025–Presente · Remote USA
-2. **Outcoding** — Senior Full Stack Engineer · Mar 2023–Dic 2024 · Remote USA
-3. **Globant** — Senior Full Stack Engineer · Jun 2022–May 2023 · Remote Paraguay
-4. **The Bridge Social** — Full Stack Engineer · Ene 2021–Ene 2022 · Remote USA
+| # | Empresa | Rol | Cliente/Proyecto | Período |
+|---|---------|-----|-----------------|---------|
+| 1 | IDM Technology | Senior Backend Engineer | Scotiabank Peru / Dynamic QR Payments | Mar 2026–Presente |
+| 2 | DaCodes | Lead Software Engineer | AgentCloud | Ene 2025–Feb 2026 |
+| 3 | Outcoding | Senior Full Stack Engineer | SambaSafety / Qorta | Mar 2023–Dic 2024 |
+| 4 | Globant | Senior Full Stack Engineer | Banco GNB Paraguay | Jun 2022–May 2023 |
 
-### Anteriores (condensados)
+### Additional Experience (condensado)
 
-- **INDRA** (proyectos BCP, RIMAC) — Full Stack Engineer
-- **Michael Page** (proyecto Intercorp) — Full Stack Engineer
-- **Zoluxiones** (proyecto SURA) — Full Stack Engineer
-- **Experis** (proyecto Equifax) — Full Stack Engineer
-- **Olva Courier** — Full Stack Engineer
-- **LimaW** — Full Stack Engineer
+- The Bridge Social — Full Stack Engineer (Ene 2021–Ene 2022, Remote USA)
+- INDRA — Full Stack Engineer (Clientes: BCP, RIMAC)
+- Michael Page — Full Stack Engineer (Cliente: Intercorp)
+- Zoluxiones — Full Stack Engineer (Cliente: SURA)
+- Experis — Full Stack Engineer (Cliente: Equifax)
+- Olva Courier — Full Stack Engineer
+- LimaW — Full Stack Engineer
 
 ---
 
@@ -75,11 +75,62 @@ cv-latex-leon-matias/
 | Categoría | Tecnologías |
 |-----------|-------------|
 | **Lenguajes** | Java, Scala, TypeScript, JavaScript, SQL |
-| **Frameworks** | Spring Boot, Spring Cloud, React, Angular, NestJS, Node.js |
-| **Cloud** | AWS (Lambda, S3, RDS, CloudWatch, EKS), Azure (AKS, CosmosDB) |
-| **Infra** | Docker, Kubernetes, Kafka, Redis |
-| **Bases de datos** | Oracle 19c, PostgreSQL, SQL Server, MongoDB, CosmosDB |
-| **Testing** | JUnit, Mockito, Jest, Karma, Jasmine |
+| **Backend** | Spring Boot, Spring Boot 4, Spring WebFlux, Spring Cloud, Spring Security, REST APIs, Reactive Programming, Hexagonal Architecture, Microservices |
+| **Frontend** | React, Angular, Node.js, NestJS |
+| **Cloud** | AWS (Lambda, S3, RDS, EKS, CloudWatch, SQS), Azure (AKS, CosmosDB), GCP, Apigee |
+| **Infra** | Docker, Kubernetes, Kafka, Redis, Jenkins, SonarCloud |
+| **Bases de datos** | Oracle 19c, SQL Server, PostgreSQL, MongoDB, CosmosDB, MySQL |
+| **Herramientas** | Bitbucket, Git, Jira, Confluence, Swagger/OpenAPI |
+| **Testing** | JUnit, Mockito, Jest, Karma, Jasmine, Pentesting |
+| **Prácticas** | Event-Driven Architecture, CI/CD, API Design, Agile/Scrum, Secure Dev, Legacy Modernization |
+
+---
+
+## Sistema de diseño (styles/resume.sty)
+
+| Propiedad | Valor |
+|-----------|-------|
+| Motor | XeLaTeX |
+| Fuente | Source Sans 3 (via fontspec, paquete tlmgr: `sourcesanspro`) |
+| Tamaño cuerpo | 10pt |
+| Página | A4, 2 páginas máximo |
+| Márgenes | top/bottom 1.6cm · left/right 1.75cm |
+| Color nombre | `#0D1B2A` (deep navy) |
+| Color títulos/secciones | `#1A3A5C` (dark navy) |
+| Color acento/links | `#1D5B9E` (medium blue) |
+| Color texto | `#2D3748` (dark charcoal) |
+| Color fechas | `#64748B` (slate gray) |
+| Color reglas | `#93C5FD` (sky blue) |
+| ATS-optimized | Sí — columna única, sin imágenes, sin tablas, sin iconos |
+
+---
+
+## Comandos de resume.sty (referencia rápida)
+
+```latex
+% Header
+\cvName{LEON MATIAS ROSLIN}
+\cvHeadTitle{Lead Software Engineer | ...}
+\cvContact{Lima, Peru \cvSep +51 933 166 559 \cvSep \href{...}{...}}
+
+% Experience entries
+\cvEntry{Rol}{Empresa — Ubicación}{Fecha inicio -- Fecha fin}
+\cvEntryClient{Rol}{Empresa}{Cliente}{Proyecto}{Fecha}
+
+% Bullets dentro de entrada de experiencia
+\begin{cvItems}
+  \cvItem{Texto del logro...}
+\end{cvItems}
+
+% Skills (single-column, ATS-safe)
+\skillLine{Categoría}{Tech A, Tech B, Tech C}
+
+% Education / Certifications
+\cvEduEntry{Título/Cert}{Institución}{Año}
+
+% Additional experience (condensado)
+\cvMiniEntry{Rol}{Empresa | Cliente}{Fechas}
+```
 
 ---
 
@@ -87,46 +138,42 @@ cv-latex-leon-matias/
 
 ### GitHub Actions (automático)
 - Cada push a `main` dispara el workflow `.github/workflows/build-cv.yml`
-- Usa la imagen Docker `texlive/texlive:latest` con `xelatex`
-- El PDF generado se sube como artefacto y opcionalmente como Release
+- Usa XeLaTeX con la imagen oficial de TeX Live
+- Instala `sourcesanspro` automáticamente
+- PDF publicado en Releases como `latest`
 
-### Local (requiere TeX Live / MacTeX instalado)
+### Local
 ```bash
-make          # compila con xelatex (2 pasadas para referencias)
-make clean    # elimina archivos auxiliares
-make view     # abre el PDF en macOS
+make            # usa latexmk (configurado en .latexmkrc para XeLaTeX)
+make clean      # elimina archivos auxiliares
+make view       # abre PDF en macOS (Preview)
 ```
+
+### Overleaf
+1. Subir como ZIP
+2. Menu → Settings → Compiler = XeLaTeX
+3. Recompile
 
 ---
 
 ## Instrucciones para Claude
 
-- **Motor LaTeX**: usa `xelatex` (soporta fuentes del sistema, mejor tipografía)
-- **Encoding**: UTF-8, sin caracteres especiales sin escapar
-- **Fuentes**: usa `fontspec` con una fuente sans-serif profesional (e.g., Source Sans Pro, IBM Plex Sans)
-- **Template base**: puede basarse en Awesome-CV, moderncv, o un template custom minimalista
-- **Idioma**: el CV puede existir en versión EN y ES — agregar suffijo al filename: `main-en.tex`, `main-es.tex`
-- **PDF output**: debe caber en **1 página** (adjustar font-size, spacing con cuidado)
-- **No usar**: biber/biblatex (no hay bibliografía)
-- **Colores**: usar una paleta profesional — considerar azul marino o indigo (consistente con portfolio web)
-- **Margenes**: ajustados (0.5in top/bottom, 0.6in left/right aprox) para maximizar espacio
-- **Secciones**: siempre en orden Header → Summary → Experience → Skills → Education
-- **Bullet points en Experience**: máximo 3-4 por empresa, orientados a impacto y métricas
+- **Motor**: siempre XeLaTeX (no pdflatex, no lualatex)
+- **Estilos**: todos los cambios visuales van en `styles/resume.sty`
+- **Contenido**: cada sección en su archivo correspondiente en `sections/`
+- **ATS**: no agregar tablas complejas, columnas múltiples, cajas decorativas ni iconos incrustados
+- **Fuente**: Source Sans 3 via fontspec — no cambiar sin actualizar el README
+- **Páginas**: máximo 2 páginas A4 — verificar que el contenido no desborde
+- **Separador de contacto**: `\cvSep` (barra vertical con espacio)
+- **Bullets**: usar `\begin{cvItems}` con `\cvItem{...}`, NO usar `itemize` directamente
+- **Colores**: usar las variables definidas en resume.sty (cvName, cvTitle, cvAccent, cvText, cvMuted, cvRule)
 
 ---
 
-## Convenciones de nombres de archivo
+## Pendientes
 
-- `main.tex` — versión principal (inglés, una página)
-- `main-es.tex` — versión en español (si se crea)
-- `main-two-page.tex` — versión extendida de dos páginas (si se crea)
-
----
-
-## Pendientes / roadmap
-
-- [ ] Definir template visual final (Awesome-CV vs custom)
-- [ ] Agregar foto en header (opcional, depende del mercado destino)
-- [ ] Versión ES del CV
-- [ ] Script para generar versión targeted por empresa/rol
-- [ ] Integrar con el portfolio web (link directo al PDF del Release)
+- [ ] Verificar y completar bullets de DaCodes, Outcoding, Globant con el contenido exacto del CV actual
+- [ ] Probar en Overleaf y verificar layout de 2 páginas
+- [ ] Crear versión `resume-es.tex` en español si se requiere
+- [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
+- [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)

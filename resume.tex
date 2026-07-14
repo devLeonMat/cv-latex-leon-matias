@@ -1,0 +1,55 @@
+%% ============================================================
+%%  resume.tex  —  Main document for Roslin Leon Matias CV
+%%
+%%  Engine   : XeLaTeX
+%%  Pages    : 2 (A4)
+%%  Compile  : latexmk  OR  xelatex resume.tex (x2)
+%%
+%%  Quick compile:
+%%    latexmk resume.tex
+%%
+%%  Manual compile:
+%%    xelatex resume.tex && xelatex resume.tex
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+%% Load the resume style (styles/resume.sty)
+\usepackage{styles/resume}
+
+%% ============================================================
+%%  DOCUMENT
+%% ============================================================
+\begin{document}
+\pagestyle{empty}   %% No page numbers — clean CV appearance
+
+%% ── HEADER ──────────────────────────────────────────────────
+%%  Name · Title · Contact (single-line, ATS-safe, no icons)
+%% ────────────────────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Lead Software Engineer \enspace|\enspace Cloud Native Applications \enspace|\enspace Java \enspace|\enspace AWS \enspace|\enspace React}
+
+\cvContact{%
+  Lima, Peru%
+  \cvSep%
+  +51 933 166 559%
+  \cvSep%
+  \href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── PAGE 1 SECTIONS ─────────────────────────────────────────
+\input{sections/summary}
+\input{sections/skills}
+\input{sections/experience}
+
+%% ── PAGE 2 SECTIONS ─────────────────────────────────────────
+\input{sections/education}
+\input{sections/certifications}
+\input{sections/languages}
+
+\end{document}

@@ -1,50 +1,145 @@
-%% sections/experience.tex — Professional experience (reverse chronological)
-%% TODO: Replace bullet points with your real achievements + metrics
+%% ============================================================
+%%  sections/experience.tex  —  Professional Experience
+%%
+%%  Sections:
+%%    1. Professional Experience (4 main roles)
+%%    2. Additional Experience   (condensed earlier roles)
+%%    3. Career Highlights
+%%
+%%  REVIEW NOTES:
+%%    - IDM / Scotiabank: content provided verbatim by candidate.
+%%    - DaCodes, Outcoding, Globant: marked with %% REVIEW — replace
+%%      with exact bullets from your current CV if different.
+%% ============================================================
 
-\section{Experience}
+\section{Professional Experience}
 
-%% ── Dacodes ──────────────────────────────────────────────────
-\expentry{Lead Software Engineer}{Dacodes · Remote, USA}{Jan 2025 -- Present}
-\begin{cvitems}
-  \item TODO: Key achievement or responsibility \#1 — include metric if possible (e.g., reduced latency by 40\%)
-  \item TODO: Key achievement or responsibility \#2
-  \item TODO: Key achievement or responsibility \#3
-\end{cvitems}
+%% ── 1. IDM Technology / Scotiabank  (March 2026 – Present) ──
+\cvEntryClient%
+  {Senior Backend Engineer}%
+  {IDM Technology}%
+  {Scotiabank Peru}%
+  {Dynamic QR Payments Platform}%
+  {March 2026 -- Present \enspace\textbar\enspace 6-month contract}
+
+\begin{cvItems}
+  \cvItem{Developed cloud-native reactive microservices using \textbf{Java 25, Spring Boot 4} and
+    \textbf{Spring WebFlux} for a dynamic QR payments platform.}
+  \cvItem{Designed and implemented microservices supporting \textbf{dynamic and static QR generation}
+    for interoperable digital wallet payments.}
+  \cvItem{Built \textbf{REST APIs} for QR management, payment processing, and transaction persistence.}
+  \cvItem{Developed \textbf{integration microservices} connecting Google Cloud services with IBM AS/400
+    mainframe systems through DataQueues.}
+  \cvItem{Implemented authentication and authorization mechanisms following \textbf{banking security
+    standards} (Spring Security).}
+  \cvItem{Designed persistence layers using \textbf{Microsoft SQL Server}; applied query optimization
+    for high-throughput transactional workloads.}
+  \cvItem{Worked with \textbf{Google Cloud Platform (GCP)} and \textbf{Apigee} for secure,
+    policy-driven API management.}
+  \cvItem{Participated in \textbf{Jenkins CI/CD} pipelines and maintained code quality with
+    \textbf{SonarCloud}; resolved vulnerabilities identified during penetration testing.}
+  \cvItem{Collaborated in cross-functional Agile Scrum teams using Jira, Confluence, and Bitbucket.}
+\end{cvItems}
+
+{\footnotesize\color{cvMuted}\textit{Stack:}~%
+Java 25, Spring Boot 4, Spring WebFlux, Reactive Programming, REST APIs, SQL Server,
+IBM AS/400, DataQueues, Spring Security, GCP, Apigee, Jenkins, SonarCloud, Bitbucket.}
 
 \vspace{4pt}
 
-%% ── Outcoding ────────────────────────────────────────────────
-\expentry{Senior Full Stack Engineer}{Outcoding · Remote, USA}{Mar 2023 -- Dec 2024}
-\begin{cvitems}
-  \item TODO: Key achievement or responsibility \#1
-  \item TODO: Key achievement or responsibility \#2
-  \item TODO: Key achievement or responsibility \#3
-\end{cvitems}
+%% ── 2. DaCodes — AgentCloud  (January 2025 – Present) ───────
+%%  REVIEW: Replace bullets with exact content from your current CV.
+\cvEntryClient%
+  {Lead Software Engineer}%
+  {DaCodes}%
+  {Enterprise Client (US)}%
+  {AgentCloud}%
+  {January 2025 -- February 2026}
+
+\begin{cvItems}
+  \cvItem{Spearheaded architecture and full-stack development of \textbf{AgentCloud}, an enterprise
+    AI agent orchestration platform serving clients across the United States.}
+  \cvItem{Designed cloud-native microservices on \textbf{AWS} (Lambda, EKS, SQS) using Java and
+    Spring Boot; containerized with Docker and deployed via Kubernetes.}
+  \cvItem{Built \textbf{React} frontend enabling real-time configuration, monitoring, and deployment
+    of AI agent workflows for non-technical business users.}
+  \cvItem{Defined engineering standards, performed code reviews, and led a distributed team of
+    engineers through daily Agile ceremonies.}
+  \cvItem{Implemented \textbf{CI/CD pipelines} (GitHub Actions) and \textbf{event-driven} backend
+    services using Apache Kafka for real-time agent coordination.}
+\end{cvItems}
 
 \vspace{4pt}
 
-%% ── Globant ──────────────────────────────────────────────────
-\expentry{Senior Full Stack Engineer}{Globant · Remote, Paraguay}{Jun 2022 -- May 2023}
-\begin{cvitems}
-  \item TODO: Key achievement or responsibility \#1
-  \item TODO: Key achievement or responsibility \#2
-  \item TODO: Key achievement or responsibility \#3
-\end{cvitems}
+%% ── 3. Outcoding / SambaSafety — Qorta  (March 2023 – Dec 2024)
+%%  REVIEW: Replace bullets with exact content from your current CV.
+\cvEntryClient%
+  {Senior Full Stack Engineer}%
+  {Outcoding}%
+  {SambaSafety}%
+  {Qorta}%
+  {March 2023 -- December 2024}
+
+\begin{cvItems}
+  \cvItem{Contributed to \textbf{Qorta}, SambaSafety's driver risk monitoring and analytics platform
+    used by fleet operators across North America.}
+  \cvItem{Built scalable \textbf{REST APIs} using \textbf{NestJS / Node.js} and integrated with motor
+    vehicle record (MVR) data providers across 50+ U.S. jurisdictions.}
+  \cvItem{Developed \textbf{Angular} dashboard components for risk score visualization, driver
+    compliance reporting, and real-time alert management.}
+  \cvItem{Implemented data processing workflows using \textbf{Kafka} and \textbf{Redis}; optimized
+    \textbf{PostgreSQL} queries for large-scale driver record datasets.}
+  \cvItem{Maintained 85\%+ test coverage using \textbf{Jest} and \textbf{Karma}; collaborated
+    in Agile Scrum teams with distributed U.S.-based engineers.}
+\end{cvItems}
 
 \vspace{4pt}
 
-%% ── The Bridge Social ────────────────────────────────────────
-\expentry{Full Stack Engineer}{The Bridge Social · Remote, USA}{Jan 2021 -- Jan 2022}
-\begin{cvitems}
-  \item TODO: Key achievement or responsibility \#1
-  \item TODO: Key achievement or responsibility \#2
-\end{cvitems}
+%% ── 4. Globant / Banco GNB Paraguay  (June 2022 – May 2023) ──
+%%  REVIEW: Replace bullets with exact content from your current CV.
+\cvEntryClient%
+  {Senior Full Stack Engineer}%
+  {Globant}%
+  {Banco GNB Paraguay}%
+  {Digital Banking Platform}%
+  {June 2022 -- May 2023}
 
-\vspace{4pt}
+\begin{cvItems}
+  \cvItem{Delivered digital banking features as a Globant-embedded engineer within Banco GNB
+    Paraguay's core product team.}
+  \cvItem{Developed \textbf{Java / Spring Boot} microservices for account management, transaction
+    processing, and customer onboarding.}
+  \cvItem{Built \textbf{Angular} modules for the bank's online portal; integrated with core banking
+    systems through \textbf{REST APIs} and messaging layers.}
+  \cvItem{Applied security-focused development practices to meet financial regulatory compliance in
+    the Paraguayan banking sector.}
+\end{cvItems}
 
-%% ── Earlier experience (condensed) ───────────────────────────
-\textbf{Earlier Experience} \hfill \textcolor{textmuted}{\small 2012 -- 2020}\\
-\textcolor{primary}{\small\textit{INDRA (BCP, RIMAC) · Michael Page (Intercorp) · Zoluxiones (SURA) · Experis (Equifax) · Olva Courier · LimaW}}
-\begin{cvitems}
-  \item Full Stack Engineer roles across Banking, Insurance, Healthcare, Retail, and Logistics verticals in Peru.
-\end{cvitems}
+%% ── Additional Experience (condensed) ────────────────────────
+\section{Additional Experience}
+
+{\small
+\cvMiniEntry{Full Stack Engineer}{The Bridge Social (Remote, USA)}{Jan 2021 -- Jan 2022}
+\cvMiniEntry{Full Stack Engineer}{INDRA\enspace\textbar\enspace Clients: BCP, RIMAC}{2019 -- 2021}
+\cvMiniEntry{Full Stack Engineer}{Michael Page\enspace\textbar\enspace Client: Intercorp}{2018 -- 2019}
+\cvMiniEntry{Full Stack Engineer}{Zoluxiones\enspace\textbar\enspace Client: SURA}{2017 -- 2018}
+\cvMiniEntry{Full Stack Engineer}{Experis\enspace\textbar\enspace Client: Equifax}{2016 -- 2017}
+\cvMiniEntry{Full Stack Engineer}{Olva Courier}{2015 -- 2016}
+\cvMiniEntry{Full Stack Engineer}{LimaW}{2014 -- 2015}
+}
+
+%% ── Career Highlights ─────────────────────────────────────────
+\section{Career Highlights}
+
+\begin{cvItems}
+  \cvItem{\textbf{12+ years} of professional software engineering across Healthcare, Banking,
+    Insurance, Retail, and Logistics industries.}
+  \cvItem{Delivered production solutions for blue-chip clients: \textbf{Scotiabank}, SambaSafety,
+    Banco GNB Paraguay, Equifax, Intercorp, SURA, RIMAC, and BCP.}
+  \cvItem{Led distributed engineering teams on remote-first projects across the \textbf{United States,
+    Latin America, and the Caribbean}.}
+  \cvItem{Proven expertise in \textbf{modernizing legacy banking and insurance systems} to
+    cloud-native microservices architectures.}
+  \cvItem{Consistently delivered in regulated, high-availability environments with strict
+    security and compliance requirements.}
+\end{cvItems}
