@@ -135,15 +135,15 @@
 %%   Use \cvSep between items. No rule — matches source PDF.
 \newcommand{\cvContact}[1]{%
   \vspace{4pt}%
-  {\fontsize{9.5}{11}\selectfont\color{cvText}#1}\par%
+  {\fontsize{9}{11}\selectfont\color{cvText}#1}\par%
   \vspace{6pt}%
 }
 
 %% \cvSep  —  separator between contact items
-\newcommand{\cvSep}{\enspace\textbar\enspace}
+\newcommand{\cvSep}{\,\textbar\,}
 
 %% \cvIcon{fontawesome-command}  —  small accent-colored icon for contact line
-\newcommand{\cvIcon}[1]{{\color{cvAccent}#1}\,}
+\newcommand{\cvIcon}[1]{{\color{cvAccent}#1}\,\allowbreak}
 
 %% ── Experience entry commands ─────────────────────────────────
 
