@@ -19,23 +19,37 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile resume.tex with XeLaTeX
+      - name: Compile resume.tex (English)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
-          # TeX Gyre Heros is bundled in texlive-full — no extra install needed
 
-      - name: Upload PDF as workflow artifact
+      - name: Compile resume-es.tex (Spanish)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-es.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Upload English PDF as workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-roslin-leon-matias
+          name: resume-roslin-leon-matias-en
           path: resume.pdf
           if-no-files-found: error
           retention-days: 90
 
-      - name: Create or update "latest" GitHub Release with PDF
+      - name: Upload Spanish PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-es
+          path: resume-es.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Create or update "latest" GitHub Release with both PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: ncipollo/release-action@v1
         with:
@@ -44,14 +58,17 @@ jobs:
           body: |
             **Roslin Leon Matias — Lead Software Engineer**
 
-            Automatically compiled PDF from the latest commit.
+            Automatically compiled PDFs from the latest commit.
+
+            | Version | File |
+            |---------|------|
+            | English | resume.pdf |
+            | Español | resume-es.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
-            - Compiled with: XeLaTeX + Source Sans 3
-
-            [View all releases](https://github.com/devLeonMat/cv-latex-leon-matias/releases)
-          artifacts: "resume.pdf"
+            - Compiled with: XeLaTeX + TeX Gyre Heros
+          artifacts: "resume.pdf,resume-es.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true

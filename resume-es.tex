@@ -1,0 +1,43 @@
+%% ============================================================
+%%  resume-es.tex  —  CV de Leon Matias (versión español)
+%%
+%%  Engine   : XeLaTeX
+%%  Pages    : 2 (A4)
+%%  Compile  : latexmk resume-es.tex  OR  make es
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── ENCABEZADO ───────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Ingeniero de Software Líder \enspace|\enspace Aplicaciones Cloud-Native \enspace|\enspace Java \enspace|\enspace AWS \enspace|\enspace React}
+
+\cvContact{%
+  Lima, Perú%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── PÁGINA 1 ─────────────────────────────────────────────────
+\input{es/summary-es}
+\input{es/skills-es}
+\input{es/experience-es}
+
+%% ── PÁGINA 2 ─────────────────────────────────────────────────
+\input{es/education-es}
+\input{es/certifications-es}
+\input{es/languages-es}
+
+\end{document}
