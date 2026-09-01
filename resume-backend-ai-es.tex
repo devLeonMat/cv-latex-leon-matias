@@ -1,0 +1,45 @@
+%% ============================================================
+%%  resume-backend-ai-es.tex  —  CV Enfocado: Ingeniero Backend
+%%                               Java · Node.js · Agentes IA
+%%
+%%  Motor    : XeLaTeX
+%%  Páginas  : 2 (A4)
+%%  Compilar : latexmk resume-backend-ai-es.tex
+%%             O bien: make backend-ai-es
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── ENCABEZADO ───────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Ingeniero Backend Senior \enspace|\enspace Java \enspace|\enspace Node.js \enspace|\enspace Agentes IA \enspace|\enspace Cloud Native \enspace|\enspace AWS}
+
+\cvContact{%
+  Lima, Perú%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── PÁGINA 1 ─────────────────────────────────────────────────
+\input{backend-ai-es/summary-es}
+\input{backend-ai-es/skills-es}
+\input{backend-ai-es/experience-es}
+
+%% ── PÁGINA 2 ─────────────────────────────────────────────────
+\input{es/education-es}
+\input{es/certifications-es}
+\input{es/languages-es}
+
+\end{document}
