@@ -19,17 +19,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile resume.tex (English)
+      - name: Compile resume.tex (English — General)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
-      - name: Compile resume-es.tex (Spanish)
+      - name: Compile resume-es.tex (Spanish — General)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume-es.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-backend-ai.tex (English — Backend + AI Agents)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-backend-ai.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-backend-ai-es.tex (Spanish — Backend + AI Agents)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-backend-ai-es.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
@@ -49,26 +63,44 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      - name: Create or update "latest" GitHub Release with both PDFs
+      - name: Upload Backend+AI English PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-backend-ai-en
+          path: resume-backend-ai.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Backend+AI Spanish PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-backend-ai-es
+          path: resume-backend-ai-es.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Create or update "latest" GitHub Release with all PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: ncipollo/release-action@v1
         with:
           tag: "latest"
           name: "Latest Resume — Roslin Leon Matias"
           body: |
-            **Roslin Leon Matias — Lead Software Engineer**
+            **Roslin Leon Matias — Senior Backend Engineer / Lead Software Engineer**
 
             Automatically compiled PDFs from the latest commit.
 
             | Version | File |
             |---------|------|
-            | English | resume.pdf |
-            | Español | resume-es.pdf |
+            | English — General | resume.pdf |
+            | Español — General | resume-es.pdf |
+            | English — Backend · Java · Node.js · AI Agents | resume-backend-ai.pdf |
+            | Español — Backend · Java · Node.js · Agentes IA | resume-backend-ai-es.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
-            - Compiled with: XeLaTeX + TeX Gyre Heros
-          artifacts: "resume.pdf,resume-es.pdf"
+            - Compiled with: XeLaTeX
+          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true
