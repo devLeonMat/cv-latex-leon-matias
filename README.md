@@ -11,7 +11,22 @@ Built with **LaTeX (XeLaTeX)** for premium typesetting. Auto-compiled by GitHub 
 
 The CV is compiled automatically on every push to `main`.
 
-**[Download latest resume.pdf →](https://github.com/devLeonMat/cv-latex-leon-matias/releases/tag/latest)**
+**[Download the latest PDFs →](https://github.com/devLeonMat/cv-latex-leon-matias/releases/tag/latest)**
+
+### CV versions
+
+| PDF | Target role | Language | Build |
+|-----|-------------|----------|-------|
+| `resume.pdf` | Lead Software Engineer — general | English | `make en` |
+| `resume-es.pdf` | Ingeniero de Software Líder — general | Español | `make es` |
+| `resume-backend-ai.pdf` | Senior Backend Engineer · AI Agents | English | `make backend-ai` |
+| `resume-backend-ai-es.pdf` | Backend Senior · Agentes IA | Español | `make backend-ai-es` |
+| `resume-techlead.pdf` | Tech Lead | English | `make techlead` |
+| `resume-techlead-es.pdf` | Tech Lead | Español | `make techlead-es` |
+
+Every variant shares `styles/resume.sty`. A targeted variant owns its `summary`, `skills`
+and `experience` files and reuses education / certifications / languages from `sections/`
+(English) or `es/` (Spanish). Build them all with `make all-versions`.
 
 ---
 

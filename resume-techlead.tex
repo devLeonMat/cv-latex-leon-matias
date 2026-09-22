@@ -1,0 +1,44 @@
+%% ============================================================
+%%  resume-techlead.tex  —  Targeted CV: Tech Lead (English)
+%%
+%%  Engine   : XeLaTeX
+%%  Pages    : 2 (A4)
+%%  Compile  : latexmk resume-techlead.tex
+%%             OR: make techlead
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── HEADER ───────────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Tech Lead \enspace|\enspace Cloud Native Architecture \enspace|\enspace Java \enspace|\enspace AWS \enspace|\enspace React}
+
+\cvContact{%
+  Lima, Peru%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── PAGE 1 ───────────────────────────────────────────────────
+\input{techlead/summary}
+\input{techlead/skills}
+\input{techlead/experience}
+
+%% ── PAGE 2 ───────────────────────────────────────────────────
+\input{sections/education}
+\input{sections/certifications}
+\input{sections/languages}
+
+\end{document}

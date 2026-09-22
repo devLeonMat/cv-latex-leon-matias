@@ -47,6 +47,27 @@ jobs:
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
+      - name: Compile resume-techlead.tex (English — Tech Lead)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-techlead.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-techlead-es.tex (Spanish — Tech Lead)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-techlead-es.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Report page count of each PDF
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          for f in *.pdf; do
+            echo "$f -> $(pdfinfo "$f" | awk '/^Pages:/ {print $2}') page(s)"
+          done
+
       - name: Upload English PDF as workflow artifact
         uses: actions/upload-artifact@v4
         with:
@@ -79,6 +100,22 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
+      - name: Upload Tech Lead English PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-techlead-en
+          path: resume-techlead.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Tech Lead Spanish PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-techlead-es
+          path: resume-techlead-es.pdf
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Create or update "latest" GitHub Release with all PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: ncipollo/release-action@v1
@@ -96,11 +133,13 @@ jobs:
             | Español — General | resume-es.pdf |
             | English — Backend · Java · Node.js · AI Agents | resume-backend-ai.pdf |
             | Español — Backend · Java · Node.js · Agentes IA | resume-backend-ai-es.pdf |
+            | English — Tech Lead | resume-techlead.pdf |
+            | Español — Tech Lead | resume-techlead-es.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
             - Compiled with: XeLaTeX
-          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf"
+          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true

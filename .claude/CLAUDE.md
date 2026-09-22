@@ -9,14 +9,24 @@ Diseñado para compilar con **XeLaTeX** vía GitHub Actions (CI/CD) y publicar e
 
 ```
 cv-latex-leon-matias/
-├── resume.tex                  # Documento raíz — header + \input de secciones
-├── sections/
+├── resume.tex                  # CV general (EN) — header + \input de secciones
+├── resume-es.tex               # CV general (ES)
+├── resume-backend-ai.tex       # CV dirigido: Backend + AI Agents (EN)
+├── resume-backend-ai-es.tex    # CV dirigido: Backend + Agentes IA (ES)
+├── resume-techlead.tex         # CV dirigido: Tech Lead (EN)
+├── resume-techlead-es.tex      # CV dirigido: Tech Lead (ES)
+├── sections/                   # Secciones del CV general (EN)
 │   ├── summary.tex             # Resumen profesional + strip de industrias
 │   ├── skills.tex              # Stack técnico (single-column, ATS-safe)
 │   ├── experience.tex          # Experiencia + Additional + Career Highlights
 │   ├── education.tex           # Grado universitario
-│   ├── certifications.tex      # AWS cert
+│   ├── certifications.tex      # Certificaciones (sin AWS: removida para caber en 2 págs)
 │   └── languages.tex           # Español / Inglés
+├── es/                         # Secciones del CV general (ES) — sufijo -es
+├── backend-ai/                 # Secciones Backend+IA (EN): summary, skills, experience
+├── backend-ai-es/              # Secciones Backend+IA (ES)
+├── techlead/                   # Secciones Tech Lead (EN): summary, skills, experience
+├── techlead-es/                # Secciones Tech Lead (ES)
 ├── styles/
 │   └── resume.sty              # TODA la configuración: geometry, fuentes, colores, comandos
 ├── assets/                     # Foto profesional (no usada en versión ATS)
@@ -134,10 +144,34 @@ cv-latex-leon-matias/
 
 ---
 
+## Variantes de CV
+
+| Documento | Rol destino | Idioma | Secciones propias | Página 2 reutilizada |
+|-----------|-------------|--------|-------------------|----------------------|
+| `resume.tex` | Lead Software Engineer (general) | EN | `sections/` | — |
+| `resume-es.tex` | Ingeniero de Software Líder (general) | ES | `es/` | — |
+| `resume-backend-ai.tex` | Senior Backend Engineer · AI Agents | EN | `backend-ai/` | `sections/` |
+| `resume-backend-ai-es.tex` | Backend Senior · Agentes IA | ES | `backend-ai-es/` | `es/` |
+| `resume-techlead.tex` | **Tech Lead** | EN | `techlead/` | `sections/` |
+| `resume-techlead-es.tex` | **Tech Lead** | ES | `techlead-es/` | `es/` |
+
+Convención de variante dirigida: un `.tex` raíz + un directorio propio con
+`summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
+de `sections/` (EN) o `es/` (ES). Todas comparten `styles/resume.sty`.
+
+**Variantes Tech Lead** (2026-09-22): mismos hechos, reformulados hacia liderazgo técnico
+(propiedad de arquitectura, estándares, code review, mentoría, stakeholders). La posición
+actual en IDM / Scotiabank figura como **Tech Lead**; en el resto de variantes sigue como
+Senior Fullstack Developer (decisión explícita del candidato).
+
+---
+
 ## Compilación
 
 ### GitHub Actions (automático)
 - Cada push a `main` dispara el workflow `.github/workflows/build-cv.yml`
+- Compila las **seis** variantes, imprime el número de páginas de cada PDF y las publica
+  en el Release `latest`
 - Usa XeLaTeX con la imagen oficial de TeX Live
 - Instala `sourcesanspro` automáticamente
 - PDF publicado en Releases como `latest`
@@ -174,6 +208,7 @@ make view       # abre PDF en macOS (Preview)
 
 - [ ] Verificar y completar bullets de DaCodes, Outcoding, Globant con el contenido exacto del CV actual
 - [ ] Probar en Overleaf y verificar layout de 2 páginas
-- [ ] Crear versión `resume-es.tex` en español si se requiere
+- [x] Versión en español (`resume-es.tex`) — hecha
+- [x] Versiones Tech Lead EN/ES (`resume-techlead*.tex`) — hechas 2026-09-22
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)
