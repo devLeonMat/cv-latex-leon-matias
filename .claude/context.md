@@ -19,6 +19,10 @@ Variantes **Tech Lead** (EN + ES), añadidas siguiendo la convención ya existen
 - **IDM Technology / Scotiabank = "Tech Lead" solo en las variantes Tech Lead**
   (pedido del candidato, 2026-09-22). El resto de variantes mantiene
   "Senior Fullstack Developer" / "Desarrollador Fullstack Senior".
+- **Años de experiencia: divergencia deliberada** (2026-09-22). Las variantes Tech Lead dicen
+  *"más de 10 años desarrollando, los últimos 2 como Tech Lead"*; las otras cuatro
+  (general EN/ES, Backend+AI EN/ES) mantienen *"12+ años / más de 12 años"*. El candidato
+  decidió explícitamente NO unificar la cifra. No "corregir" esta diferencia.
 - `styles/resume.sty` no se modificó: las variantes ES no usan babel (misma decisión que
   `resume-es.tex`), por lo que la etiqueta fija del estilo sigue siendo "Project:".
 - Contenido sincronizado con el estado vigente de `main`: DaCodes = SaaS para aseguradora
