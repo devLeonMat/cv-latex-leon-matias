@@ -25,11 +25,24 @@ Variantes **Tech Lead** (EN + ES), añadidas siguiendo la convención ya existen
   de salud en EE.UU., IDM incluye tooling interno (React/Electron/Node/Python) y desarrollo
   asistido por IA, certificación AWS removida del CV.
 
-## Pendiente de verificar
+## Verificado en CI (run 35745116338, 2026-09-22)
 
-- Conteo de páginas de `resume-techlead.pdf` y `resume-techlead-es.pdf` (objetivo: 2 A4).
-  No hay LaTeX local (`xelatex`/`latexmk` ausentes) → se verifica en GitHub Actions,
-  o localmente con `make docker` adaptado (imagen `texlive/texlive:latest`).
+| PDF | Páginas |
+|-----|---------|
+| resume.pdf | 2 |
+| resume-es.pdf | **3** |
+| resume-backend-ai.pdf | 2 |
+| resume-backend-ai-es.pdf | 2 |
+| resume-techlead.pdf | 2 |
+| resume-techlead-es.pdf | 2 |
+
+La variante ES Tech Lead necesitó un pase de recorte (el español ocupa ~15% más que el
+inglés con el mismo contenido): fusión de bullets en IDM, DaCodes, Globant y Logros.
+
+**Pendiente (preexistente, no introducido aquí):** `resume-es.pdf` sale en 3 páginas.
+
+No hay LaTeX local (`xelatex`/`latexmk` ausentes) → la verificación se hace en GitHub
+Actions, o localmente con `make docker` (imagen `texlive/texlive:latest`).
 
 ## Nota de proceso
 
