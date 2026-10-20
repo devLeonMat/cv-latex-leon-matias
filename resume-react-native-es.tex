@@ -1,0 +1,45 @@
+%% ============================================================
+%%  resume-react-native-es.tex  —  CV Enfocado: Ingeniero Full Stack
+%%                                 React Native · Móvil · Java · Node.js
+%%
+%%  Motor    : XeLaTeX
+%%  Páginas  : 2 (A4)
+%%  Compilar : latexmk resume-react-native-es.tex
+%%             O bien: make react-native-es
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── ENCABEZADO ───────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Ingeniero Full Stack Senior \enspace|\enspace React Native \enspace|\enspace Móvil \enspace|\enspace Java \enspace|\enspace Node.js \enspace|\enspace AWS}
+
+\cvContact{%
+  Lima, Perú%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── PÁGINA 1 ─────────────────────────────────────────────────
+\input{react-native-es/summary-es}
+\input{react-native-es/skills-es}
+\input{react-native-es/experience-es}
+
+%% ── PÁGINA 2 ─────────────────────────────────────────────────
+\input{es/education-es}
+\input{es/certifications-es}
+\input{es/languages-es}
+
+\end{document}

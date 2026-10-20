@@ -18,6 +18,8 @@ MAIN_BACKEND_AI    = resume-backend-ai
 MAIN_BACKEND_AI_ES = resume-backend-ai-es
 MAIN_TECHLEAD      = resume-techlead
 MAIN_TECHLEAD_ES   = resume-techlead-es
+MAIN_RN            = resume-react-native
+MAIN_RN_ES         = resume-react-native-es
 STYLES          = styles/resume.sty
 SECTIONS        = sections/*.tex
 SECTIONS_ES     = es/*.tex
@@ -25,13 +27,16 @@ SECTIONS_BAI    = backend-ai/*.tex
 SECTIONS_BAI_ES = backend-ai-es/*.tex
 SECTIONS_TL     = techlead/*.tex
 SECTIONS_TL_ES  = techlead-es/*.tex
+SECTIONS_RN     = react-native/*.tex
+SECTIONS_RN_ES  = react-native-es/*.tex
 VIEWER          = open   # macOS; change to 'evince' or 'zathura' on Linux
 DOCKER_IMG      = texlive/texlive:latest
 
 .PHONY: all en es both backend-ai backend-ai-es backend-ai-both \
-        techlead techlead-es techlead-both all-versions \
+        techlead techlead-es techlead-both \
+        react-native react-native-es react-native-both all-versions \
         clean cleanall view view-es view-backend-ai view-backend-ai-es \
-        view-techlead view-techlead-es \
+        view-techlead view-techlead-es view-react-native view-react-native-es \
         watch docker docker-es docker-both install-mac
 
 ## Default: compile English version
@@ -82,8 +87,23 @@ $(MAIN_TECHLEAD_ES).pdf: $(MAIN_TECHLEAD_ES).tex $(STYLES) $(SECTIONS_ES) $(SECT
 ## Both Tech Lead versions
 techlead-both: techlead techlead-es
 
-## All six versions
-all-versions: en es backend-ai backend-ai-es techlead techlead-es
+## React Native · Full Stack — English
+react-native: $(MAIN_RN).pdf
+
+$(MAIN_RN).pdf: $(MAIN_RN).tex $(STYLES) $(SECTIONS) $(SECTIONS_RN)
+	latexmk $(MAIN_RN).tex
+
+## React Native · Full Stack — Spanish
+react-native-es: $(MAIN_RN_ES).pdf
+
+$(MAIN_RN_ES).pdf: $(MAIN_RN_ES).tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_RN_ES)
+	latexmk $(MAIN_RN_ES).tex
+
+## Both React Native versions
+react-native-both: react-native react-native-es
+
+## All eight versions
+all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es
 
 ## Open English PDF (macOS)
 view: $(MAIN).pdf
@@ -108,6 +128,14 @@ view-techlead: $(MAIN_TECHLEAD).pdf
 ## Open Tech Lead Spanish PDF (macOS)
 view-techlead-es: $(MAIN_TECHLEAD_ES).pdf
 	$(VIEWER) $(MAIN_TECHLEAD_ES).pdf
+
+## Open React Native English PDF (macOS)
+view-react-native: $(MAIN_RN).pdf
+	$(VIEWER) $(MAIN_RN).pdf
+
+## Open React Native Spanish PDF (macOS)
+view-react-native-es: $(MAIN_RN_ES).pdf
+	$(VIEWER) $(MAIN_RN_ES).pdf
 
 ## Continuous rebuild on file change (requires fswatch on macOS)
 watch:
@@ -142,6 +170,8 @@ clean:
 	latexmk -c $(MAIN_BACKEND_AI_ES).tex
 	latexmk -c $(MAIN_TECHLEAD).tex
 	latexmk -c $(MAIN_TECHLEAD_ES).tex
+	latexmk -c $(MAIN_RN).tex
+	latexmk -c $(MAIN_RN_ES).tex
 
 ## Remove everything including PDFs
 cleanall:
@@ -151,6 +181,8 @@ cleanall:
 	latexmk -C $(MAIN_BACKEND_AI_ES).tex
 	latexmk -C $(MAIN_TECHLEAD).tex
 	latexmk -C $(MAIN_TECHLEAD_ES).tex
+	latexmk -C $(MAIN_RN).tex
+	latexmk -C $(MAIN_RN_ES).tex
 
 ## Install MacTeX + required font (macOS + Homebrew)
 install-mac:
