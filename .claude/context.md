@@ -32,6 +32,40 @@ reconciliado contra las fechas del repo. El ADR completo está en `CLAUDE.md`. R
   respaldado por fechas; antes el neto real era 10 a 4 m.
 - Quedan 2 toques de 1 mes en bordes (sep 2019, dic 2019), aceptados como traspasos.
 
+## Orientación por rol (2026-10-21)
+
+Cada variante abre con el rol al que postula, no con el stack completo:
+
+| Variante | Título | Stack que resalta |
+|----------|--------|-------------------|
+| `resume` / `-es` | Senior Full Stack Engineer | Angular · React · Java · Node.js · AWS |
+| `resume-backend-ai` / `-es` | Senior Backend Engineer | Java · Node.js · **Python** · AI Agents · AWS |
+| `resume-techlead` / `-es` | Tech Lead | sin cambios, ya tenía rol |
+| `resume-react-native` / `-es` | Senior React Native Engineer | Mobile · React · Java · Node.js |
+| `resume-extended` / `-es` | Full Stack · React Native | sin tocar por pedido del candidato |
+
+Ya no existe un CV "general" sin rol: el antiguo `resume.tex` pasó a ser el Full Stack.
+
+En Full Stack, `Frontend` subió de la quinta línea a la segunda, con la superficie real de Angular
+(6--15, micro frontends) y React 18 (Redux, Hooks, RxJS). En backend, Python tiene línea propia
+acotada a lo que cubre: serverless en Lambda, procesamiento documental, tareas programadas y
+tooling interno.
+
+### Claims sin respaldo eliminados
+
+Quedan **cero** ocurrencias de `RIMAC`, `HIPAA` y `LangChain` en los 50 archivos `.tex`:
+
+- **HIPAA-aligned data persistence** (Logros de backend EN+ES): el CV fuente describe Oracle 19c
+  y AWS en AgentCloud, sin alcance de cumplimiento.
+- **RIMAC como cliente** (8 archivos): era el proyecto de INDRA, retirada del CV. Quedaba listado
+  sin ningún rol en la página que lo explicara. Es un cliente real; si se quiere recuperar, lo
+  correcto es devolver INDRA, no listar el cliente suelto.
+- **LangChain** (skills de backend EN+ES).
+- **React Native en la variante backend** (DaCodes y Globant): el aporte backend se mantiene,
+  reformulado como las APIs REST que consume el cliente móvil.
+- **El resumen ES de backend** describía AgentCloud como "plataforma empresarial de agentes IA
+  que integra LLMs". Es un SaaS de seguros de salud, según el Word y la versión inglesa.
+
 ## Riesgos abiertos
 
 - **3 bullets de React Native sin respaldo en el Word** (DaCodes, Globant, Bridge Social). El
@@ -42,33 +76,33 @@ reconciliado contra las fechas del repo. El ADR completo está en `CLAUDE.md`. R
 - **Solape Globant / ExSquared** (mar–may 2023) sigue presente en las 10 variantes. Preexistente,
   fuera del alcance acordado.
 
-## Verificación en CI (run 39670734798, 2026-10-21)
+## Verificación en CI (run 39689757650, 2026-10-21)
 
-Las diez variantes compilan. Conteo real de páginas:
+Las diez variantes compilan. **Las ocho dirigidas en 2 páginas, las dos extendidas en 4.**
 
 | PDF | Páginas |
 |-----|---------|
-| resume.pdf | 2 |
-| resume-es.pdf | 2 |
+| resume.pdf (Full Stack) | 2 |
+| resume-es.pdf (Full Stack) | 2 |
 | resume-backend-ai.pdf | 2 |
-| resume-backend-ai-es.pdf | **3** ← regresión |
+| resume-backend-ai-es.pdf | 2 |
 | resume-techlead.pdf | 2 |
 | resume-techlead-es.pdf | 2 |
 | resume-react-native.pdf | 2 |
 | resume-react-native-es.pdf | 2 |
-| **resume-extended.pdf** | **4** ← excepción deliberada |
-| **resume-extended-es.pdf** | **4** ← excepción deliberada |
+| resume-extended.pdf | 4 |
+| resume-extended-es.pdf | 4 |
 
-Las extendidas salieron en 4 páginas en ambos idiomas, como se había estimado. Inusual que el
-español no se desborde a 5: el ES suele ocupar ~15% más, pero aquí los dos caen en 4.
+Las extendidas salieron en 4 en ambos idiomas, inusual: el ES suele ocupar ~15% más y aquí no
+desbordó a 5.
 
-**`resume-es.pdf` ya está en 2 páginas** — lo arregló el commit 86073c0 (quitó la sección de
-idiomas).
+El Full Stack aguantó en 2 páginas pese a expandir summary y skills, porque se fusionó
+`Control de Versiones` dentro de `Prácticas` y se recortó la línea de IA a una.
 
-**Regresión nueva, no introducida por el CV extendido:** `resume-backend-ai-es.pdf` pasó de 2 a
-**3 páginas**. La causó el commit eb4c3ad, que añadió experiencia React Native y reescribió la
-descripción de DaCodes/AgentCloud en `backend-ai-es/experience-es.tex` y `skills-es.tex`.
-Necesita un pase de recorte, igual que el que se le hizo a techlead-es en septiembre.
+`backend-ai-es` necesitó **dos** pases: reescribir summary y skills no bastó (seguía en 3): el
+desborde estaba en `experience-es.tex`, que bajó de 25 a 20 bullets por fusión en IDM, ExSquared,
+Globant y Logros. El español ocupa ~15% más que el inglés con el mismo contenido — misma lección
+que techlead-es en septiembre.
 
 No hay LaTeX local (`xelatex`/`latexmk` ausentes) → la verificación se hace en GitHub Actions,
 o localmente con `make docker`.

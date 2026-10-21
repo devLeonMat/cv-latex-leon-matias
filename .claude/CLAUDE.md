@@ -170,14 +170,14 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 
 | Documento | Rol destino | Idioma | Secciones propias | Página 2 reutilizada |
 |-----------|-------------|--------|-------------------|----------------------|
-| `resume.tex` | Lead Software Engineer (general) | EN | `sections/` | — |
-| `resume-es.tex` | Ingeniero de Software Líder (general) | ES | `es/` | — |
-| `resume-backend-ai.tex` | Senior Backend Engineer · AI Agents | EN | `backend-ai/` | `sections/` |
-| `resume-backend-ai-es.tex` | Backend Senior · Agentes IA | ES | `backend-ai-es/` | `es/` |
+| `resume.tex` | **Senior Full Stack Engineer** · Angular · React · Java · Node.js | EN | `sections/` | — |
+| `resume-es.tex` | **Ingeniero Full Stack Senior** · Angular · React · Java · Node.js | ES | `es/` | — |
+| `resume-backend-ai.tex` | Senior Backend Engineer · Java · Node.js · **Python** · AI Agents | EN | `backend-ai/` | `sections/` |
+| `resume-backend-ai-es.tex` | Ingeniero Backend Senior · Java · Node.js · **Python** · Agentes IA | ES | `backend-ai-es/` | `es/` |
 | `resume-techlead.tex` | **Tech Lead** | EN | `techlead/` | `sections/` |
 | `resume-techlead-es.tex` | **Tech Lead** | ES | `techlead-es/` | `es/` |
-| `resume-react-native.tex` | Full Stack · React Native · Mobile | EN | `react-native/` | `sections/` |
-| `resume-react-native-es.tex` | Full Stack · React Native · Móvil | ES | `react-native-es/` | `es/` |
+| `resume-react-native.tex` | **Senior React Native Engineer** · Mobile | EN | `react-native/` | `sections/` |
+| `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
 | `resume-extended.tex` | **Extendido** — historial completo (11 roles) | EN | `extended/` | `sections/languages` |
 | `resume-extended-es.tex` | **Extendido** — historial completo (11 roles) | ES | `extended-es/` | `es/languages-es` |
 
@@ -189,6 +189,31 @@ de `sections/` (EN) o `es/` (ES). Todas comparten `styles/resume.sty`.
 (propiedad de arquitectura, estándares, code review, mentoría, stakeholders). La posición
 actual en IDM / Scotiabank figura como **Tech Lead**; en el resto de variantes sigue como
 Senior Fullstack Developer (decisión explícita del candidato).
+
+---
+
+## ADR — Orientación por rol (2026-10-21)
+
+**Cada variante abre con el rol al que postula**, no con el stack completo. Ya no existe un CV
+"general" sin rol: `resume.tex` / `resume-es.tex` pasaron a ser la variante **Full Stack**
+(Angular, React, Java, Node.js). En la variante backend, **Python** entra al título con una línea
+propia en skills, acotada a lo que realmente cubre (serverless en Lambda, procesamiento
+documental, tareas programadas, tooling interno); el ángulo de agentes IA baja del slot de
+"Cloud Native" pero se mantiene. La variante React Native se titula como rol React Native en
+lugar de full stack genérico. Tech Lead y las extendidas no se tocaron.
+
+`sections/{summary,skills,experience}.tex` y `es/*` los usa **solo** el CV general — editarlos
+no afecta a las otras variantes, que tienen sus propios directorios.
+
+**Claims sin respaldo eliminados** (quedan cero ocurrencias en los 50 `.tex`): `HIPAA`,
+`LangChain`, `RIMAC` y los bullets de React Native dentro de la variante backend. El resumen ES
+de backend describía AgentCloud como plataforma de agentes IA con LLMs; es un SaaS de seguros de
+salud. RIMAC era el proyecto de INDRA, retirada del CV: para recuperarlo hay que devolver INDRA,
+no listar el cliente suelto.
+
+**Páginas**: el español ocupa ~15% más que el inglés con el mismo contenido. `backend-ai-es`
+necesitó bajar de 25 a 20 bullets para volver a 2 páginas tras la regresión de `eb4c3ad`.
+Verificado en el run 39689757650: las ocho dirigidas en 2 páginas, las dos extendidas en 4.
 
 ---
 
@@ -275,8 +300,9 @@ make view       # abre PDF en macOS (Preview)
 - [x] Versiones React Native EN/ES (`resume-react-native*.tex`) — hechas
 - [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
-- [ ] Confirmar los 3 bullets de **React Native** (DaCodes, Globant, Bridge Social): el CV
-      en Word describe esos roles como React 18, Angular 12 y ReactJS, sin React Native
+- [ ] Confirmar los bullets de **React Native** que quedan en las variantes general, react-native
+      y extendida (DaCodes, Globant, Bridge Social): el CV en Word describe esos roles como
+      React 18, Angular 12 y ReactJS, sin React Native. Ya se quitaron de la variante backend
 - [ ] Alinear LinkedIn con las fechas de Olva Courier (mar 2015 – jun 2018)
 - [ ] Resolver el solape Globant / ExSquared (mar–may 2023) en todas las variantes
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)
