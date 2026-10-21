@@ -1,0 +1,43 @@
+%% ============================================================
+%%  resume-extended.tex  —  Extended CV: full career history
+%%                          11 roles · Jan 2014 -> present
+%%
+%%  Engine   : XeLaTeX
+%%  Pages    : 4 (A4) — deliberate exception to the 2-page rule
+%%  Compile  : latexmk resume-extended.tex
+%%             OR: make extended
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── HEADER ───────────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Senior Full Stack Engineer \enspace|\enspace React Native \enspace|\enspace Mobile \enspace|\enspace Java \enspace|\enspace Node.js \enspace|\enspace AWS}
+
+\cvContact{%
+  Lima, Peru%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── BODY ─────────────────────────────────────────────────────
+\input{extended/summary}
+\input{extended/skills}
+\input{extended/experience}
+\input{extended/education}
+\input{extended/certifications}
+\input{sections/languages}
+
+\end{document}

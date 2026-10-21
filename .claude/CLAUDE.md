@@ -15,6 +15,10 @@ cv-latex-leon-matias/
 ├── resume-backend-ai-es.tex    # CV dirigido: Backend + Agentes IA (ES)
 ├── resume-techlead.tex         # CV dirigido: Tech Lead (EN)
 ├── resume-techlead-es.tex      # CV dirigido: Tech Lead (ES)
+├── resume-react-native.tex     # CV dirigido: React Native + Full Stack (EN)
+├── resume-react-native-es.tex  # CV dirigido: React Native + Full Stack (ES)
+├── resume-extended.tex         # CV extendido: historial completo, 11 roles (EN)
+├── resume-extended-es.tex      # CV extendido: historial completo, 11 roles (ES)
 ├── sections/                   # Secciones del CV general (EN)
 │   ├── summary.tex             # Resumen profesional + strip de industrias
 │   ├── skills.tex              # Stack técnico (single-column, ATS-safe)
@@ -27,6 +31,10 @@ cv-latex-leon-matias/
 ├── backend-ai-es/              # Secciones Backend+IA (ES)
 ├── techlead/                   # Secciones Tech Lead (EN): summary, skills, experience
 ├── techlead-es/                # Secciones Tech Lead (ES)
+├── react-native/               # Secciones React Native (EN)
+├── react-native-es/            # Secciones React Native (ES)
+├── extended/                   # Secciones CV extendido (EN) + education y certifications propias
+├── extended-es/                # Secciones CV extendido (ES)
 ├── styles/
 │   └── resume.sty              # TODA la configuración: geometry, fuentes, colores, comandos
 ├── assets/                     # Foto profesional (no usada en versión ATS)
@@ -68,15 +76,29 @@ cv-latex-leon-matias/
 | 3 | ExSquared (antes Outcoding) | Senior Full Stack Engineer | SambaSafety / Qorta | Mar 2023–Dic 2024 |
 | 4 | Globant | Senior Full Stack Engineer | Banco GNB Paraguay | Jun 2022–May 2023 |
 
-### Additional Experience (condensado)
+### Roles anteriores (fechas verificadas 2026-10-21)
 
-- The Bridge Social — Full Stack Engineer (Ene 2021–Ene 2022, Remote USA)
-- INDRA — Full Stack Engineer (Clientes: BCP, RIMAC)
-- Michael Page — Full Stack Engineer (Cliente: Intercorp)
-- Zoluxiones — Full Stack Engineer (Cliente: SURA)
-- Experis — Full Stack Engineer (Cliente: Equifax)
-- Olva Courier — Full Stack Engineer
-- LimaW — Full Stack Engineer
+Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las variantes
+**extendidas**; las demás variantes los condensan con `\cvMiniEntry` (sin fechas).
+
+| Empresa | Rol | Cliente / Proyecto | Período |
+|---------|-----|--------------------|---------|
+| The Bridge Social | Full Stack Engineer | National Commercial Bank / Lynk — Remoto, **Jamaica** | Ene 2021–May 2022 |
+| Kruger Corp | Senior Full Stack Engineer | **BCP** / Tío Grou | Jul 2020–Dic 2020 |
+| Michael Page | Full Stack Engineer | Intercorp Retail / Tracking de incidentes | Dic 2019–Jun 2020 |
+| Zoluxiones | Full Stack Engineer | SURA Perú / Contrato Digital | Sep 2019–Dic 2019 |
+| Experis / Manpower | Senior Java Engineer | Equifax / KATRINA | Jul 2018–Sep 2019 |
+| Olva Courier | Java Developer | ERP Olva Corp | Mar 2015–Jun 2018 |
+| LimaW | Java Developer | Biometría Zircon | Ene 2014–Feb 2015 |
+
+**Correcciones sobre lo que decía este documento antes:**
+- **BCP fue cliente de Kruger Corp, no de INDRA.** INDRA (cliente RIMAC, proyecto Póliza
+  Electrónica, abr–ago 2020) se retiró del CV por decisión del candidato; Michael Page cubre
+  ese período.
+- The Bridge Social es **Jamaica**, no "Remote USA", y terminó en **may 2022**, no ene 2022.
+- Olva Courier abarca **mar 2015 – jun 2018**, no solo 2017–2018.
+
+**Experiencia total: 12 años 10 meses, cadena continua desde ene 2014, sin vacíos.**
 
 ---
 
@@ -154,6 +176,10 @@ cv-latex-leon-matias/
 | `resume-backend-ai-es.tex` | Backend Senior · Agentes IA | ES | `backend-ai-es/` | `es/` |
 | `resume-techlead.tex` | **Tech Lead** | EN | `techlead/` | `sections/` |
 | `resume-techlead-es.tex` | **Tech Lead** | ES | `techlead-es/` | `es/` |
+| `resume-react-native.tex` | Full Stack · React Native · Mobile | EN | `react-native/` | `sections/` |
+| `resume-react-native-es.tex` | Full Stack · React Native · Móvil | ES | `react-native-es/` | `es/` |
+| `resume-extended.tex` | **Extendido** — historial completo (11 roles) | EN | `extended/` | `sections/languages` |
+| `resume-extended-es.tex` | **Extendido** — historial completo (11 roles) | ES | `extended-es/` | `es/languages-es` |
 
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
 `summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
@@ -166,11 +192,47 @@ Senior Fullstack Developer (decisión explícita del candidato).
 
 ---
 
+## ADR — CV extendido (2026-10-21)
+
+La variante **extendida** (`resume-extended*.tex`) expande la sección *Additional Experience*
+a 11 roles con fechas, cliente, proyecto y bullets completos. Fuente: el CV en Word del
+candidato (`Roslin Leon Matias.docx`), reconciliado contra las fechas del repo.
+
+**Reglas de la reconciliación de fechas** (decisión explícita del candidato):
+
+- Los roles **desde jun 2022 en adelante** (IDM, DaCodes, ExSquared, Globant) conservan las
+  fechas del repo. El Word difería hasta 9 meses en esos cuatro; el repo manda.
+- Los roles **anteriores a jun 2022** vienen del Word, con estos ajustes:
+  - **The Bridge Social**: Word 01/2021–10/2022 → **ene 2021 – may 2022**. Oct 2022 solapaba
+    5 meses con Globant.
+  - **INDRA** (RIMAC / Póliza Electrónica): **eliminada**. Michael Page absorbe abr–jun 2020.
+  - **Michael Page**: Word 12/2019–04/2020 → **dic 2019 – jun 2020**.
+  - **Olva Courier**: Word 08/2017–05/2018 → **mar 2015 – jun 2018**. Elimina el vacío de
+    29 meses (2015–2017) que coincidía con la carrera en UNAC.
+- **Kruger Corp** entra como rol propio con **BCP** de cliente. Antes el repo atribuía BCP a
+  INDRA, lo cual era incorrecto: BCP fue Kruger (Tío Grou), RIMAC fue INDRA.
+- **The Bridge Social = Jamaica** (cliente National Commercial Bank, proyecto Lynk), no
+  "Remote, USA" como decía el repo.
+- Resultado: **cadena continua ene 2014 → presente, cero vacíos, 12 años 10 meses**. Quedan
+  2 toques de 1 mes en bordes (sep 2019, dic 2019), considerados traspasos normales.
+
+**Excepción de páginas**: esta variante rompe a propósito la regla de 2 páginas A4 —
+son ~4 páginas. Es el objetivo de una versión extendida.
+
+**Educación y certificaciones propias**: `extended/education.tex` usa **2012–2018** (del Word)
+en lugar del `2014` de `sections/education.tex`, y `extended/certifications.tex` incluye AWS SA
+Associate (BSG 2020), Angular y Java Advanced (Cibertec 2019), B.SOFT y la lista de Udemy.
+
+**Solape preexistente sin resolver**: Globant (jun 2022 – may 2023) pisa 3 meses a ExSquared
+(mar 2023 – dic 2024) en todas las variantes, incluida la extendida. Fuera del alcance acordado.
+
+---
+
 ## Compilación
 
 ### GitHub Actions (automático)
 - Cada push a `main` dispara el workflow `.github/workflows/build-cv.yml`
-- Compila las **seis** variantes, imprime el número de páginas de cada PDF y las publica
+- Compila las **diez** variantes, imprime el número de páginas de cada PDF y las publica
   en el Release `latest`
 - Usa XeLaTeX con la imagen oficial de TeX Live
 - Instala `sourcesanspro` automáticamente
@@ -210,5 +272,11 @@ make view       # abre PDF en macOS (Preview)
 - [ ] Probar en Overleaf y verificar layout de 2 páginas
 - [x] Versión en español (`resume-es.tex`) — hecha
 - [x] Versiones Tech Lead EN/ES (`resume-techlead*.tex`) — hechas 2026-09-22
+- [x] Versiones React Native EN/ES (`resume-react-native*.tex`) — hechas
+- [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
+- [ ] Confirmar los 3 bullets de **React Native** (DaCodes, Globant, Bridge Social): el CV
+      en Word describe esos roles como React 18, Angular 12 y ReactJS, sin React Native
+- [ ] Alinear LinkedIn con las fechas de Olva Courier (mar 2015 – jun 2018)
+- [ ] Resolver el solape Globant / ExSquared (mar–may 2023) en todas las variantes
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)

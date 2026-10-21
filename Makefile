@@ -5,6 +5,8 @@
 #   make              → compile resume.tex → resume.pdf
 #   make techlead     → Tech Lead CV (English)
 #   make techlead-es  → Tech Lead CV (Spanish)
+#   make extended    → Extended CV, full history (English)
+#   make extended-es → Extended CV, full history (Spanish)
 #   make all-versions → every CV variant
 #   make watch        → continuous rebuild on file changes
 #   make clean        → remove auxiliary files
@@ -20,6 +22,8 @@ MAIN_TECHLEAD      = resume-techlead
 MAIN_TECHLEAD_ES   = resume-techlead-es
 MAIN_RN            = resume-react-native
 MAIN_RN_ES         = resume-react-native-es
+MAIN_EXT           = resume-extended
+MAIN_EXT_ES        = resume-extended-es
 STYLES          = styles/resume.sty
 SECTIONS        = sections/*.tex
 SECTIONS_ES     = es/*.tex
@@ -29,14 +33,18 @@ SECTIONS_TL     = techlead/*.tex
 SECTIONS_TL_ES  = techlead-es/*.tex
 SECTIONS_RN     = react-native/*.tex
 SECTIONS_RN_ES  = react-native-es/*.tex
+SECTIONS_EXT    = extended/*.tex
+SECTIONS_EXT_ES = extended-es/*.tex
 VIEWER          = open   # macOS; change to 'evince' or 'zathura' on Linux
 DOCKER_IMG      = texlive/texlive:latest
 
 .PHONY: all en es both backend-ai backend-ai-es backend-ai-both \
         techlead techlead-es techlead-both \
-        react-native react-native-es react-native-both all-versions \
+        react-native react-native-es react-native-both \
+        extended extended-es extended-both all-versions \
         clean cleanall view view-es view-backend-ai view-backend-ai-es \
         view-techlead view-techlead-es view-react-native view-react-native-es \
+        view-extended view-extended-es \
         watch docker docker-es docker-both install-mac
 
 ## Default: compile English version
@@ -102,8 +110,24 @@ $(MAIN_RN_ES).pdf: $(MAIN_RN_ES).tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_RN_ES)
 ## Both React Native versions
 react-native-both: react-native react-native-es
 
-## All eight versions
-all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es
+## Extended — full career history, English
+extended: $(MAIN_EXT).pdf
+
+$(MAIN_EXT).pdf: $(MAIN_EXT).tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT)
+	latexmk $(MAIN_EXT).tex
+
+## Extended — full career history, Spanish
+extended-es: $(MAIN_EXT_ES).pdf
+
+$(MAIN_EXT_ES).pdf: $(MAIN_EXT_ES).tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_EXT_ES)
+	latexmk $(MAIN_EXT_ES).tex
+
+## Both extended versions
+extended-both: extended extended-es
+
+## All ten versions
+all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es \
+              extended extended-es
 
 ## Open English PDF (macOS)
 view: $(MAIN).pdf
@@ -136,6 +160,14 @@ view-react-native: $(MAIN_RN).pdf
 ## Open React Native Spanish PDF (macOS)
 view-react-native-es: $(MAIN_RN_ES).pdf
 	$(VIEWER) $(MAIN_RN_ES).pdf
+
+## Open Extended English PDF (macOS)
+view-extended: $(MAIN_EXT).pdf
+	$(VIEWER) $(MAIN_EXT).pdf
+
+## Open Extended Spanish PDF (macOS)
+view-extended-es: $(MAIN_EXT_ES).pdf
+	$(VIEWER) $(MAIN_EXT_ES).pdf
 
 ## Continuous rebuild on file change (requires fswatch on macOS)
 watch:
@@ -172,6 +204,8 @@ clean:
 	latexmk -c $(MAIN_TECHLEAD_ES).tex
 	latexmk -c $(MAIN_RN).tex
 	latexmk -c $(MAIN_RN_ES).tex
+	latexmk -c $(MAIN_EXT).tex
+	latexmk -c $(MAIN_EXT_ES).tex
 
 ## Remove everything including PDFs
 cleanall:
@@ -183,6 +217,8 @@ cleanall:
 	latexmk -C $(MAIN_TECHLEAD_ES).tex
 	latexmk -C $(MAIN_RN).tex
 	latexmk -C $(MAIN_RN_ES).tex
+	latexmk -C $(MAIN_EXT).tex
+	latexmk -C $(MAIN_EXT_ES).tex
 
 ## Install MacTeX + required font (macOS + Homebrew)
 install-mac:
