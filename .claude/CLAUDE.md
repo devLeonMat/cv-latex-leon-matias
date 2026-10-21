@@ -74,7 +74,7 @@ cv-latex-leon-matias/
 | 1 | IDM Technology | Senior Fullstack Developer | Scotiabank Peru / Dynamic QR Payments | Mar 2026–Presente |
 | 2 | DaCodes | Lead Software Engineer | HealthCare / AgentCloud | Ene 2025–Feb 2026 |
 | 3 | ExSquared (antes Outcoding) | Senior Full Stack Engineer | SambaSafety / Qorta | Mar 2023–Dic 2024 |
-| 4 | Globant | Senior Full Stack Engineer | Banco GNB Paraguay | Jun 2022–May 2023 |
+| 4 | Globant | Senior Full Stack Engineer | Banco GNB Paraguay | Jun 2022–**Feb 2023** |
 
 ### Roles anteriores (fechas verificadas 2026-10-21)
 
@@ -243,6 +243,7 @@ candidato (`Roslin Leon Matias.docx`), reconciliado contra las fechas del repo.
   - **Michael Page**: Word 12/2019–04/2020 → **dic 2019 – jun 2020**.
   - **Olva Courier**: Word 08/2017–05/2018 → **mar 2015 – jun 2018**. Elimina el vacío de
     29 meses (2015–2017) que coincidía con la carrera en UNAC.
+  - **Globant**: cierra en **feb 2023**, no may 2023, para no pisar a ExSquared (2026-10-21).
 - **Kruger Corp** entra como rol propio con **BCP** de cliente. Antes el repo atribuía BCP a
   INDRA, lo cual era incorrecto: BCP fue Kruger (Tío Grou), RIMAC fue INDRA.
 - **The Bridge Social = Jamaica** (cliente National Commercial Bank, proyecto Lynk), no
@@ -257,8 +258,14 @@ son ~4 páginas. Es el objetivo de una versión extendida.
 en lugar del `2014` de `sections/education.tex`, y `extended/certifications.tex` incluye AWS SA
 Associate (BSG 2020), Angular y Java Advanced (Cibertec 2019), B.SOFT y la lista de Udemy.
 
-**Solape preexistente sin resolver**: Globant (jun 2022 – may 2023) pisa 3 meses a ExSquared
-(mar 2023 – dic 2024) en todas las variantes, incluida la extendida. Fuera del alcance acordado.
+**Solape Globant / ExSquared: resuelto** (2026-10-21). Globant cerraba en may 2023 y pisaba
+3 meses a ExSquared (mar 2023 – dic 2024). Ahora cierra en **feb 2023** en las diez variantes,
+por decisión del candidato. El total no baja: esos 3 meses estaban contados dos veces, no eran
+cobertura extra.
+
+**Resultado del historial: cero vacíos y cero solapes desde ene 2014**, salvo dos toques de
+1 mes en bordes (sep 2019, dic 2019) que solo aparecen en las variantes extendidas y se
+consideran traspasos normales. Experiencia total: **12 años 10 meses**.
 
 ---
 
@@ -312,5 +319,5 @@ make view       # abre PDF en macOS (Preview)
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
 - [ ] Alinear LinkedIn con las fechas de Olva Courier (mar 2015 – jun 2018)
-- [ ] Resolver el solape Globant / ExSquared (mar–may 2023) en todas las variantes
+- [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)

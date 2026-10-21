@@ -72,8 +72,10 @@ Quedan **cero** ocurrencias de `RIMAC`, `HIPAA` y `LangChain` en los 50 archivos
   que los puede defender. El Word está incompleto en ese punto, no el CV. Se mantienen en general,
   react-native y extendida; fuera de la variante backend solo por enfoque. **No reabrir.**
 - **LinkedIn debe alinearse** con Olva Courier mar 2015 – jun 2018.
-- **Solape Globant / ExSquared** (mar–may 2023) sigue presente en las 10 variantes. Preexistente,
-  fuera del alcance acordado.
+- ~~Solape Globant / ExSquared~~ → **resuelto 2026-10-21**: Globant cierra en **feb 2023** en
+  las 10 variantes. El historial queda sin vacíos y sin solapes desde ene 2014 (salvo 2 toques de
+  1 mes en bordes, solo visibles en las extendidas). El total sigue en 12 años 10 meses: esos
+  3 meses estaban contados dos veces.
 
 ## Verificación en CI (run 39689757650, 2026-10-21)
 
