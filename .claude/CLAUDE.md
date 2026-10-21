@@ -212,8 +212,9 @@ no afecta a las otras variantes, que tienen sus propios directorios.
 que puede defender los bullets de React Native en **DaCodes**, **Globant** y **The Bridge
 Social**. El CV en Word está **incompleto** en ese punto: describe esos roles como React 18,
 Angular 12 y ReactJS, pero la experiencia React Native es real. Los bullets se mantienen en las
-variantes general (Full Stack), react-native y extendida. Siguen fuera de la variante **backend**,
-no por veracidad sino porque el trabajo de UI móvil está fuera del enfoque de ese CV.
+variantes **react-native** y **extendida**, que son las que lo usan. Están fuera de la variante
+**backend** (no por veracidad: el trabajo de UI móvil está fuera del enfoque de ese CV) y también
+fuera de las variantes **general/Full Stack** y **Tech Lead**, que nunca los tuvieron.
 No reabrir este tema ni "corregirlo" contra el Word. El resumen ES
 de backend describía AgentCloud como plataforma de agentes IA con LLMs; es un SaaS de seguros de
 salud. RIMAC era el proyecto de INDRA, retirada del CV: para recuperarlo hay que devolver INDRA,
