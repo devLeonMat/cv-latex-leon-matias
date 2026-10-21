@@ -206,7 +206,15 @@ lugar de full stack genérico. Tech Lead y las extendidas no se tocaron.
 no afecta a las otras variantes, que tienen sus propios directorios.
 
 **Claims sin respaldo eliminados** (quedan cero ocurrencias en los 50 `.tex`): `HIPAA`,
-`LangChain`, `RIMAC` y los bullets de React Native dentro de la variante backend. El resumen ES
+`LangChain`, `RIMAC` y los bullets de React Native dentro de la variante backend.
+
+**React Native: confirmado, no cuestionar** (2026-10-21). El candidato confirmó explícitamente
+que puede defender los bullets de React Native en **DaCodes**, **Globant** y **The Bridge
+Social**. El CV en Word está **incompleto** en ese punto: describe esos roles como React 18,
+Angular 12 y ReactJS, pero la experiencia React Native es real. Los bullets se mantienen en las
+variantes general (Full Stack), react-native y extendida. Siguen fuera de la variante **backend**,
+no por veracidad sino porque el trabajo de UI móvil está fuera del enfoque de ese CV.
+No reabrir este tema ni "corregirlo" contra el Word. El resumen ES
 de backend describía AgentCloud como plataforma de agentes IA con LLMs; es un SaaS de seguros de
 salud. RIMAC era el proyecto de INDRA, retirada del CV: para recuperarlo hay que devolver INDRA,
 no listar el cliente suelto.
@@ -300,9 +308,8 @@ make view       # abre PDF en macOS (Preview)
 - [x] Versiones React Native EN/ES (`resume-react-native*.tex`) — hechas
 - [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
-- [ ] Confirmar los bullets de **React Native** que quedan en las variantes general, react-native
-      y extendida (DaCodes, Globant, Bridge Social): el CV en Word describe esos roles como
-      React 18, Angular 12 y ReactJS, sin React Native. Ya se quitaron de la variante backend
+- [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
+      candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
 - [ ] Alinear LinkedIn con las fechas de Olva Courier (mar 2015 – jun 2018)
 - [ ] Resolver el solape Globant / ExSquared (mar–may 2023) en todas las variantes
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)

@@ -68,10 +68,9 @@ Quedan **cero** ocurrencias de `RIMAC`, `HIPAA` y `LangChain` en los 50 archivos
 
 ## Riesgos abiertos
 
-- **3 bullets de React Native sin respaldo en el Word** (DaCodes, Globant, Bridge Social). El
-  Word describe esos roles como React 18, Angular 12 y ReactJS. Se mantuvieron porque ya
-  estaban en la variante react-native del repo, pero el candidato no los ha confirmado.
-  Lo móvil que sí está documentado: Ionic/Angular (SURA), Kotlin (Olva), PWA (BCP).
+- ~~3 bullets de React Native sin confirmar~~ → **resuelto 2026-10-21**: el candidato confirmó
+  que los puede defender. El Word está incompleto en ese punto, no el CV. Se mantienen en general,
+  react-native y extendida; fuera de la variante backend solo por enfoque. **No reabrir.**
 - **LinkedIn debe alinearse** con Olva Courier mar 2015 – jun 2018.
 - **Solape Globant / ExSquared** (mar–may 2023) sigue presente en las 10 variantes. Preexistente,
   fuera del alcance acordado.
