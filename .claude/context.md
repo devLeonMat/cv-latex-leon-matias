@@ -42,19 +42,33 @@ reconciliado contra las fechas del repo. El ADR completo está en `CLAUDE.md`. R
 - **Solape Globant / ExSquared** (mar–may 2023) sigue presente en las 10 variantes. Preexistente,
   fuera del alcance acordado.
 
-## Verificación
+## Verificación en CI (run 39670734798, 2026-10-21)
 
-Las extendidas apuntan a ~4 páginas A4 (excepción deliberada a la regla de 2 páginas).
-**Conteo real pendiente de confirmar en CI.**
+Las diez variantes compilan. Conteo real de páginas:
 
-| PDF | Páginas (run 35745116338, 2026-09-22) |
+| PDF | Páginas |
 |-----|---------|
 | resume.pdf | 2 |
-| resume-es.pdf | **3** |
+| resume-es.pdf | 2 |
 | resume-backend-ai.pdf | 2 |
-| resume-backend-ai-es.pdf | 2 |
+| resume-backend-ai-es.pdf | **3** ← regresión |
 | resume-techlead.pdf | 2 |
 | resume-techlead-es.pdf | 2 |
+| resume-react-native.pdf | 2 |
+| resume-react-native-es.pdf | 2 |
+| **resume-extended.pdf** | **4** ← excepción deliberada |
+| **resume-extended-es.pdf** | **4** ← excepción deliberada |
+
+Las extendidas salieron en 4 páginas en ambos idiomas, como se había estimado. Inusual que el
+español no se desborde a 5: el ES suele ocupar ~15% más, pero aquí los dos caen en 4.
+
+**`resume-es.pdf` ya está en 2 páginas** — lo arregló el commit 86073c0 (quitó la sección de
+idiomas).
+
+**Regresión nueva, no introducida por el CV extendido:** `resume-backend-ai-es.pdf` pasó de 2 a
+**3 páginas**. La causó el commit eb4c3ad, que añadió experiencia React Native y reescribió la
+descripción de DaCodes/AgentCloud en `backend-ai-es/experience-es.tex` y `skills-es.tex`.
+Necesita un pase de recorte, igual que el que se le hizo a techlead-es en septiembre.
 
 No hay LaTeX local (`xelatex`/`latexmk` ausentes) → la verificación se hace en GitHub Actions,
 o localmente con `make docker`.
