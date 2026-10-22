@@ -42,7 +42,7 @@ cv-latex-leon-matias/
 │   └── build-cv.yml            # CI: compila PDF + publica Release
 ├── .latexmkrc                  # Configura latexmk para usar XeLaTeX
 ├── Makefile                    # Targets: make · make view · make clean
-├── LINKEDIN.md                 # Texto de los 11 roles listo para pegar en LinkedIn
+├── LINKEDIN.md                 # Espejo del CV extendido, listo para pegar en LinkedIn
 └── README.md
 ```
 
@@ -262,6 +262,15 @@ son ~4 páginas. Es el objetivo de una versión extendida.
 en lugar del `2014` de `sections/education.tex`, y `extended/certifications.tex` incluye AWS SA
 Associate (BSG 2020), Angular y Java Advanced (Cibertec 2019), B.SOFT y la lista de Udemy.
 
+**LinkedIn = espejo del CV extendido** (2026-10-22). Decisión del candidato: el perfil debe
+parecerse lo más posible a `resume-extended.tex`. `LINKEDIN.md` reproduce sus 11 roles con los
+mismos bullets, fechas y orden — paridad verificada en 69 bullets. De ahí se desprende que
+**INDRA se elimina de LinkedIn**, no que vuelva al CV: la extendida no la incluye. Al borrarla,
+RIMAC deja de figurar también en el perfil. Para recuperar RIMAC habría que devolver INDRA al CV
+**y** a LinkedIn a la vez; nunca listar el cliente suelto en uno de los dos.
+
+Si la extendida cambia, `LINKEDIN.md` se regenera desde ella.
+
 **Solape Globant / ExSquared: resuelto** (2026-10-21). Globant cerraba en may 2023 y pisaba
 3 meses a ExSquared (mar 2023 – dic 2024). Ahora cierra en **feb 2023** en las diez variantes,
 por decisión del candidato. El total no baja: esos 3 meses estaban contados dos veces, no eran
@@ -322,9 +331,7 @@ make view       # abre PDF en macOS (Preview)
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
-- [ ] Alinear LinkedIn — texto listo en `LINKEDIN.md`, con checklist de las 6 divergencias
-      (Olva mar 2015, Globant feb 2023, Michael Page jun 2020, Bridge Social Jamaica,
-      Outcoding→ExSquared, Kruger Corp). Decidir también si INDRA sale de LinkedIn
-      o vuelve al CV: hoy está en uno y no en el otro
+- [ ] Alinear LinkedIn — texto listo en `LINKEDIN.md`, espejo exacto de la extendida
+      (69 bullets en ambos), con checklist de 11 puntos
 - [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)

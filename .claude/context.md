@@ -71,7 +71,10 @@ Quedan **cero** ocurrencias de `RIMAC`, `HIPAA` y `LangChain` en los 50 archivos
 - ~~3 bullets de React Native sin confirmar~~ → **resuelto 2026-10-21**: el candidato confirmó
   que los puede defender. El Word está incompleto en ese punto, no el CV. Se mantienen en general,
   react-native y extendida; fuera de la variante backend solo por enfoque. **No reabrir.**
-- **LinkedIn debe alinearse** con Olva Courier mar 2015 – jun 2018.
+- **LinkedIn debe alinearse** con la extendida. `LINKEDIN.md` ya tiene el texto de los 11 roles
+  listo para pegar (paridad verificada: 69 bullets en ambos) y un checklist de 11 puntos. Incluye
+  borrar **INDRA** del perfil: decisión del candidato 2026-10-22, para que LinkedIn sea espejo
+  del CV extendido, que no la incluye. Pendiente de que el candidato lo aplique.
 - ~~Solape Globant / ExSquared~~ → **resuelto 2026-10-21**: Globant cierra en **feb 2023** en
   las 10 variantes. El historial queda sin vacíos y sin solapes desde ene 2014 (salvo 2 toques de
   1 mes en bordes, solo visibles en las extendidas). El total sigue en 12 años 10 meses: esos
