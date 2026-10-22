@@ -36,6 +36,10 @@ Senior Backend Engineer | Java · Spring Boot | Node.js · NestJS | Python | AWS
 | End | `Present` |
 | Location | `Lima, Peru` · `On-site` o `Hybrid` |
 
+> El CV ya no dice "contrato de 6 meses": empezó en mar 2026 y sigue activo, así que a los
+> 8 meses la etiqueta se contradecía. En LinkedIn basta con `Contract` en Employment type.
+> Si el contrato se extendió o se convirtió en indefinido, cambia ese campo a `Full-time`.
+
 ```
 Client: Scotiabank Peru — Dynamic QR Payments Platform
 

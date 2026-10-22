@@ -42,6 +42,7 @@ cv-latex-leon-matias/
 │   └── build-cv.yml            # CI: compila PDF + publica Release
 ├── .latexmkrc                  # Configura latexmk para usar XeLaTeX
 ├── Makefile                    # Targets: make · make view · make clean
+├── LINKEDIN.md                 # Texto de los 11 roles listo para pegar en LinkedIn
 └── README.md
 ```
 
@@ -244,6 +245,9 @@ candidato (`Roslin Leon Matias.docx`), reconciliado contra las fechas del repo.
   - **Olva Courier**: Word 08/2017–05/2018 → **mar 2015 – jun 2018**. Elimina el vacío de
     29 meses (2015–2017) que coincidía con la carrera en UNAC.
   - **Globant**: cierra en **feb 2023**, no may 2023, para no pisar a ExSquared (2026-10-21).
+  - **IDM / Scotiabank**: el header ya **no** lleva la etiqueta "6-month contract" / "Contrato
+    6 meses" (2026-10-21). Empezó en mar 2026 y sigue activo: a los 8 meses la etiqueta se
+    contradecía a sí misma. Las diez variantes muestran solo `March 2026 -- Present`.
 - **Kruger Corp** entra como rol propio con **BCP** de cliente. Antes el repo atribuía BCP a
   INDRA, lo cual era incorrecto: BCP fue Kruger (Tío Grou), RIMAC fue INDRA.
 - **The Bridge Social = Jamaica** (cliente National Commercial Bank, proyecto Lynk), no
@@ -309,7 +313,7 @@ make view       # abre PDF en macOS (Preview)
 
 ## Pendientes
 
-- [ ] Verificar y completar bullets de DaCodes, Outcoding, Globant con el contenido exacto del CV actual
+- [x] Bullets de DaCodes, ExSquared y Globant verificados contra el CV en Word (2026-10-21)
 - [ ] Probar en Overleaf y verificar layout de 2 páginas
 - [x] Versión en español (`resume-es.tex`) — hecha
 - [x] Versiones Tech Lead EN/ES (`resume-techlead*.tex`) — hechas 2026-09-22
@@ -318,6 +322,9 @@ make view       # abre PDF en macOS (Preview)
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
-- [ ] Alinear LinkedIn con las fechas de Olva Courier (mar 2015 – jun 2018)
+- [ ] Alinear LinkedIn — texto listo en `LINKEDIN.md`, con checklist de las 6 divergencias
+      (Olva mar 2015, Globant feb 2023, Michael Page jun 2020, Bridge Social Jamaica,
+      Outcoding→ExSquared, Kruger Corp). Decidir también si INDRA sale de LinkedIn
+      o vuelve al CV: hoy está en uno y no en el otro
 - [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)
