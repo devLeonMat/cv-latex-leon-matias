@@ -19,7 +19,8 @@ cv-latex-leon-matias/
 ├── resume-react-native-es.tex  # CV dirigido: React Native + Full Stack (ES)
 ├── resume-extended.tex         # CV extendido: historial completo, 11 roles (EN)
 ├── resume-extended-es.tex      # CV extendido: historial completo, 11 roles (ES)
-├── resume-latam.tex            # CV LATAM: historial conciliado contra el CUL (EN)
+├── resume-latam-es.tex         # CV LATAM: historial conciliado contra el CUL (ES)
+├── resume-usa.tex              # CV USA: conciliado + Apple Inc. (EN)
 ├── sections/                   # Secciones del CV general (EN)
 │   ├── summary.tex             # Resumen profesional + strip de industrias
 │   ├── skills.tex              # Stack técnico (single-column, ATS-safe)
@@ -36,7 +37,8 @@ cv-latex-leon-matias/
 ├── react-native-es/            # Secciones React Native (ES)
 ├── extended/                   # Secciones CV extendido (EN) + education y certifications propias
 ├── extended-es/                # Secciones CV extendido (ES)
-├── latam/                      # Secciones CV LATAM conciliado (EN)
+├── latam-es/                   # Secciones CV LATAM conciliado (ES)
+├── usa/                        # Secciones CV USA conciliado + Apple (EN)
 ├── styles/
 │   └── resume.sty              # TODA la configuración: geometry, fuentes, colores, comandos
 ├── assets/                     # Foto profesional (no usada en versión ATS)
@@ -183,7 +185,8 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
 | `resume-extended.tex` | **Extendido** — historial completo (11 roles) | EN | `extended/` | `sections/languages` |
 | `resume-extended-es.tex` | **Extendido** — historial completo (11 roles) | ES | `extended-es/` | `es/languages-es` |
-| `resume-latam.tex` | **LATAM** — historial conciliado contra el CUL (13 roles activos) | EN | `latam/` | `extended/{education,certifications}` + `sections/languages` |
+| `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL (13 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
+| `resume-usa.tex` | **USA** — conciliado + **Apple Inc.** (14 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
 
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
 `summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
@@ -287,9 +290,9 @@ consideran traspasos normales. Experiencia total: **12 años 10 meses**.
 
 ---
 
-## ADR — CV LATAM conciliado contra el CUL (2026-10-26)
+## ADR — CV LATAM y USA conciliados contra el CUL (2026-10-26)
 
-`resume-latam.tex` + `latam/` es la primera variante cuyas fechas **no** vienen del CV en Word ni
+`resume-latam-es.tex` + `latam-es/` y `resume-usa.tex` + `usa/` son las primeras variantes cuyas fechas **no** vienen del CV en Word ni
 de decisiones del repo, sino del **Certificado Único Laboral** emitido por el MTPE el 2026-10-26
 (23 registros de planilla, T-Registro + PLAME, data desde ago 2012).
 
@@ -387,8 +390,30 @@ Quedan solo traspasos de uno o dos meses entre contratos.
 
 Por el ADR de LinkedIn, al entrar Indra al CV debe entrar también a `LINKEDIN.md`, y RIMAC con ella.
 
-**Variante USA pendiente**: incluirá **Apple Inc.** (Caleidos Media, oct 2022 – mar 2023) como
-experiencia, lo que exige recortar Globant o ExSquared para abrirle espacio.
+### Separación por idioma y mercado (2026-10-26)
+
+Decisión del candidato: **LATAM va en español, USA va en inglés**, y Apple entra solo en la de USA.
+
+| | Idioma | Roles | Apple |
+|---|--------|-------|-------|
+| `resume-latam-es.tex` | español | 13 | no |
+| `resume-usa.tex` | inglés | 14 | **sí** |
+
+Los dos comparten la misma conciliación; `latam-es/` es espejo de `usa/` menos Apple. Las
+traducciones de los diez roles que ya existían se tomaron de `extended-es/experience-es.tex` para no
+retraducir y mantener la voz del repo; solo Indra, PSS y el bloque freelance se escribieron nuevos
+en español.
+
+**Apple rompe la propiedad de cero solapes, a propósito.** El CUL registra Caleidos Media
+17/10/2022 – 31/03/2023 **en paralelo** con Globant Perú 22/06/2022 – 19/06/2023. Los dos son reales
+y los dos están documentados, así que `usa/experience.tex` conserva las fechas del certificado en
+lugar de recortar una para fingir una secuencia limpia. Es el único solape del CV.
+Alternativa si se quiere estrictamente secuencial: cerrar Globant en oct 2022 (4 m en vez de 8 m 7 d)
+y correr Apple hasta feb 2023.
+
+**El summary de USA no menciona el CUL.** Para un reclutador estadounidense esa frase es ruido, y
+podría leerse como una señal rara. La frase se mantiene solo en `latam-es/summary-es.tex`, donde el
+certificado sí significa algo para quien lo lee.
 
 
 ## Compilación
@@ -438,14 +463,17 @@ make view       # abre PDF en macOS (Preview)
 - [x] Versiones React Native EN/ES (`resume-react-native*.tex`) — hechas
 - [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
-- [x] Variante **LATAM** conciliada contra el CUL (`resume-latam.tex`) — hecha 2026-10-26
+- [x] Variante **LATAM** conciliada contra el CUL (`resume-latam-es.tex`) — hecha 2026-10-26
 - [x] Bullets de Indra/RIMAC y PSS/BanBif — aportados por el candidato 2026-10-26
 - [x] WProducciones = LimaW — confirmado y fusionado en una entrada de 10 meses (2026-10-26)
 - [x] Alternativa Tecnológica retirada; el tramo lo cubre el bloque freelance (2026-10-26)
 - [ ] Ampliar el bloque **Freelance Web Developer** (mar 2015 – jul 2017): clientes, stack, proyectos
 - [ ] Fijar la versión de Java de PSS/BanBif (LTS de 2019: Java 8 u 11)
 - [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
-- [ ] Variante **USA** con Apple Inc. como experiencia
+- [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
+- [x] LATAM en español, USA en inglés — hecho 2026-10-26
+- [ ] **Bullets de Apple Inc.** en `usa/experience.tex`: hoy la entrada no describe el trabajo
+- [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos

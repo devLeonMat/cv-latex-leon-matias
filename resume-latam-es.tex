@@ -1,0 +1,50 @@
+%% ============================================================
+%%  resume-latam-es.tex  —  CV LATAM: historial conciliado (ES)
+%%                          13 roles · may 2014 -> presente
+%%
+%%  Cada vínculo peruano en planilla calza con un registro del
+%%  Certificado Unico Laboral (MTPE, emitido el 2026-10-26). Los solapes
+%%  se resuelven con la regla del contrato mas extenso; ver
+%%  latam-es/experience-es.tex.
+%%
+%%  Apple Inc. queda fuera a proposito: va solo en el variante USA.
+%%
+%%  Motor    : XeLaTeX
+%%  Paginas  : 4-5 (A4) — variante extendida, excepcion deliberada a la
+%%             regla de 2 paginas
+%%  Compilar : latexmk resume-latam-es.tex   O   make latam-es
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── ENCABEZADO ───────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Lead Software Engineer \enspace|\enspace LATAM \enspace|\enspace Banca y Seguros \enspace|\enspace Java \enspace|\enspace Spring Boot \enspace|\enspace AWS}
+
+\cvContact{%
+  Lima, Perú%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── CUERPO ───────────────────────────────────────────────────
+\input{latam-es/summary-es}
+\input{latam-es/skills-es}
+\input{latam-es/experience-es}
+\input{extended-es/education-es}
+\input{extended-es/certifications-es}
+\input{es/languages-es}
+
+\end{document}
