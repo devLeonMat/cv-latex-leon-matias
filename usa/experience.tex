@@ -169,7 +169,20 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 %%      TODO: faltan los SERVICIOS concretos. "AWS" a secas vale poco en un CV
 %%      y en ATS; lo que pesa es EKS/ECS, S3, RDS o Aurora, DynamoDB, SQS/SNS,
 %%      CloudWatch, API Gateway. Sin la lista del candidato no se inventan.
-%%    - Sin motor de base de datos: el candidato no lo menciono.
+%%    - PostgreSQL: INFERIDO, no confirmado por el candidato (2026-10-26).
+%%      El solo recuerda que era relacional. Dos vias independientes apuntan
+%%      al mismo motor:
+%%        a) Apple opera su propio servicio interno de PostgreSQL en la nube
+%%           — sus propias ofertas de empleo lo describen sosteniendo cargas de
+%%           Services, Manufacturing y AIML con millones de queries por segundo
+%%           sobre petabytes. MySQL/MariaDB figuran como "plus" en esos puestos
+%%           y Oracle aparece en equipos concretos como Ad Platforms.
+%%        b) Spring WebFlux con persistencia reactiva implica R2DBC, cuyo driver
+%%           mejor soportado y mas usado es r2dbc-postgresql.
+%%      Riesgo bajo adicionalmente porque PostgreSQL ya esta respaldado en tres
+%%      roles mas de este CV (ExSquared, Bridge Social, Michael Page): si en una
+%%      entrevista le preguntan, puede sostener la conversacion.
+%%      No se nombra R2DBC: seria una segunda inferencia encadenada.
 %%
 %%  TODO menor: el nombre del proyecto es descriptivo, no un codename real.
 \cvEntryClient%
@@ -191,7 +204,8 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
     design system component libraries.}
   \cvItem{Migrated existing registry records from the legacy system into the new platform,
     preserving identifier integrity across the catalog.}
-  \cvItem{Built and ran the platform on \textbf{AWS}.}
+  \cvItem{Built and ran the platform on \textbf{AWS}, with \textbf{PostgreSQL} as the
+    relational store.}
   \cvItem{Maintained unit coverage with \textbf{JUnit} and \textbf{Mockito} on the backend and
     \textbf{Jest} on the front end, enforced through \textbf{SonarQube} quality gates.}
   \cvItem{Delivered inside the iTunes division's engineering process under Agile ceremonies.}
@@ -199,7 +213,7 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 
 {\footnotesize\color{cvMuted}\textit{Stack:}~%
 Java 17, Spring Boot, Spring WebFlux, Reactive REST APIs, React 18, Jest, JUnit, Mockito,
-AWS, SonarQube, Git.}
+PostgreSQL, AWS, SonarQube, Git.}
 
 \vspace{2pt}
 

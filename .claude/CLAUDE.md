@@ -433,7 +433,15 @@ Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `u
   entra en la entrada y en el stack. **Faltan los servicios concretos**: «AWS» a secas aporta poco
   en un CV y casi nada en un filtro ATS; lo que pesa son EKS/ECS, S3, RDS o Aurora, DynamoDB,
   SQS/SNS, CloudWatch, API Gateway. No se inventan.
-- **Sin motor de base de datos.** El candidato no lo mencionó.
+- **PostgreSQL — inferido, no confirmado** (2026-10-26). El candidato solo recuerda que era
+  relacional y pidió investigar lo típico. Dos vías independientes apuntan al mismo motor: Apple
+  opera su **propio servicio interno de PostgreSQL** (sus ofertas de empleo lo describen sosteniendo
+  cargas de Services, Manufacturing y AIML, con millones de queries por segundo sobre petabytes;
+  MySQL/MariaDB aparecen como «plus» y Oracle en equipos puntuales como Ad Platforms), y
+  **Spring WebFlux con persistencia reactiva implica R2DBC**, cuyo driver mejor soportado es
+  `r2dbc-postgresql`. Riesgo bajo además porque PostgreSQL ya está respaldado en tres roles más del
+  CV, así que es defendible en entrevista. **R2DBC no se nombra**: sería una segunda inferencia
+  encadenada sobre la primera.
 - El nombre del proyecto, *iTunes — Content Registry Modernization*, es descriptivo, no un codename
   real.
 
@@ -501,6 +509,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
 - [ ] Confirmar la versión de Java de Apple: puesto 17 (LTS vigente) en lugar de 19
 - [ ] Listar los **servicios de AWS** concretos del proyecto de Apple (hoy dice solo «AWS»)
+- [ ] Confirmar o corregir **PostgreSQL** en la entrada de Apple: está inferido, no recordado
 - [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
