@@ -411,6 +411,28 @@ lugar de recortar una para fingir una secuencia limpia. Es el único solape del 
 Alternativa si se quiere estrictamente secuencial: cerrar Globant en oct 2022 (4 m en vez de 8 m 7 d)
 y correr Apple hasta feb 2023.
 
+**Contenido de Apple aportado por el candidato** (2026-10-26): división **iTunes**; reemplazo del
+sistema legado de registro de contenido musical; digitalización del registro de **códigos únicos**
+de canciones, álbumes y playlists; backend **Java con Spring WebFlux**; frontend **React** sobre las
+librerías de diseño internas de Apple; **JUnit** y **Jest** para pruebas unitarias; coverage con
+SonarQube.
+
+Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `usa/experience.tex`:
+
+- **«Sonnet» = SonarQube.** No existe herramienta de coverage con ese nombre y SonarQube ya figura en
+  seis roles del CV.
+- **Java 17, no 19.** En oct 2022 – mar 2023 la versión más nueva era Java 19, pero era un release de
+  seis meses sin soporte extendido; la LTS vigente y la que corre en producción era la 17. El
+  candidato pidió «la más actualizada»; 17 es la defendible. Si recuerda 19, se cambia.
+- **React 18** — versión vigente en esa ventana (salió en marzo de 2022).
+- **Spring Boot sin número de versión.** El encargo arrancó cuando regía 2.7 y Spring Boot 3 salió en
+  noviembre de 2022, a mitad del proyecto. Afirmar una de las dos sería inventar.
+- **Sin proveedor de cloud ni motor de base de datos.** El candidato no los mencionó y Apple corre
+  infraestructura propia: afirmar AWS en esta entrada sería un error fácil de detectar en una
+  entrevista.
+- El nombre del proyecto, *iTunes — Content Registry Modernization*, es descriptivo, no un codename
+  real.
+
 **El summary de USA no menciona el CUL.** Para un reclutador estadounidense esa frase es ruido, y
 podría leerse como una señal rara. La frase se mantiene solo en `latam-es/summary-es.tex`, donde el
 certificado sí significa algo para quien lo lee.
@@ -472,7 +494,8 @@ make view       # abre PDF en macOS (Preview)
 - [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
 - [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
-- [ ] **Bullets de Apple Inc.** en `usa/experience.tex`: hoy la entrada no describe el trabajo
+- [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
+- [ ] Confirmar la versión de Java de Apple: puesto 17 (LTS vigente) en lugar de 19
 - [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
