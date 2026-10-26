@@ -89,6 +89,13 @@ jobs:
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
+      - name: Compile resume-latam.tex (English — LATAM · reconciled history)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-latam.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
       - name: Report page count of each PDF
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
@@ -176,6 +183,14 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
+      - name: Upload LATAM English PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-latam-en
+          path: resume-latam.pdf
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Create or update "latest" GitHub Release with all PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: ncipollo/release-action@v1
@@ -199,11 +214,12 @@ jobs:
             | Español — React Native · Full Stack | resume-react-native-es.pdf |
             | English — Extended · full career history (11 roles) | resume-extended.pdf |
             | Español — Extendido · historial completo (11 roles) | resume-extended-es.pdf |
+            | English — LATAM · reconciled against the Certificado Único Laboral | resume-latam.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
             - Compiled with: XeLaTeX
-          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-extended.pdf,resume-extended-es.pdf"
+          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-extended.pdf,resume-extended-es.pdf,resume-latam.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true

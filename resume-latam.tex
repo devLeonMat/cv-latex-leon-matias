@@ -1,0 +1,47 @@
+%% ============================================================
+%%  resume-latam.tex  —  LATAM CV: reconciled career history
+%%                       13 roles · May 2014 -> present
+%%
+%%  Every Peruvian engagement matches a payroll record in the
+%%  Certificado Unico Laboral (MTPE, issued 2026-10-26). Overlaps are
+%%  resolved by the longest-contract rule; see latam/experience.tex.
+%%
+%%  Engine   : XeLaTeX
+%%  Pages    : 4-5 (A4) — extended variant, deliberate exception to
+%%             the 2-page rule
+%%  Compile  : latexmk resume-latam.tex   OR   make latam
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{styles/resume}
+
+\begin{document}
+\pagestyle{empty}
+
+%% ── HEADER ───────────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Lead Software Engineer \enspace|\enspace LATAM \enspace|\enspace Banking \& Insurance \enspace|\enspace Java \enspace|\enspace Spring Boot \enspace|\enspace AWS}
+
+\cvContact{%
+  Lima, Peru%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── BODY ─────────────────────────────────────────────────────
+\input{latam/summary}
+\input{latam/skills}
+\input{latam/experience}
+\input{extended/education}
+\input{extended/certifications}
+\input{sections/languages}
+
+\end{document}

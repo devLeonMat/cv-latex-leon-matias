@@ -7,6 +7,7 @@
 #   make techlead-es  → Tech Lead CV (Spanish)
 #   make extended    → Extended CV, full history (English)
 #   make extended-es → Extended CV, full history (Spanish)
+#   make latam        → LATAM CV, reconciled against the CUL (English)
 #   make all-versions → every CV variant
 #   make watch        → continuous rebuild on file changes
 #   make clean        → remove auxiliary files
@@ -24,6 +25,7 @@ MAIN_RN            = resume-react-native
 MAIN_RN_ES         = resume-react-native-es
 MAIN_EXT           = resume-extended
 MAIN_EXT_ES        = resume-extended-es
+MAIN_LATAM         = resume-latam
 STYLES          = styles/resume.sty
 SECTIONS        = sections/*.tex
 SECTIONS_ES     = es/*.tex
@@ -35,16 +37,17 @@ SECTIONS_RN     = react-native/*.tex
 SECTIONS_RN_ES  = react-native-es/*.tex
 SECTIONS_EXT    = extended/*.tex
 SECTIONS_EXT_ES = extended-es/*.tex
+SECTIONS_LATAM  = latam/*.tex
 VIEWER          = open   # macOS; change to 'evince' or 'zathura' on Linux
 DOCKER_IMG      = texlive/texlive:latest
 
 .PHONY: all en es both backend-ai backend-ai-es backend-ai-both \
         techlead techlead-es techlead-both \
         react-native react-native-es react-native-both \
-        extended extended-es extended-both all-versions \
+        extended extended-es extended-both latam all-versions \
         clean cleanall view view-es view-backend-ai view-backend-ai-es \
         view-techlead view-techlead-es view-react-native view-react-native-es \
-        view-extended view-extended-es \
+        view-extended view-extended-es view-latam \
         watch docker docker-es docker-both install-mac
 
 ## Default: compile English version
@@ -125,9 +128,15 @@ $(MAIN_EXT_ES).pdf: $(MAIN_EXT_ES).tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_EXT_E
 ## Both extended versions
 extended-both: extended extended-es
 
+## LATAM — reconciled against the Certificado Unico Laboral, English
+latam: $(MAIN_LATAM).pdf
+
+$(MAIN_LATAM).pdf: $(MAIN_LATAM).tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT) $(SECTIONS_LATAM)
+	latexmk $(MAIN_LATAM).tex
+
 ## All ten versions
 all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es \
-              extended extended-es
+              extended extended-es latam
 
 ## Open English PDF (macOS)
 view: $(MAIN).pdf
@@ -169,6 +178,10 @@ view-extended: $(MAIN_EXT).pdf
 view-extended-es: $(MAIN_EXT_ES).pdf
 	$(VIEWER) $(MAIN_EXT_ES).pdf
 
+## Open LATAM PDF (macOS)
+view-latam: $(MAIN_LATAM).pdf
+	$(VIEWER) $(MAIN_LATAM).pdf
+
 ## Continuous rebuild on file change (requires fswatch on macOS)
 watch:
 	@echo "Watching for changes... (install fswatch: brew install fswatch)"
@@ -206,6 +219,7 @@ clean:
 	latexmk -c $(MAIN_RN_ES).tex
 	latexmk -c $(MAIN_EXT).tex
 	latexmk -c $(MAIN_EXT_ES).tex
+	latexmk -c $(MAIN_LATAM).tex
 
 ## Remove everything including PDFs
 cleanall:
@@ -219,6 +233,7 @@ cleanall:
 	latexmk -C $(MAIN_RN_ES).tex
 	latexmk -C $(MAIN_EXT).tex
 	latexmk -C $(MAIN_EXT_ES).tex
+	latexmk -C $(MAIN_LATAM).tex
 
 ## Install MacTeX + required font (macOS + Homebrew)
 install-mac:
