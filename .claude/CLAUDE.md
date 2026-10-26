@@ -19,6 +19,7 @@ cv-latex-leon-matias/
 ├── resume-react-native-es.tex  # CV dirigido: React Native + Full Stack (ES)
 ├── resume-extended.tex         # CV extendido: historial completo, 11 roles (EN)
 ├── resume-extended-es.tex      # CV extendido: historial completo, 11 roles (ES)
+├── resume-latam.tex            # CV LATAM: historial conciliado contra el CUL (EN)
 ├── sections/                   # Secciones del CV general (EN)
 │   ├── summary.tex             # Resumen profesional + strip de industrias
 │   ├── skills.tex              # Stack técnico (single-column, ATS-safe)
@@ -35,6 +36,7 @@ cv-latex-leon-matias/
 ├── react-native-es/            # Secciones React Native (ES)
 ├── extended/                   # Secciones CV extendido (EN) + education y certifications propias
 ├── extended-es/                # Secciones CV extendido (ES)
+├── latam/                      # Secciones CV LATAM conciliado (EN)
 ├── styles/
 │   └── resume.sty              # TODA la configuración: geometry, fuentes, colores, comandos
 ├── assets/                     # Foto profesional (no usada en versión ATS)
@@ -181,6 +183,7 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
 | `resume-extended.tex` | **Extendido** — historial completo (11 roles) | EN | `extended/` | `sections/languages` |
 | `resume-extended-es.tex` | **Extendido** — historial completo (11 roles) | ES | `extended-es/` | `es/languages-es` |
+| `resume-latam.tex` | **LATAM** — historial conciliado contra el CUL (13 roles activos) | EN | `latam/` | `extended/{education,certifications}` + `sections/languages` |
 
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
 `summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
@@ -282,6 +285,112 @@ consideran traspasos normales. Experiencia total: **12 años 10 meses**.
 
 ---
 
+---
+
+## ADR — CV LATAM conciliado contra el CUL (2026-10-26)
+
+`resume-latam.tex` + `latam/` es la primera variante cuyas fechas **no** vienen del CV en Word ni
+de decisiones del repo, sino del **Certificado Único Laboral** emitido por el MTPE el 2026-10-26
+(23 registros de planilla, T-Registro + PLAME, data desde ago 2012).
+
+**Regla de conciliación** (decisión del candidato): cuando dos contratos se solapan, **gana el más
+extenso**; el más corto se recorta al espacio libre y se descarta si queda por debajo de 25 días.
+Resultado: cero solapes por construcción.
+
+**Clientes confirmados por el candidato** (2026-10-26), que el CUL no trae:
+
+| Empleador en planilla | Cliente |
+|-----------------------|---------|
+| Quality & Development Software | Clínicas AUNA |
+| Caleidos Media | Apple Inc. |
+| Tata Consultancy | SUNAT |
+| Neoris Perú | Cencosud |
+| NTT Data Perú | Telefónica Perú (como **arquitecto**) |
+| Q System | Inkafarma |
+| Indra Perú | RIMAC |
+| PSS Perú | BanBif |
+| Alternativa Tecnológica | BCP (soporte) |
+
+**Indra entra, Kruger sale.** Indra / RIMAC son 9 meses (abr–dic 2020); Kruger / BCP · Tío Grou son
+4 m 23 d y caen enteros dentro de Indra. La regla deja a Indra. Esto **invierte** la decisión previa
+del repo, donde Kruger estaba y a Indra se la había retirado. Decisión explícita del candidato.
+Afecta solo a `latam/`: las diez variantes anteriores quedan intactas.
+
+**Claims retirados de `latam/skills.tex`** por perder su único respaldo al salir Kruger:
+`PWA` / `Progressive Web Apps`, `WhatsApp Business API`, `Retrofit`, `Angular 10`. Angular 6, 8, 12
+y 15 sobreviven en otros roles. También se retiraron **MongoDB** y **CosmosDB**, que no tienen
+respaldo en ningún rol de ninguna variante.
+
+**Redis se queda.** `extended/` lo atribuye a Kruger, pero las ocho condensadas lo atribuyen a
+ExSquared / Qorta junto con Kafka. `latam/experience.tex` sigue a las ocho: Redis va en el bloque de
+ExSquared. Esa discrepancia entre documentos ya existía y sigue pendiente en `extended/`.
+
+**Fechas corregidas contra el CUL:**
+
+| Rol | Decía el repo | Dice el CUL |
+|-----|---------------|-------------|
+| Olva Courier | mar 2015 – jun 2018 | **ago 2017 – may 2018** (9 m 8 d) |
+| LimaW / WProducciones | ene 2014 – feb 2015 | **may 2014 – feb 2015** (10 m, fusionadas) |
+| Experis / Equifax | jul 2018 – sep 2019 | **jul 2018 – abr 2019** (8 m 21 d) |
+| Michael Page | dic 2019 – jun 2020 | **ene 2020 – mar 2020** (recortado; Zoluxiones ocupa dic 2019) |
+| Globant | jun 2022 – feb 2023 | 22/06/2022 – 19/06/2023, recortado a **feb 2023** por ExSquared |
+
+El caso de Globant confirma que la fecha que ya tenía el repo era la correcta: la regla la reproduce
+sola. El bullet de Olva que decía *"over a three-year tenure"* se reescribió: con 9 meses era falso.
+
+**El summary ya no dice "continuous".** La cadena continua desde ene 2014 que afirmaban los ADR
+anteriores **no se sostiene**: el CUL muestra 5 a 7 m sin registro dentro de la ventana, de los
+cuales solo 2 a 5 m se explican por empleadores extranjeros. El hueco mayor es **mar 2015 – nov
+2016 (1 a 9 m)**, que coincide con la carrera en la UNAC. `latam/summary.tex` dice "since 2014".
+
+**Nueve registros descartados por la regla:** Kruger/BCP, NTT Data/Telefónica, Tata/SUNAT,
+Caleidos/Apple, Quality & Development/AUNA, Neoris/Cencosud, Q System/Inkafarma, AVLA y el 2º
+contrato de Manpower.
+
+**Descartado por el candidato** (2026-10-26): **Alternativa Tecnológica / BCP** (dic 2016 – mar
+2017). Al salir, y con Kruger ya fuera, **BCP deja de figurar en este variante**: se retiró también
+de la lista de clientes del summary.
+
+**Fusionadas** (2026-10-26): **WProducciones es LimaW** — la misma empresa con dos registros de
+planilla (WProducciones 01/05/2014 – 31/01/2015 y LimaW 01/02/2015 – 28/02/2015). Entran como una
+sola entrada de **10 meses**, con los dos nombres en el encabezado para que calce línea a línea con
+el certificado. Esto resuelve el problema de que LimaW tenía 5 bullets para 28 días.
+
+**Freelance Web Developer, mar 2015 – jul 2017 (2 a 5 m).** Cubre la ventana entre LimaW y Olva,
+incluida la franja donde estaba Alternativa. **No puede aparecer en el CUL y eso no es una omisión**:
+las consideraciones del propio certificado establecen que no se presentan los casos de trabajadores
+que generan ingresos de **cuarta – quinta categoría**, que es exactamente la figura del trabajo
+independiente. El certificado calla ahí por diseño, no por vacío.
+
+Con esto el historial arranca en **may 2014**, no en ene 2014, y cubre **12 a 5 m** hasta oct 2026.
+Quedan solo traspasos de uno o dos meses entre contratos.
+
+**Contenido aportado por el candidato** (2026-10-26):
+
+- **Indra / RIMAC** — desarrollo de nuevos productos, entre ellos Póliza Electrónica. Capa de datos
+  completa en **Oracle / PL/SQL** (procedures, packages, vistas, modelo), servicios **serverless** en
+  **AWS Lambda** con **Node.js**, **S3** para documentos, y front end en **React**. Rol puesto como
+  Senior Full Stack Engineer; el título exacto sigue sin confirmar.
+- **PSS Perú / BanBif** — nuevos productos de ahorro: **Ahorro Programado** y **Ahorro Automático**.
+  **Java** con **Spring Boot**, servicios **REST** y **SOAP**, módulos legados en **JSP / JSTL**, y
+  front end en **Angular** con **Angular Material**. La versión de Java no está fijada: el candidato
+  recuerda una LTS vigente en 2019 (eran Java 8 y Java 11) pero no cuál.
+
+**Claims agregados a `latam/skills.tex`** con ese contenido: **PL/SQL** (Indra), **JSP / JSTL**
+(PSS y LimaW) y **PrimeFaces** (Olva — ya estaba en los bullets pero nunca se listó en skills).
+
+**Pendiente de contenido** — un solo bloque, marcado con `TODO` en `latam/experience.tex`:
+
+- **Freelance Web Developer (mar 2015 – jul 2017)** — tiene un bullet genérico. Es el tramo más
+  largo de la carrera temprana, 2 a 5 m, y un revisor va a preguntar. Falta tipo y cantidad de
+  clientes, stack concreto y algún proyecto nombrable.
+
+Por el ADR de LinkedIn, al entrar Indra al CV debe entrar también a `LINKEDIN.md`, y RIMAC con ella.
+
+**Variante USA pendiente**: incluirá **Apple Inc.** (Caleidos Media, oct 2022 – mar 2023) como
+experiencia, lo que exige recortar Globant o ExSquared para abrirle espacio.
+
+
 ## Compilación
 
 ### GitHub Actions (automático)
@@ -329,6 +438,15 @@ make view       # abre PDF en macOS (Preview)
 - [x] Versiones React Native EN/ES (`resume-react-native*.tex`) — hechas
 - [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
+- [x] Variante **LATAM** conciliada contra el CUL (`resume-latam.tex`) — hecha 2026-10-26
+- [x] Bullets de Indra/RIMAC y PSS/BanBif — aportados por el candidato 2026-10-26
+- [x] WProducciones = LimaW — confirmado y fusionado en una entrada de 10 meses (2026-10-26)
+- [x] Alternativa Tecnológica retirada; el tramo lo cubre el bloque freelance (2026-10-26)
+- [ ] Ampliar el bloque **Freelance Web Developer** (mar 2015 – jul 2017): clientes, stack, proyectos
+- [ ] Fijar la versión de Java de PSS/BanBif (LTS de 2019: Java 8 u 11)
+- [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
+- [ ] Variante **USA** con Apple Inc. como experiencia
+- [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
 - [ ] Alinear LinkedIn — texto listo en `LINKEDIN.md`, espejo exacto de la extendida
