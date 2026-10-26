@@ -427,9 +427,13 @@ Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `u
 - **React 18** — versión vigente en esa ventana (salió en marzo de 2022).
 - **Spring Boot sin número de versión.** El encargo arrancó cuando regía 2.7 y Spring Boot 3 salió en
   noviembre de 2022, a mitad del proyecto. Afirmar una de las dos sería inventar.
-- **Sin proveedor de cloud ni motor de base de datos.** El candidato no los mencionó y Apple corre
-  infraestructura propia: afirmar AWS en esta entrada sería un error fácil de detectar en una
-  entrevista.
+- **AWS — corregido el 2026-10-26.** Primero omití el cloud razonando que Apple corre
+  infraestructura propia. La premisa estaba mal: Apple es uno de los clientes más grandes de AWS y
+  eso es público. El candidato confirmó que el proyecto trabajaba sobre el stack de AWS, así que
+  entra en la entrada y en el stack. **Faltan los servicios concretos**: «AWS» a secas aporta poco
+  en un CV y casi nada en un filtro ATS; lo que pesa son EKS/ECS, S3, RDS o Aurora, DynamoDB,
+  SQS/SNS, CloudWatch, API Gateway. No se inventan.
+- **Sin motor de base de datos.** El candidato no lo mencionó.
 - El nombre del proyecto, *iTunes — Content Registry Modernization*, es descriptivo, no un codename
   real.
 
@@ -496,6 +500,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
 - [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
 - [ ] Confirmar la versión de Java de Apple: puesto 17 (LTS vigente) en lugar de 19
+- [ ] Listar los **servicios de AWS** concretos del proyecto de Apple (hoy dice solo «AWS»)
 - [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el

@@ -162,9 +162,14 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 %%      Spring Boot 3 salio en noviembre de 2022, a mitad del encargo.
 %%      Afirmar una de las dos seria inventar.
 %%    - Mockito junto a JUnit: estandar y presente en todos los demas roles.
-%%    - Sin proveedor de cloud ni motor de base de datos: el candidato no los
-%%      menciono y Apple corre infraestructura propia. Afirmar AWS aqui seria
-%%      un error facil de detectar en una entrevista.
+%%    - AWS: CORREGIDO el 2026-10-26. Omiti el cloud razonando que Apple corre
+%%      infraestructura propia; la premisa estaba mal. Apple es uno de los
+%%      clientes mas grandes de AWS y eso es publico. El candidato confirmo que
+%%      el proyecto trabajaba sobre el stack de AWS.
+%%      TODO: faltan los SERVICIOS concretos. "AWS" a secas vale poco en un CV
+%%      y en ATS; lo que pesa es EKS/ECS, S3, RDS o Aurora, DynamoDB, SQS/SNS,
+%%      CloudWatch, API Gateway. Sin la lista del candidato no se inventan.
+%%    - Sin motor de base de datos: el candidato no lo menciono.
 %%
 %%  TODO menor: el nombre del proyecto es descriptivo, no un codename real.
 \cvEntryClient%
@@ -186,6 +191,7 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
     design system component libraries.}
   \cvItem{Migrated existing registry records from the legacy system into the new platform,
     preserving identifier integrity across the catalog.}
+  \cvItem{Built and ran the platform on \textbf{AWS}.}
   \cvItem{Maintained unit coverage with \textbf{JUnit} and \textbf{Mockito} on the backend and
     \textbf{Jest} on the front end, enforced through \textbf{SonarQube} quality gates.}
   \cvItem{Delivered inside the iTunes division's engineering process under Agile ceremonies.}
@@ -193,7 +199,7 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 
 {\footnotesize\color{cvMuted}\textit{Stack:}~%
 Java 17, Spring Boot, Spring WebFlux, Reactive REST APIs, React 18, Jest, JUnit, Mockito,
-SonarQube, Git.}
+AWS, SonarQube, Git.}
 
 \vspace{2pt}
 
