@@ -2,7 +2,7 @@
 # Requires: MacTeX or TeX Live with xelatex + latexmk
 #
 # Targets:
-#   make              → compile resume.tex → resume.pdf
+#   make              → compile resume-fullstack.tex → resume-fullstack.pdf
 #   make techlead     → Tech Lead CV (English)
 #   make techlead-es  → Tech Lead CV (Spanish)
 #   make extended    → Extended CV, full history (English)
@@ -16,8 +16,8 @@
 #   make view         → open PDF (macOS)
 #   make install-mac  → install MacTeX + required font package
 
-MAIN            = resume
-MAIN_ES         = resume-es
+MAIN            = resume-fullstack
+MAIN_ES         = resume-fullstack-es
 MAIN_BACKEND_AI    = resume-backend-ai
 MAIN_BACKEND_AI_ES = resume-backend-ai-es
 MAIN_TECHLEAD      = resume-techlead
@@ -145,7 +145,7 @@ $(MAIN_USA).pdf: $(MAIN_USA).tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT) $(SECTION
 
 ## All ten versions
 all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es \
-              extended extended-es latam-es usa
+              latam-es usa
 
 ## Open English PDF (macOS)
 view: $(MAIN).pdf
@@ -206,19 +206,19 @@ watch:
 docker:
 	docker run --rm -v $(PWD):/workspace -w /workspace $(DOCKER_IMG) \
 		latexmk -xelatex $(MAIN).tex
-	@echo "✓  resume.pdf generated"
+	@echo "✓  resume-fullstack.pdf generated"
 
 ## Compile Spanish via Docker
 docker-es:
 	docker run --rm -v $(PWD):/workspace -w /workspace $(DOCKER_IMG) \
 		latexmk -xelatex $(MAIN_ES).tex
-	@echo "✓  resume-es.pdf generated"
+	@echo "✓  resume-fullstack-es.pdf generated"
 
 ## Compile both versions via Docker
 docker-both:
 	docker run --rm -v $(PWD):/workspace -w /workspace $(DOCKER_IMG) \
 		sh -c "latexmk -xelatex $(MAIN).tex && latexmk -xelatex $(MAIN_ES).tex"
-	@echo "✓  resume.pdf + resume-es.pdf generated"
+	@echo "✓  resume-fullstack.pdf + resume-fullstack-es.pdf generated"
 
 ## Remove auxiliary build files (keep PDFs)
 clean:

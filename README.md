@@ -17,8 +17,8 @@ The CV is compiled automatically on every push to `main`.
 
 | PDF | Target role | Language | Build |
 |-----|-------------|----------|-------|
-| `resume.pdf` | Lead Software Engineer — general | English | `make en` |
-| `resume-es.pdf` | Ingeniero de Software Líder — general | Español | `make es` |
+| `resume-fullstack.pdf` | Senior Full Stack Engineer · Angular · React · Java · Node.js | English | `make en` |
+| `resume-fullstack-es.pdf` | Ingeniero Full Stack Senior · Angular · React · Java · Node.js | Español | `make es` |
 | `resume-backend-ai.pdf` | Senior Backend Engineer · AI Agents | English | `make backend-ai` |
 | `resume-backend-ai-es.pdf` | Backend Senior · Agentes IA | Español | `make backend-ai-es` |
 | `resume-techlead.pdf` | Tech Lead | English | `make techlead` |
@@ -35,7 +35,7 @@ and `experience` files and reuses education / certifications / languages from `s
 ```
 cv-latex-leon-matias/
 │
-├── resume.tex                  # Root document — header + section imports
+├── resume-fullstack.tex        # Root document — header + section imports
 │
 ├── sections/
 │   ├── summary.tex             # Professional summary + industry strip
@@ -83,7 +83,7 @@ sudo tlmgr update --self
 sudo tlmgr install sourcesanspro
 
 # 3. Compile
-make            # → resume.pdf
+make            # → resume-fullstack.pdf
 make view       # opens PDF in Preview
 make clean      # remove auxiliary files
 ```
@@ -93,7 +93,7 @@ make clean      # remove auxiliary files
 1. Install the [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension
 2. Install MacTeX or TeX Live (see Option B)
 3. Set LaTeX Workshop recipe to **latexmk (xelatex)** in VS Code settings
-4. Open `resume.tex` and press **Ctrl/Cmd+Alt+B** to build
+4. Open `resume-fullstack.tex` and press **Ctrl/Cmd+Alt+B** to build
 
 ### Font requirement
 
@@ -108,9 +108,9 @@ On Overleaf, the font is available by default.
 Every push to `main` triggers `.github/workflows/build-cv.yml`:
 
 1. Checks out the repository
-2. Compiles `resume.tex` with **XeLaTeX** inside the official TeX Live Docker image
+2. Compiles every variant with **XeLaTeX** inside the official TeX Live Docker image
 3. Installs `sourcesanspro` font package automatically
-4. Uploads `resume.pdf` as a workflow artifact (90-day retention)
+4. Uploads each PDF as a workflow artifact (90-day retention)
 5. Creates/updates the [`latest`](https://github.com/devLeonMat/cv-latex-leon-matias/releases/tag/latest) GitHub Release with the fresh PDF
 
 ---
@@ -119,7 +119,7 @@ Every push to `main` triggers `.github/workflows/build-cv.yml`:
 
 | Content area | File |
 |---|---|
-| Name, title, contact links | `resume.tex` (header block) |
+| Name, title, contact links | `resume-fullstack.tex` (header block) |
 | Professional summary + industries | `sections/summary.tex` |
 | Technical skills | `sections/skills.tex` |
 | Work experience, highlights | `sections/experience.tex` |

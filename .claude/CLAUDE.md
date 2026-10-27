@@ -9,16 +9,16 @@ Diseñado para compilar con **XeLaTeX** vía GitHub Actions (CI/CD) y publicar e
 
 ```
 cv-latex-leon-matias/
-├── resume.tex                  # CV general (EN) — header + \input de secciones
-├── resume-es.tex               # CV general (ES)
+├── resume-fullstack.tex        # CV Full Stack (EN) — header + \input de secciones
+├── resume-fullstack-es.tex     # CV Full Stack (ES)
 ├── resume-backend-ai.tex       # CV dirigido: Backend + AI Agents (EN)
 ├── resume-backend-ai-es.tex    # CV dirigido: Backend + Agentes IA (ES)
 ├── resume-techlead.tex         # CV dirigido: Tech Lead (EN)
 ├── resume-techlead-es.tex      # CV dirigido: Tech Lead (ES)
 ├── resume-react-native.tex     # CV dirigido: React Native + Full Stack (EN)
 ├── resume-react-native-es.tex  # CV dirigido: React Native + Full Stack (ES)
-├── resume-extended.tex         # CV extendido: historial completo, 11 roles (EN)
-├── resume-extended-es.tex      # CV extendido: historial completo, 11 roles (ES)
+├── resume-extended.tex         # CV extendido (EN) — YA NO SE COMPILA, ver ADR 2026-10-27
+├── resume-extended-es.tex      # CV extendido (ES) — YA NO SE COMPILA
 ├── resume-latam-es.tex         # CV LATAM: historial conciliado contra el CUL (ES)
 ├── resume-usa.tex              # CV USA: conciliado + Apple Inc. (EN)
 ├── sections/                   # Secciones del CV general (EN)
@@ -175,16 +175,16 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 
 | Documento | Rol destino | Idioma | Secciones propias | Página 2 reutilizada |
 |-----------|-------------|--------|-------------------|----------------------|
-| `resume.tex` | **Senior Full Stack Engineer** · Angular · React · Java · Node.js | EN | `sections/` | — |
-| `resume-es.tex` | **Ingeniero Full Stack Senior** · Angular · React · Java · Node.js | ES | `es/` | — |
+| `resume-fullstack.tex` | **Senior Full Stack Engineer** · Angular · React · Java · Node.js | EN | `sections/` | — |
+| `resume-fullstack-es.tex` | **Ingeniero Full Stack Senior** · Angular · React · Java · Node.js | ES | `es/` | — |
 | `resume-backend-ai.tex` | Senior Backend Engineer · Java · Node.js · **Python** · AI Agents | EN | `backend-ai/` | `sections/` |
 | `resume-backend-ai-es.tex` | Ingeniero Backend Senior · Java · Node.js · **Python** · Agentes IA | ES | `backend-ai-es/` | `es/` |
 | `resume-techlead.tex` | **Tech Lead** | EN | `techlead/` | `sections/` |
 | `resume-techlead-es.tex` | **Tech Lead** | ES | `techlead-es/` | `es/` |
 | `resume-react-native.tex` | **Senior React Native Engineer** · Mobile | EN | `react-native/` | `sections/` |
 | `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
-| `resume-extended.tex` | **Extendido** — historial completo (11 roles) | EN | `extended/` | `sections/languages` |
-| `resume-extended-es.tex` | **Extendido** — historial completo (11 roles) | ES | `extended-es/` | `es/languages-es` |
+| ~~`resume-extended.tex`~~ | **Extendido** (11 roles) — *fuera de la generación* | EN | `extended/` | `sections/languages` |
+| ~~`resume-extended-es.tex`~~ | **Extendido** (11 roles) — *fuera de la generación* | ES | `extended-es/` | `es/languages-es` |
 | `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL (12 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
 | `resume-usa.tex` | **USA** — conciliado + **Apple Inc.** (13 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
 
@@ -203,13 +203,14 @@ Senior Fullstack Developer (decisión explícita del candidato).
 
 **Cada variante abre con el rol al que postula**, no con el stack completo. Ya no existe un CV
 "general" sin rol: `resume.tex` / `resume-es.tex` pasaron a ser la variante **Full Stack**
+(y el 2026-10-27 se renombraron a `resume-fullstack*.tex`)
 (Angular, React, Java, Node.js). En la variante backend, **Python** entra al título con una línea
 propia en skills, acotada a lo que realmente cubre (serverless en Lambda, procesamiento
 documental, tareas programadas, tooling interno); el ángulo de agentes IA baja del slot de
 "Cloud Native" pero se mantiene. La variante React Native se titula como rol React Native en
 lugar de full stack genérico. Tech Lead y las extendidas no se tocaron.
 
-`sections/{summary,skills,experience}.tex` y `es/*` los usa **solo** el CV general — editarlos
+`sections/{summary,skills,experience}.tex` y `es/*` los usa **solo** la variante Full Stack — editarlos
 no afecta a las otras variantes, que tienen sus propios directorios.
 
 **Claims sin respaldo eliminados** (quedan cero ocurrencias en los 50 `.tex`): `HIPAA`,
@@ -486,6 +487,45 @@ podría leerse como una señal rara. La frase se mantiene solo en `latam-es/summ
 certificado sí significa algo para quien lo lee.
 
 
+---
+
+## ADR — Nombres por rol y retiro de las extendidas (2026-10-27)
+
+**`resume.tex` → `resume-fullstack.tex`, `resume-es.tex` → `resume-fullstack-es.tex`.** Decisión del
+candidato. El ADR del 2026-10-21 ya había convertido al antiguo CV «general» en la variante Full
+Stack, pero el nombre del archivo —y por lo tanto el del PDF que baja un reclutador— seguía diciendo
+`resume.pdf`, sin rol. Ahora las doce raíces nombran su variante. La tabla del Release también dejó
+de decir «General»: dice «Full Stack · Angular · React · Java · Node.js».
+
+Lo que se tocó: los dos `.tex` raíz (`git mv` + su propio encabezado), `@default_files` en
+`.latexmkrc`, `MAIN` y `MAIN_ES` en el `Makefile`, y en el workflow los dos pasos de compilación, los
+dos `upload-artifact`, las dos filas de la tabla del Release y la lista `artifacts:`. Los directorios
+`sections/` y `es/` **no** se renombraron: los reutilizan backend-ai, techlead y react-native.
+
+Los targets del `Makefile` siguen siendo `make en` / `make es`. Son genéricos para un repo donde cada
+variante tiene las dos lenguas, pero renombrarlos rompería la costumbre sin ganar nada hoy.
+
+**Las dos variantes extendidas salen de la generación.** Decisión del candidato: *el conciliado
+completo reemplaza al extendido*. `resume-extended.tex` y `resume-extended-es.tex` ya no se compilan
+ni se publican en el Release, y `make all-versions` no los incluye. Se compilan **diez** PDFs.
+
+Las conciliadas los reemplazan de hecho: cubren el mismo historial completo con fechas que calzan
+contra el Certificado Único Laboral, que es más de lo que la extendida podía defender.
+
+**Los archivos raíz y los directorios `extended/` y `extended-es/` se quedan**, por dos razones:
+
+1. **`resume-usa.tex` y `resume-latam-es.tex` dependen de ellos.** USA hace `\input{extended/education}`
+   y `\input{extended/certifications}`; LATAM hace lo mismo con `extended-es/`. Borrar esos
+   directorios rompe las dos variantes que sí se publican. Si alguna vez se quieren limpiar, primero
+   hay que mover esos cuatro archivos a `usa/` y `latam-es/`.
+2. **`make extended` sigue funcionando en local**, que es útil mientras `LINKEDIN.md` siga siendo
+   espejo de la extendida.
+
+**Consecuencia pendiente sobre LinkedIn.** El ADR del 2026-10-22 fija `LINKEDIN.md` como espejo del
+CV extendido. Al retirarse la extendida, ese espejo apunta a un documento que ya no se genera.
+`LINKEDIN.md` debería regenerarse desde `usa/experience.tex`, que trae las fechas conciliadas, Indra
+y Apple. No se hizo en este cambio: es trabajo de contenido, no de renombrado.
+
 ## Compilación
 
 ### GitHub Actions (automático)
@@ -528,10 +568,11 @@ make view       # abre PDF en macOS (Preview)
 
 - [x] Bullets de DaCodes, ExSquared y Globant verificados contra el CV en Word (2026-10-21)
 - [ ] Probar en Overleaf y verificar layout de 2 páginas
-- [x] Versión en español (`resume-es.tex`) — hecha
+- [x] Versión en español (`resume-fullstack-es.tex`) — hecha
 - [x] Versiones Tech Lead EN/ES (`resume-techlead*.tex`) — hechas 2026-09-22
 - [x] Versiones React Native EN/ES (`resume-react-native*.tex`) — hechas
-- [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21
+- [x] Versiones extendidas EN/ES (`resume-extended*.tex`) — hechas 2026-10-21; **retiradas de la
+      generación el 2026-10-27**, reemplazadas por las conciliadas
 - [ ] Crear versión `resume-targeted.tex` para postulaciones específicas
 - [x] Variante **LATAM** conciliada contra el CUL (`resume-latam-es.tex`) — hecha 2026-10-26
 - [x] Bullets de Indra/RIMAC y PSS/BanBif — aportados por el candidato 2026-10-26
@@ -553,7 +594,7 @@ make view       # abre PDF en macOS (Preview)
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
-- [ ] Alinear LinkedIn — texto listo en `LINKEDIN.md`, espejo exacto de la extendida
-      (69 bullets en ambos), con checklist de 11 puntos
+- [ ] **Regenerar `LINKEDIN.md` desde la variante USA**, no desde la extendida: el ADR de
+      LinkedIn la fijaba como espejo de la extendida, que ya no se compila (2026-10-27)
 - [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)
