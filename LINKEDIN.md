@@ -14,6 +14,9 @@ hoy.
 Sistemas en la UNAC, y el rango de educación (2012–2018) la cubre. **Nunca escribas «12+ años de
 experiencia»** en el perfil: ese es el lapso, no el trabajo registrado.
 
+**IDM Technology está en espera** (2026-10-27): el rol actual no se publica todavía, por decisión
+del candidato. Los otros once sí. Ver la nota en su sección.
+
 **Convención**: la empresa es el empleador; el cliente final va en la primera línea de la
 descripción. Es lo que LinkedIn espera para consultoras y staffing, y evita que parezca que
 trabajaste directo para el banco.
@@ -41,7 +44,16 @@ Senior Backend Engineer | Java · Spring Boot | Node.js · NestJS | Python | AWS
 
 ---
 
-## 1. IDM Technology
+## 1. IDM Technology — EN ESPERA, no publicar todavía
+
+> **Decisión del candidato, 2026-10-27: esta entrada no va al perfil por ahora.** El resto del
+> archivo sí. Queda acá redactada para cuando él diga.
+>
+> **Consecuencia, y conviene tenerla presente**: sin IDM, el rol más reciente del perfil pasa a ser
+> **DaCodes, cerrado en feb 2026**, así que LinkedIn muestra al candidato sin trabajo desde
+> entonces y el buscador de LinkedIn lo trata como *open to work* implícito. Si eso no es lo que
+> se busca, las dos salidas son publicar IDM o dejar DaCodes como `Present`; la segunda sería
+> falsa y contradice los diez PDFs del CV, así que **no la hagas sin decidirlo a conciencia**.
 
 | Campo | Valor |
 |---|---|
@@ -448,6 +460,7 @@ sostiene y el perfil dejaría de calzar con él.
 
 ## Checklist
 
+- [ ] **IDM Technology**: **no publicar todavía** (en espera, decisión del 2026-10-27)
 - [ ] **Headline**: actualizar, sin el `12+ years`
 - [ ] **Indra**: añadir (abr–dic 2020, cliente RIMAC Seguros)
 - [ ] **Kruger Corp**: borrar la entrada — y con ella BCP
