@@ -7,7 +7,8 @@
 #   make techlead-es  → Tech Lead CV (Spanish)
 #   make extended    → Extended CV, full history (English)
 #   make extended-es → Extended CV, full history (Spanish)
-#   make latam        → LATAM CV, reconciled against the CUL (English)
+#   make latam-es     → LATAM CV, reconciled against the CUL (Spanish)
+#   make usa          → USA CV, reconciled + Apple Inc. (English)
 #   make all-versions → every CV variant
 #   make watch        → continuous rebuild on file changes
 #   make clean        → remove auxiliary files
@@ -25,7 +26,8 @@ MAIN_RN            = resume-react-native
 MAIN_RN_ES         = resume-react-native-es
 MAIN_EXT           = resume-extended
 MAIN_EXT_ES        = resume-extended-es
-MAIN_LATAM         = resume-latam
+MAIN_LATAM_ES      = resume-latam-es
+MAIN_USA           = resume-usa
 STYLES          = styles/resume.sty
 SECTIONS        = sections/*.tex
 SECTIONS_ES     = es/*.tex
@@ -37,17 +39,18 @@ SECTIONS_RN     = react-native/*.tex
 SECTIONS_RN_ES  = react-native-es/*.tex
 SECTIONS_EXT    = extended/*.tex
 SECTIONS_EXT_ES = extended-es/*.tex
-SECTIONS_LATAM  = latam/*.tex
+SECTIONS_LATAM_ES = latam-es/*.tex
+SECTIONS_USA    = usa/*.tex
 VIEWER          = open   # macOS; change to 'evince' or 'zathura' on Linux
 DOCKER_IMG      = texlive/texlive:latest
 
 .PHONY: all en es both backend-ai backend-ai-es backend-ai-both \
         techlead techlead-es techlead-both \
         react-native react-native-es react-native-both \
-        extended extended-es extended-both latam all-versions \
+        extended extended-es extended-both latam-es usa all-versions \
         clean cleanall view view-es view-backend-ai view-backend-ai-es \
         view-techlead view-techlead-es view-react-native view-react-native-es \
-        view-extended view-extended-es view-latam \
+        view-extended view-extended-es view-latam-es view-usa \
         watch docker docker-es docker-both install-mac
 
 ## Default: compile English version
@@ -128,15 +131,21 @@ $(MAIN_EXT_ES).pdf: $(MAIN_EXT_ES).tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_EXT_E
 ## Both extended versions
 extended-both: extended extended-es
 
-## LATAM — reconciled against the Certificado Unico Laboral, English
-latam: $(MAIN_LATAM).pdf
+## LATAM — reconciled against the Certificado Unico Laboral, Spanish
+latam-es: $(MAIN_LATAM_ES).pdf
 
-$(MAIN_LATAM).pdf: $(MAIN_LATAM).tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT) $(SECTIONS_LATAM)
-	latexmk $(MAIN_LATAM).tex
+$(MAIN_LATAM_ES).pdf: $(MAIN_LATAM_ES).tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_EXT_ES) $(SECTIONS_LATAM_ES)
+	latexmk $(MAIN_LATAM_ES).tex
+
+## USA — reconciled history including Apple Inc., English
+usa: $(MAIN_USA).pdf
+
+$(MAIN_USA).pdf: $(MAIN_USA).tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT) $(SECTIONS_USA)
+	latexmk $(MAIN_USA).tex
 
 ## All ten versions
 all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es \
-              extended extended-es latam
+              extended extended-es latam-es usa
 
 ## Open English PDF (macOS)
 view: $(MAIN).pdf
@@ -178,9 +187,13 @@ view-extended: $(MAIN_EXT).pdf
 view-extended-es: $(MAIN_EXT_ES).pdf
 	$(VIEWER) $(MAIN_EXT_ES).pdf
 
-## Open LATAM PDF (macOS)
-view-latam: $(MAIN_LATAM).pdf
-	$(VIEWER) $(MAIN_LATAM).pdf
+## Open LATAM Spanish PDF (macOS)
+view-latam-es: $(MAIN_LATAM_ES).pdf
+	$(VIEWER) $(MAIN_LATAM_ES).pdf
+
+## Open USA PDF (macOS)
+view-usa: $(MAIN_USA).pdf
+	$(VIEWER) $(MAIN_USA).pdf
 
 ## Continuous rebuild on file change (requires fswatch on macOS)
 watch:
@@ -219,7 +232,8 @@ clean:
 	latexmk -c $(MAIN_RN_ES).tex
 	latexmk -c $(MAIN_EXT).tex
 	latexmk -c $(MAIN_EXT_ES).tex
-	latexmk -c $(MAIN_LATAM).tex
+	latexmk -c $(MAIN_LATAM_ES).tex
+	latexmk -c $(MAIN_USA).tex
 
 ## Remove everything including PDFs
 cleanall:
@@ -233,7 +247,8 @@ cleanall:
 	latexmk -C $(MAIN_RN_ES).tex
 	latexmk -C $(MAIN_EXT).tex
 	latexmk -C $(MAIN_EXT_ES).tex
-	latexmk -C $(MAIN_LATAM).tex
+	latexmk -C $(MAIN_LATAM_ES).tex
+	latexmk -C $(MAIN_USA).tex
 
 ## Install MacTeX + required font (macOS + Homebrew)
 install-mac:

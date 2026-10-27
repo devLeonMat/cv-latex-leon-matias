@@ -1,5 +1,5 @@
 %% ============================================================
-%%  latam/experience.tex  —  Experience (LATAM · reconciled)
+%%  usa/experience.tex  —  Experience (USA · reconciled, includes Apple)
 %%
 %%  Career history reconciled against the Certificado Unico Laboral
 %%  (MTPE Peru, issued 2026-10-26).
@@ -16,14 +16,26 @@
 %%  Tata / SUNAT, Caleidos / Apple, Quality & Development / AUNA,
 %%  Neoris / Cencosud, Q System / Inkafarma, AVLA, Manpower 2nd contract.
 %%
-%%  Dropped by the candidate (2026-10-26): Alternativa Tecnologica / BCP.
-%%  The Mar 2015 -- Jul 2017 window it sat in is covered by the freelance
-%%  entry instead.
+%%  Dropped by the candidate (2026-10-26): Alternativa Tecnologica / BCP,
+%%  and the freelance entry that used to cover the window it sat in.
+%%
+%%  THE MAR 2015 -- JUL 2017 GAP IS DELIBERATE (2026-10-26). A freelance
+%%  block stood here with one generic bullet; the candidate chose to drop it
+%%  rather than pad it, and to account for the 2 y 5 m in conversation: he
+%%  was finishing the Systems Engineering degree at UNAC. The education
+%%  section already carries 2012--2018, so the document supports that answer
+%%  without claiming work it cannot evidence. Do not refill this window with
+%%  invented freelance work.
 %%
 %%  Merged (2026-10-26): WProducciones and LimaW are one company, so their
 %%  two payroll records become a single 10-month entry.
 %%
 %%  13 roles - career opens in May 2014, not January 2014.
+%%
+%%  USA variant: adds Caleidos Media / Apple Inc. (Oct 2022 -- Mar 2023),
+%%  which the longest-contract rule had dropped. Including it costs the
+%%  zero-overlap property: Apple and Globant ran concurrently and the
+%%  certificate proves both. See the note on block 4.
 %% ============================================================
 
 \section{Professional Experience}
@@ -128,7 +140,99 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 
 \vspace{2pt}
 
-%% ── 4. Globant / Banco GNB Paraguay  (Jun 2022 – Feb 2023) ───
+%% ── 4. Caleidos Media / Apple Inc.  (Oct 2022 – Mar 2023) ────
+%%
+%%  CONCURRENT ENGAGEMENT — the one deliberate overlap in this CV.
+%%  The CUL records Caleidos Media 17/10/2022 -- 31/03/2023 running at the
+%%  same time as Globant Peru 22/06/2022 -- 19/06/2023. Both are genuine and
+%%  both are documented, so this variant keeps the certificate's own dates
+%%  rather than trimming one of them to fake a clean sequence.
+%%  Alternative, if a strictly sequential CV is preferred: close Globant in
+%%  October 2022 (4 m instead of 8 m 7 d) and run Apple to February 2023.
+%%
+%%  Contenido aportado por el candidato el 2026-10-26.
+%%
+%%  De el: division iTunes; reemplazo del sistema legado de registro de
+%%  contenido musical; digitalizacion del registro de codigos unicos de
+%%  canciones y playlists; backend Java con WebFlux; frontend React;
+%%  JUnit y Jest para pruebas; "Sonnet" para coverage (= SonarQube, no
+%%  existe herramienta de coverage con ese nombre); librerias de UX/UI
+%%  propias de Apple.
+%%
+%%  Decisiones mias, a pedido del candidato ("pon la ultima version de ese
+%%  anio" / "amplia segun tu criterio"):
+%%    - Java 17, no 19. En la ventana oct 2022 -- mar 2023 la mas nueva era
+%%      Java 19, pero era un release de 6 meses sin soporte extendido; la LTS
+%%      vigente y la que corre en produccion era la 17. CERRADO: el candidato
+%%      ratifico la 17 el 2026-10-26. No reabrir contra el "pon la mas nueva".
+%%    - React 18 — era la version vigente (salio en marzo de 2022).
+%%    - Spring Boot sin numero: el proyecto arranco cuando regia 2.7 y
+%%      Spring Boot 3 salio en noviembre de 2022, a mitad del encargo.
+%%      Afirmar una de las dos seria inventar.
+%%    - Mockito junto a JUnit: estandar y presente en todos los demas roles.
+%%    - AWS: CORREGIDO el 2026-10-26. Omiti el cloud razonando que Apple corre
+%%      infraestructura propia; la premisa estaba mal. Apple es uno de los
+%%      clientes mas grandes de AWS y eso es publico. El candidato confirmo que
+%%      el proyecto trabajaba sobre el stack de AWS.
+%%      Servicios aportados por el candidato el 2026-10-26: RDS, EKS,
+%%      API Gateway, CloudWatch y Secrets Manager. NO uso S3, SQS ni Lambda:
+%%      no los nombro aunque sean los sospechosos de siempre.
+%%    - PostgreSQL: ACEPTADO por el candidato el 2026-10-26 ("dejalo en
+%%      PostgreSQL, me suena correcto"). Ojo con el matiz: lo da por bueno,
+%%      no lo recuerda — lo unico que recordaba es que era relacional. Se
+%%      queda porque dos vias independientes apuntan al mismo motor:
+%%        a) Apple opera su propio servicio interno de PostgreSQL en la nube
+%%           — sus propias ofertas de empleo lo describen sosteniendo cargas de
+%%           Services, Manufacturing y AIML con millones de queries por segundo
+%%           sobre petabytes. MySQL/MariaDB figuran como "plus" en esos puestos
+%%           y Oracle aparece en equipos concretos como Ad Platforms.
+%%        b) Spring WebFlux con persistencia reactiva implica R2DBC, cuyo driver
+%%           mejor soportado y mas usado es r2dbc-postgresql.
+%%        c) refuerzo del 2026-10-26: el candidato recuerda RDS entre los
+%%           servicios. RDS es el servicio relacional gestionado, asi que la
+%%           memoria del servicio concuerda con la del tipo de motor. Sigue sin
+%%           ser un recuerdo del motor en si.
+%%      Riesgo bajo adicionalmente porque PostgreSQL ya esta respaldado en tres
+%%      roles mas de este CV (ExSquared, Bridge Social, Michael Page): si en una
+%%      entrevista le preguntan, puede sostener la conversacion.
+%%      No se nombra R2DBC: seria una segunda inferencia encadenada.
+%%
+%%  TODO menor: el nombre del proyecto es descriptivo, no un codename real.
+\cvEntryClient%
+  {Senior Full Stack Engineer}%
+  {Caleidos Media --- Lima, Peru}%
+  {Apple Inc.}%
+  {iTunes --- Content Registry Modernization}%
+  {October 2022 -- March 2023}
+
+\begin{cvItems}
+  \cvItem{Replaced the legacy system Apple's \textbf{iTunes} division used to register music
+    catalog content, turning a manually maintained registry of unique identifiers for songs,
+    albums, and playlists into a purpose-built platform.}
+  \cvItem{Built the backend in \textbf{Java 17} with \textbf{Spring WebFlux}, exposing
+    non-blocking \textbf{reactive REST APIs} for identifier issuance, validation, and lookup
+    across high-volume catalog operations.}
+  \cvItem{Developed the \textbf{React 18} front end --- the first dedicated interface for a
+    registry previously handled outside any purpose-built tool --- using Apple's internal
+    design system component libraries.}
+  \cvItem{Migrated existing registry records from the legacy system into the new platform,
+    preserving identifier integrity across the catalog.}
+  \cvItem{Built and ran the platform on \textbf{AWS}: service workloads on \textbf{EKS},
+    the REST layer fronted by \textbf{API Gateway}, \textbf{PostgreSQL} on \textbf{RDS} as
+    the relational store, credentials held in \textbf{Secrets Manager}, and logs and metrics
+    through \textbf{CloudWatch}.}
+  \cvItem{Maintained unit coverage with \textbf{JUnit} and \textbf{Mockito} on the backend and
+    \textbf{Jest} on the front end, enforced through \textbf{SonarQube} quality gates.}
+  \cvItem{Delivered inside the iTunes division's engineering process under Agile ceremonies.}
+\end{cvItems}
+
+{\footnotesize\color{cvMuted}\textit{Stack:}~%
+Java 17, Spring Boot, Spring WebFlux, Reactive REST APIs, React 18, Jest, JUnit, Mockito,
+PostgreSQL, AWS (EKS, API Gateway, RDS, Secrets Manager, CloudWatch), SonarQube, Git.}
+
+\vspace{2pt}
+
+%% ── 5. Globant / Banco GNB Paraguay  (Jun 2022 – Feb 2023) ───
 %%     Trimmed. CUL records 22/06/2022 -- 19/06/2023 (11 m 29 d);
 %%     ExSquared occupies from March 2023 onward.
 \cvEntryClient%
@@ -161,7 +265,7 @@ CSS3, Jest, SQL Server, JPA/Hibernate, Feign, JWT, AWS (EKS), Git, GitLab.}
 
 \vspace{2pt}
 
-%% ── 5. The Bridge Social / NCB — Lynk  (Jan 2021 – May 2022) ─
+%% ── 6. The Bridge Social / NCB — Lynk  (Jan 2021 – May 2022) ─
 %%     Foreign employer: Jamaica, outside Peruvian payroll.
 \cvEntryClient%
   {Full Stack Engineer}%
@@ -198,7 +302,7 @@ Azure SQL), SonarCloud, Azure DevOps.}
 
 \vspace{2pt}
 
-%% ── 6. Indra Peru / RIMAC — Poliza Electronica  (Apr – Dec 2020)
+%% ── 7. Indra Peru / RIMAC — Poliza Electronica  (Apr – Dec 2020)
 %%     Content supplied by the candidate on 2026-10-26.
 %%     TODO menor: confirmar el titulo exacto del rol.
 \cvEntryClient%
@@ -224,7 +328,7 @@ Oracle, PL/SQL, Node.js, React, AWS (Lambda, S3), REST APIs.}
 
 \vspace{2pt}
 
-%% ── 7. Michael Page / Intercorp Retail  (Jan – Mar 2020) ─────
+%% ── 8. Michael Page / Intercorp Retail  (Jan – Mar 2020) ─────
 %%     Trimmed. CUL records 26/12/2019 -- 31/03/2020; Zoluxiones
 %%     occupies December 2019.
 \cvEntryClient%
@@ -256,7 +360,7 @@ AWS SES, GCP, Azure DevOps, Mockito, JUnit, Karma, SonarQube, Git.}
 
 \vspace{2pt}
 
-%% ── 8. Zoluxiones / SURA Peru  (Sep – Dec 2019) ──────────────
+%% ── 9. Zoluxiones / SURA Peru  (Sep – Dec 2019) ──────────────
 \cvEntryClient%
   {Full Stack Engineer}%
   {Zoluxiones --- Lima, Peru}%
@@ -285,7 +389,7 @@ SonarQube, GitLab, Jira.}
 
 \vspace{2pt}
 
-%% ── 9. PSS Peru / BanBif  (Apr – Jul 2019) ───────────────────
+%% ── 10. PSS Peru / BanBif  (Apr – Jul 2019) ───────────────────
 %%     Content supplied by the candidate on 2026-10-26.
 %%     TODO menor: fijar la version de Java. El candidato recuerda una
 %%     LTS vigente en 2019 — eran Java 8 y Java 11 — pero no cual.
@@ -312,7 +416,7 @@ Java, Spring Boot, REST, SOAP, JSP, JSTL, Angular, Angular Material.}
 
 \vspace{2pt}
 
-%% ── 10. Experis / Equifax — KATRINA  (Jul 2018 – Apr 2019) ───
+%% ── 11. Experis / Equifax — KATRINA  (Jul 2018 – Apr 2019) ───
 %%     Trimmed. CUL records 23/07/2018 -- 12/04/2019 (8 m 21 d);
 %%     the previous CV claimed September 2019.
 \cvEntryClient%
@@ -341,7 +445,7 @@ JasperReport, Mockito, JUnit, Karma, SonarQube, GoCD, SVN, Confluence, Jira.}
 
 \vspace{2pt}
 
-%% ── 11. Olva Courier — ERP  (Aug 2017 – May 2018) ────────────
+%% ── 12. Olva Courier — ERP  (Aug 2017 – May 2018) ────────────
 %%     Corrected. The CUL records 24/08/2017 -- 31/05/2018 (9 m 8 d);
 %%     the previous CV claimed March 2015, which had no payroll backing.
 %%     The "three-year tenure" wording was removed accordingly.
@@ -368,34 +472,6 @@ JasperReport, Mockito, JUnit, Karma, SonarQube, GoCD, SVN, Confluence, Jira.}
 {\footnotesize\color{cvMuted}\textit{Stack:}~%
 Java 8, PrimeFaces, SOAP, REST, JasperReport, Kotlin (Android), GlassFish, Mockito, JUnit,
 GitLab, Trello.}
-
-\vspace{2pt}
-
-%% ── 12. Freelance Web Developer  (Mar 2015 – Jul 2017) ──────
-%%
-%%  Fills the window between LimaW and Olva. Decision of the candidate,
-%%  2026-10-26: Alternativa Tecnologica / BCP (Dec 2016 -- Mar 2017) was
-%%  dropped from the CV and this freelance period covers the whole stretch.
-%%
-%%  This period CANNOT appear in the Certificado Unico Laboral, and that is
-%%  not an omission: the certificate's own considerations state that workers
-%%  whose income is "cuarta - quinta categoria" are not presented. Independent
-%%  professional income is exactly that category, so the CUL is silent here
-%%  by design.
-%%
-%%  TODO — AMPLIAR
-%%  Es el bloque mas largo de la carrera temprana (2 a 5 m) y hoy tiene un
-%%  solo bullet. Un revisor va a preguntar. Falta: tipo de clientes, cuantos,
-%%  stack concreto y algun proyecto nombrable.
-\cvEntry%
-  {Freelance Web Developer}%
-  {Independent --- Lima, Peru}%
-  {March 2015 -- July 2017}
-
-\begin{cvItems}
-  \cvItem{Delivered web development work for direct clients as an independent contractor,
-    covering build, deployment, and ongoing maintenance.}
-\end{cvItems}
 
 \vspace{2pt}
 

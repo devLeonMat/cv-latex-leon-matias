@@ -89,10 +89,17 @@ jobs:
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
-      - name: Compile resume-latam.tex (English — LATAM · reconciled history)
+      - name: Compile resume-latam-es.tex (Spanish — LATAM · historial conciliado)
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: resume-latam.tex
+          root_file: resume-latam-es.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-usa.tex (English — USA · reconciled history + Apple)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-usa.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
@@ -183,11 +190,19 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      - name: Upload LATAM English PDF as workflow artifact
+      - name: Upload LATAM Spanish PDF as workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: resume-roslin-leon-matias-latam-en
-          path: resume-latam.pdf
+          name: resume-roslin-leon-matias-latam-es
+          path: resume-latam-es.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload USA English PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-usa-en
+          path: resume-usa.pdf
           if-no-files-found: error
           retention-days: 90
 
@@ -214,12 +229,13 @@ jobs:
             | Español — React Native · Full Stack | resume-react-native-es.pdf |
             | English — Extended · full career history (11 roles) | resume-extended.pdf |
             | Español — Extendido · historial completo (11 roles) | resume-extended-es.pdf |
-            | English — LATAM · reconciled against the Certificado Único Laboral | resume-latam.pdf |
+            | Español — LATAM · historial conciliado contra el Certificado Único Laboral | resume-latam-es.pdf |
+            | English — USA · reconciled history, includes Apple Inc. | resume-usa.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
             - Compiled with: XeLaTeX
-          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-extended.pdf,resume-extended-es.pdf,resume-latam.pdf"
+          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-extended.pdf,resume-extended-es.pdf,resume-latam-es.pdf,resume-usa.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true
