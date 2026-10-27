@@ -185,7 +185,7 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
 | ~~`resume-extended.tex`~~ | **Extendido** (11 roles) — *fuera de la generación* | EN | `extended/` | `sections/languages` |
 | ~~`resume-extended-es.tex`~~ | **Extendido** (11 roles) — *fuera de la generación* | ES | `extended-es/` | `es/languages-es` |
-| `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL (12 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
+| `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL + **Apple Inc.** (13 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
 | `resume-usa.tex` | **USA** — conciliado + **Apple Inc.** (13 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
 
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
@@ -401,14 +401,15 @@ Por el ADR de LinkedIn, al entrar Indra al CV debe entrar también a `LINKEDIN.m
 
 ### Separación por idioma y mercado (2026-10-26)
 
-Decisión del candidato: **LATAM va en español, USA va en inglés**, y Apple entra solo en la de USA.
+Decisión del candidato: **LATAM va en español, USA va en inglés**. Apple entraba solo en la de USA;
+desde el 2026-10-27 va en las dos y en las ocho condensadas (ver el ADR del 2026-10-27 más abajo).
 
 | | Idioma | Roles | Apple |
 |---|--------|-------|-------|
-| `resume-latam-es.tex` | español | 13 | no |
-| `resume-usa.tex` | inglés | 14 | **sí** |
+| `resume-latam-es.tex` | español | 13 | **sí** (desde 2026-10-27) |
+| `resume-usa.tex` | inglés | 13 | **sí** |
 
-Los dos comparten la misma conciliación; `latam-es/` es espejo de `usa/` menos Apple. Las
+Los dos comparten la misma conciliación; `latam-es/` es espejo de `usa/`, Apple incluido. Las
 traducciones de los diez roles que ya existían se tomaron de `extended-es/experience-es.tex` para no
 retraducir y mantener la voz del repo; solo Indra y PSS se escribieron nuevos en español (el bloque
 freelance también, pero se retiró después).
@@ -445,7 +446,7 @@ Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `u
   aporta poco en un filtro ATS. **S3, SQS y Lambda quedan fuera** de esta entrada: son los
   sospechosos de siempre en un stack así, pero el candidato no los nombró. En `usa/skills.tex` se
   agregaron **API Gateway** y **Secrets Manager**, que antes no figuraban; su único respaldo es
-  Apple, así que **no van a `latam-es/`**, donde Apple no existe.
+  Apple. Entraron a `latam-es/skills-es.tex` el 2026-10-27, cuando Apple entró a ese variante.
 - **PostgreSQL — inferido y aceptado**, con un refuerzo posterior (2026-10-26). El candidato
   recuerda **RDS** entre los servicios, que es el servicio relacional gestionado de AWS: la
   memoria del servicio concuerda con la del tipo de motor, aunque no es un recuerdo del motor en
@@ -506,6 +507,40 @@ contra el Certificado Único Laboral, que es más de lo que la extendida podía 
 CV extendido. Al retirarse la extendida, ese espejo apunta a un documento que ya no se genera.
 `LINKEDIN.md` debería regenerarse desde `usa/experience.tex`, que trae las fechas conciliadas, Indra
 y Apple. No se hizo en este cambio: es trabajo de contenido, no de renombrado.
+
+---
+
+## ADR — Apple Inc. en todas las variantes (2026-10-27)
+
+Decisión del candidato: **el encargo de Apple fue temporal y concurrente**, así que no compite con
+Globant y vale en los doce documentos, no solo en el de USA.
+
+| Dónde | Cómo figura |
+|-------|-------------|
+| `usa/experience.tex` | Entrada completa con bullets y stack (ya estaba) |
+| `latam-es/experience-es.tex` | Entrada completa, traducida — **nueva**, bloque 4 de 13 |
+| Las ocho condensadas (EN) | `\cvMiniEntry` en *Additional Experience*, con fechas (ya estaba) |
+| Las ocho condensadas (ES) | `\cvMiniEntry` en *Experiencia Adicional*, con fechas — **nuevo** |
+
+El mini-entry de Apple es el único de esa sección que lleva fechas: sin ellas, un lector asume que
+va en la secuencia y el solape con Globant se lee como error.
+
+**El solape con Globant se conserva en todas partes.** El CUL registra Caleidos Media
+17/10/2022 – 31/03/2023 en paralelo con Globant Perú 22/06/2022 – 19/06/2023. Las dos están
+documentadas, así que ya no se evalúa recortar Globant: la etiqueta de concurrente las sostiene.
+Esto cierra el pendiente que quedaba del 2026-10-26.
+
+También entró Apple a la lista de clientes de los *Logros Destacados* de `es/`, `backend-ai-es/`,
+`react-native-es/`, `backend-ai/` y `react-native/`; `sections/` ya la tenía. Las dos Tech Lead no
+listan clientes en sus logros, así que ahí solo va el mini-entry.
+
+**`latam-es/skills-es.tex` recibió `API Gateway` y `Secrets Manager`**, cuyo único respaldo es
+Apple. Eso revierte la exclusión del 2026-10-26, que se justificaba únicamente en que Apple no
+figuraba en ese variante.
+
+Las decisiones de contenido de la entrada (Java 17, React 18, Spring Boot sin versión, los cinco
+servicios de AWS, PostgreSQL inferido, SonarQube) siguen documentadas en `usa/experience.tex` y
+**no se reabren**; `latam-es/` apunta allí en lugar de duplicar el razonamiento.
 
 ## Compilación
 
@@ -570,7 +605,8 @@ make view       # abre PDF en macOS (Preview)
 - [x] **Servicios de AWS** del proyecto de Apple — RDS, EKS, API Gateway, CloudWatch y Secrets
       Manager, aportados por el candidato 2026-10-26
 - [x] **PostgreSQL** en la entrada de Apple — inferido y aceptado por el candidato 2026-10-26
-- [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
+- [x] Solape Apple / Globant — **se conserva** (2026-10-27): el encargo fue temporal y
+      concurrente, y las dos fechas están en el CUL
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
