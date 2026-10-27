@@ -7,14 +7,15 @@
 %%  Regla de conciliación: cuando dos registros de planilla se solapan,
 %%  gana el contrato más extenso; el más corto se recorta al espacio libre
 %%  y se descarta si queda por debajo de 25 días. Cero solapes por
-%%  construcción.
+%%  construcción, con una excepción deliberada: Apple (bloque 4), que es
+%%  concurrente con Globant y entró el 2026-10-27.
 %%
 %%  Las fechas vienen del CUL salvo en los tres empleadores extranjeros
 %%  (ExSquared, DaCodes, The Bridge Social), que no pueden figurar en
 %%  planilla peruana.
 %%
 %%  Descartados por la regla: Kruger Corp / BCP, NTT Data / Telefónica,
-%%  Tata / SUNAT, Caleidos / Apple, Quality & Development / AUNA,
+%%  Tata / SUNAT, Quality & Development / AUNA,
 %%  Neoris / Cencosud, Q System / Inkafarma, AVLA y el 2º contrato de
 %%  Manpower.
 %%
@@ -32,10 +33,11 @@
 %%  Fusionadas (2026-10-26): WProducciones y LimaW son la misma empresa, así
 %%  que sus dos registros de planilla entran como una sola entrada de 10 meses.
 %%
-%%  12 roles — la carrera abre en mayo 2014, no en enero 2014.
+%%  13 roles — la carrera abre en mayo 2014, no en enero 2014.
 %%
-%%  Apple Inc. queda FUERA de este variante a propósito: va solo en el
-%%  variante USA (usa/experience.tex).
+%%  Apple Inc. ENTRA a este variante desde el 2026-10-27 (antes iba solo en
+%%  el variante USA): el encargo fue temporal y concurrente, así que el
+%%  candidato decidió mostrarlo en todos los CV. Ver bloque 4.
 %% ============================================================
 
 \section{Experiencia Profesional}
@@ -141,7 +143,64 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 
 \vspace{2pt}
 
-%% ── 4. Globant / Banco GNB Paraguay  (jun 2022 – feb 2023) ───
+%% ── 4. Caleidos Media / Apple Inc.  (oct 2022 – mar 2023) ───
+%%
+%%  VÍNCULO CONCURRENTE — el único solape deliberado de este documento.
+%%  El CUL registra Caleidos Media 17/10/2022 -- 31/03/2023 en paralelo con
+%%  Globant Perú 22/06/2022 -- 19/06/2023. Los dos son reales y los dos están
+%%  documentados, así que la entrada conserva las fechas del certificado en
+%%  lugar de recortar una para fingir una secuencia limpia.
+%%  Entró a este variante el 2026-10-27 por decisión del candidato: el encargo
+%%  fue temporal y concurrente, así que no compite con Globant y vale en todos
+%%  los CV. Antes figuraba solo en el variante USA.
+%%
+%%  El último bullet dice «encargo por proyecto» a propósito (decisión del
+%%  2026-10-27, misma redacción que usa/experience.tex): quien note el solape
+%%  encuentra la respuesta en la misma entrada. Lo que el CV NO dice es que
+%%  corría junto a otro contrato — nombrar el doble empleo es el flag que se
+%%  quiere evitar; el tipo de encargo alcanza y el resto va en entrevista.
+%%
+%%  Contenido aportado por el candidato el 2026-10-26. Las decisiones de
+%%  contenido —Java 17 (no 19), React 18, Spring Boot sin número de versión,
+%%  AWS con los servicios que él nombró, PostgreSQL inferido y aceptado,
+%%  SonarQube = "Sonnet"— están documentadas en detalle en usa/experience.tex.
+%%  No reabrirlas aquí.
+\cvEntryClient%
+  {Ingeniero Full Stack Senior}%
+  {Caleidos Media --- Lima, Perú}%
+  {Apple Inc.}%
+  {iTunes --- Modernización del Registro de Contenido}%
+  {Octubre 2022 -- Marzo 2023}
+
+\begin{cvItems}
+  \cvItem{Reemplazó el sistema legado con el que la división \textbf{iTunes} de Apple registraba
+    el contenido del catálogo musical, convirtiendo un registro de identificadores únicos de
+    canciones, álbumes y playlists mantenido a mano en una plataforma dedicada.}
+  \cvItem{Desarrolló el backend en \textbf{Java 17} con \textbf{Spring WebFlux}, exponiendo
+    \textbf{APIs REST reactivas} no bloqueantes para emisión, validación y consulta de
+    identificadores sobre operaciones de catálogo de alto volumen.}
+  \cvItem{Construyó el frontend en \textbf{React 18} --- la primera interfaz dedicada para un
+    registro que antes se manejaba fuera de cualquier herramienta propia --- sobre las librerías
+    de componentes del sistema de diseño interno de Apple.}
+  \cvItem{Migró los registros existentes del sistema legado a la nueva plataforma, preservando la
+    integridad de los identificadores en todo el catálogo.}
+  \cvItem{Construyó y operó la plataforma en \textbf{AWS}: cargas de servicio en \textbf{EKS},
+    capa REST detrás de \textbf{API Gateway}, \textbf{PostgreSQL} en \textbf{RDS} como almacén
+    relacional, credenciales en \textbf{Secrets Manager}, y logs y métricas vía
+    \textbf{CloudWatch}.}
+  \cvItem{Mantuvo la cobertura unitaria con \textbf{JUnit} y \textbf{Mockito} en el backend y
+    \textbf{Jest} en el frontend, con quality gates en \textbf{SonarQube}.}
+  \cvItem{Entregó como \textbf{encargo por proyecto} a través de Caleidos Media, trabajando
+    dentro del proceso de ingeniería de la división iTunes bajo ceremonias Agile.}
+\end{cvItems}
+
+{\footnotesize\color{cvMuted}\textit{Stack:}~%
+Java 17, Spring Boot, Spring WebFlux, APIs REST reactivas, React 18, Jest, JUnit, Mockito,
+PostgreSQL, AWS (EKS, API Gateway, RDS, Secrets Manager, CloudWatch), SonarQube, Git.}
+
+\vspace{2pt}
+
+%% ── 5. Globant / Banco GNB Paraguay  (jun 2022 – feb 2023) ───
 \cvEntryClient%
   {Ingeniero Full Stack Senior}%
   {Globant --- Remoto, Paraguay}%
@@ -173,7 +232,7 @@ CSS3, Jest, SQL Server, JPA/Hibernate, Feign, JWT, AWS (EKS), Git, GitLab.}
 
 \vspace{2pt}
 
-%% ── 5. The Bridge Social / NCB — Lynk  (ene 2021 – may 2022) ─
+%% ── 6. The Bridge Social / NCB — Lynk  (ene 2021 – may 2022) ─
 \cvEntryClient%
   {Ingeniero Full Stack}%
   {The Bridge Social --- Remoto, Jamaica}%
@@ -208,7 +267,7 @@ Azure SQL), SonarCloud, Azure DevOps.}
 
 \vspace{2pt}
 
-%% ── 6. Indra Perú / RIMAC — Póliza Electrónica  (abr – dic 2020)
+%% ── 7. Indra Perú / RIMAC — Póliza Electrónica  (abr – dic 2020)
 %%     Contenido aportado por el candidato el 2026-10-26.
 %%     TODO menor: confirmar el título exacto del rol.
 \cvEntryClient%
@@ -235,7 +294,7 @@ Oracle, PL/SQL, Node.js, React, AWS (Lambda, S3), APIs REST.}
 
 \vspace{2pt}
 
-%% ── 7. Michael Page / Intercorp Retail  (ene – mar 2020) ─────
+%% ── 8. Michael Page / Intercorp Retail  (ene – mar 2020) ─────
 %%     Recortado. El CUL registra 26/12/2019 -- 31/03/2020; Zoluxiones
 %%     ocupa diciembre de 2019.
 \cvEntryClient%
@@ -267,7 +326,7 @@ AWS SES, GCP, Azure DevOps, Mockito, JUnit, Karma, SonarQube, Git.}
 
 \vspace{2pt}
 
-%% ── 8. Zoluxiones / SURA Perú  (sep 2019 – dic 2019) ─────────
+%% ── 9. Zoluxiones / SURA Perú  (sep 2019 – dic 2019) ─────────
 \cvEntryClient%
   {Ingeniero Full Stack}%
   {Zoluxiones --- Lima, Perú}%
@@ -296,7 +355,7 @@ SonarQube, GitLab, Jira.}
 
 \vspace{2pt}
 
-%% ── 9. PSS Perú / BanBif  (abr – jul 2019) ───────────────────
+%% ── 10. PSS Perú / BanBif  (abr – jul 2019) ───────────────────
 %%     Contenido aportado por el candidato el 2026-10-26.
 %%     Java 11: CONFIRMADO por el candidato el 2026-10-27. Encaja: la 11
 %%     salió en sep 2018 y era la LTS vigente en abr – jul 2019.
@@ -323,7 +382,7 @@ Java 11, Spring Boot, REST, SOAP, JSP, JSTL, Angular, Angular Material.}
 
 \vspace{2pt}
 
-%% ── 10. Experis / Equifax — KATRINA  (jul 2018 – abr 2019) ───
+%% ── 11. Experis / Equifax — KATRINA  (jul 2018 – abr 2019) ───
 %%     Corregido. El CUL cierra el 12/04/2019; el CV anterior decía sep 2019.
 \cvEntryClient%
   {Desarrollador Senior de Java}%
@@ -352,7 +411,7 @@ JasperReport, Mockito, JUnit, Karma, SonarQube, GoCD, SVN, Confluence, Jira.}
 
 \vspace{2pt}
 
-%% ── 11. Olva Courier — ERP  (ago 2017 – may 2018) ────────────
+%% ── 12. Olva Courier — ERP  (ago 2017 – may 2018) ────────────
 %%     Corregido. El CUL registra 24/08/2017 -- 31/05/2018; el CV anterior
 %%     decía mar 2015, sin respaldo de planilla. Se reescribió el bullet que
 %%     hablaba de "una permanencia de tres años".
@@ -383,7 +442,7 @@ GitLab, Trello.}
 
 \vspace{2pt}
 
-%% ── 12. LimaW / WProducciones — Biometría Zircon  (may 2014 – feb 2015)
+%% ── 13. LimaW / WProducciones — Biometría Zircon  (may 2014 – feb 2015)
 %%     Entrada fusionada. Confirmado por el candidato el 2026-10-26:
 %%     WProducciones y LimaW son la misma empresa. El CUL trae dos registros
 %%     — WProducciones 01/05/2014 -- 31/01/2015 (9 m) y LimaW

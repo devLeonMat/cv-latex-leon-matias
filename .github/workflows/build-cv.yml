@@ -75,14 +75,14 @@ jobs:
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
-      - name: Compile resume-latam-es.tex (Spanish — LATAM · historial conciliado)
+      - name: Compile resume-latam-es.tex (Spanish — LATAM · extendido / historial conciliado)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume-latam-es.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
-      - name: Compile resume-usa.tex (English — USA · reconciled history + Apple)
+      - name: Compile resume-usa.tex (English — USA · extended / reconciled history + Apple)
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume-usa.tex
@@ -197,8 +197,8 @@ jobs:
             | Español — Tech Lead | resume-techlead-es.pdf |
             | English — React Native · Full Stack | resume-react-native.pdf |
             | Español — React Native · Full Stack | resume-react-native-es.pdf |
-            | Español — LATAM · historial conciliado contra el Certificado Único Laboral | resume-latam-es.pdf |
-            | English — USA · reconciled history, includes Apple Inc. | resume-usa.pdf |
+            | Español — **LATAM · EXTENDIDO** · historial completo conciliado contra el Certificado Único Laboral | resume-latam-es.pdf |
+            | English — **USA · EXTENDED** · complete reconciled history, includes Apple Inc. | resume-usa.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`

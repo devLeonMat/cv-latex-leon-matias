@@ -154,6 +154,16 @@
   \vspace{6pt}%
 }
 
+%% \cvVariantTag{text}
+%%   Renders a one-line variant label under the contact block — states
+%%   outright which edition of the CV this is (e.g. the extended one).
+%%   Plain text, ATS-safe.
+\newcommand{\cvVariantTag}[1]{%
+  \vspace{-2pt}%
+  {\fontsize{9}{11}\selectfont\bfseries\color{cvAccent}#1}\par%
+  \vspace{6pt}%
+}
+
 %% \cvSep  —  separator between contact items
 \newcommand{\cvSep}{\,\textbar\,}
 
