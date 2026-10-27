@@ -433,8 +433,10 @@ Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `u
   entra en la entrada y en el stack. **Faltan los servicios concretos**: «AWS» a secas aporta poco
   en un CV y casi nada en un filtro ATS; lo que pesa son EKS/ECS, S3, RDS o Aurora, DynamoDB,
   SQS/SNS, CloudWatch, API Gateway. No se inventan.
-- **PostgreSQL — inferido, no confirmado** (2026-10-26). El candidato solo recuerda que era
-  relacional y pidió investigar lo típico. Dos vías independientes apuntan al mismo motor: Apple
+- **PostgreSQL — inferido y aceptado** (2026-10-26). El candidato solo recordaba que era
+  relacional, pidió investigar lo típico y aceptó el resultado: «dejalo en PostgreSQL, me suena
+  correcto». Lo da por bueno, no lo recuerda — el matiz importa si alguien reabre el tema.
+  Dos vías independientes apuntan al mismo motor: Apple
   opera su **propio servicio interno de PostgreSQL** (sus ofertas de empleo lo describen sosteniendo
   cargas de Services, Manufacturing y AIML, con millones de queries por segundo sobre petabytes;
   MySQL/MariaDB aparecen como «plus» y Oracle en equipos puntuales como Ad Platforms), y
@@ -509,7 +511,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
 - [ ] Confirmar la versión de Java de Apple: puesto 17 (LTS vigente) en lugar de 19
 - [ ] Listar los **servicios de AWS** concretos del proyecto de Apple (hoy dice solo «AWS»)
-- [ ] Confirmar o corregir **PostgreSQL** en la entrada de Apple: está inferido, no recordado
+- [x] **PostgreSQL** en la entrada de Apple — inferido y aceptado por el candidato 2026-10-26
 - [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
