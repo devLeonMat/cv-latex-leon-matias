@@ -415,9 +415,26 @@ freelance también, pero se retiró después).
 **Apple rompe la propiedad de cero solapes, a propósito.** El CUL registra Caleidos Media
 17/10/2022 – 31/03/2023 **en paralelo** con Globant Perú 22/06/2022 – 19/06/2023. Los dos son reales
 y los dos están documentados, así que `usa/experience.tex` conserva las fechas del certificado en
-lugar de recortar una para fingir una secuencia limpia. Es el único solape del CV.
-Alternativa si se quiere estrictamente secuencial: cerrar Globant en oct 2022 (4 m en vez de 8 m 7 d)
-y correr Apple hasta feb 2023.
+lugar de recortar una para fingir una secuencia limpia. Es el único solape del CV: en el documento
+queda como **oct 2022 – feb 2023, cinco meses**.
+
+**Resuelto el 2026-10-27: declarado, no recortado.** Decisión del candidato, sobre dos datos que él
+aportó: Globant era la **jornada principal** y Caleidos un **encargo por proyecto**.
+
+- **No se recorta Globant** a oct 2022. Lo dejaría en 4 meses, que se lee como paso corto, y Apple
+  es la línea de más valor del CV. Nótese que el argumento «recortar inventa fechas» no aplica acá:
+  este documento ya recorta Globant de jun 2023 a feb 2023 por decisión del 2026-10-21.
+- **No se deja crudo.** Un solape sin explicar parece error de tipeo, y ante un lector
+  estadounidense dos jornadas completas en paralelo levantan la pregunta de doble empleo — más con
+  Apple, que tiene política estricta.
+- **Cómo queda**: el último bullet de la entrada dice «delivered as a **project-based engagement**
+  through Caleidos Media». Quien note el solape encuentra la respuesta en la misma entrada, sin
+  línea extra ni riesgo de desborde.
+- **Lo que el CV NO dice**: que corría junto a otro contrato. Nombrar el doble empleo es el flag que
+  se quiere evitar; el tipo de encargo alcanza. Si preguntan en entrevista, ahí se explica.
+
+La alternativa descartada era cerrar Globant en oct 2022 (4 m en vez de 8 m) y correr Apple hasta
+mar 2023.
 
 **Contenido de Apple aportado por el candidato** (2026-10-26): división **iTunes**; reemplazo del
 sistema legado de registro de contenido musical; digitalización del registro de **códigos únicos**
@@ -529,7 +546,8 @@ make view       # abre PDF en macOS (Preview)
 - [x] **Servicios de AWS** del proyecto de Apple — RDS, EKS, API Gateway, CloudWatch y Secrets
       Manager, aportados por el candidato 2026-10-26
 - [x] **PostgreSQL** en la entrada de Apple — inferido y aceptado por el candidato 2026-10-26
-- [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
+- [x] Solape Apple / Globant — **declarado, no recortado** (2026-10-27). Caleidos fue encargo
+      por proyecto; el último bullet de la entrada lo dice
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
