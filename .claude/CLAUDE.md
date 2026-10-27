@@ -89,7 +89,8 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | Empresa | Rol | Cliente / Proyecto | Período |
 |---------|-----|--------------------|---------|
 | The Bridge Social | Full Stack Engineer | National Commercial Bank / Lynk — Remoto, **Jamaica** | Ene 2021–May 2022 |
-| Kruger Corp | Senior Full Stack Engineer | **BCP** / Tío Grou | Jul 2020–Dic 2020 |
+| ~~Kruger Corp~~ | Senior Full Stack Engineer | **BCP** / Tío Grou | Jul 2020–Dic 2020 |
+| Indra | Senior Full Stack Engineer | **RIMAC Seguros** / Póliza Electrónica | Abr 2020–Dic 2020 |
 | Michael Page | Full Stack Engineer | Intercorp Retail / Tracking de incidentes | Dic 2019–Jun 2020 |
 | Zoluxiones | Full Stack Engineer | SURA Perú / Contrato Digital | Sep 2019–Dic 2019 |
 | Experis / Manpower | Senior Java Engineer | Equifax / KATRINA | Jul 2018–Sep 2019 |
@@ -97,9 +98,10 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | LimaW | Java Developer | Biometría Zircon | Ene 2014–Feb 2015 |
 
 **Correcciones sobre lo que decía este documento antes:**
-- **BCP fue cliente de Kruger Corp, no de INDRA.** INDRA (cliente RIMAC, proyecto Póliza
-  Electrónica, abr–ago 2020) se retiró del CV por decisión del candidato; Michael Page cubre
-  ese período.
+- **BCP fue cliente de Kruger Corp, no de INDRA.** Eso sigue siendo cierto como hecho, pero
+  **desde el 2026-10-27 Kruger ya no figura en ninguna variante compilada** y BCP se fue con
+  ella: la conciliación contra el CUL deja a Indra en esa ventana (abr–dic 2020, 9 meses) y
+  Kruger cae entera dentro de Indra (4 m 23 d). Ver el ADR del 2026-10-27 más abajo.
 - The Bridge Social es **Jamaica**, no "Remote USA", y terminó en **may 2022**, no ene 2022.
 - Olva Courier abarca **mar 2015 – jun 2018**, no solo 2017–2018.
 
@@ -213,8 +215,11 @@ lugar de full stack genérico. Tech Lead y las extendidas no se tocaron.
 `sections/{summary,skills,experience}.tex` y `es/*` los usa **solo** la variante Full Stack — editarlos
 no afecta a las otras variantes, que tienen sus propios directorios.
 
-**Claims sin respaldo eliminados** (quedan cero ocurrencias en los 50 `.tex`): `HIPAA`,
-`LangChain`, `RIMAC` y los bullets de React Native dentro de la variante backend.
+**Claims sin respaldo eliminados**: `HIPAA`, `LangChain` y los bullets de React Native dentro de
+la variante backend. `RIMAC` también estuvo en esa lista, y **salió de ella el 2026-10-27**: al
+entrar Indra a las ocho condensadas, RIMAC vuelve a tener respaldo y figura como su cliente. La
+condición que fijaba el ADR —«para recuperarlo hay que devolver INDRA, no listar el cliente
+suelto»— se cumplió.
 
 **React Native: confirmado, no cuestionar** (2026-10-21). El candidato confirmó explícitamente
 que puede defender los bullets de React Native en **DaCodes**, **Globant** y **The Bridge
@@ -225,8 +230,8 @@ variantes **react-native** y **extendida**, que son las que lo usan. Están fuer
 fuera de las variantes **general/Full Stack** y **Tech Lead**, que nunca los tuvieron.
 No reabrir este tema ni "corregirlo" contra el Word. El resumen ES
 de backend describía AgentCloud como plataforma de agentes IA con LLMs; es un SaaS de seguros de
-salud. RIMAC era el proyecto de INDRA, retirada del CV: para recuperarlo hay que devolver INDRA,
-no listar el cliente suelto.
+salud. RIMAC era el proyecto de INDRA: la regla de «no listar el cliente suelto» se respetó
+devolviendo Indra misma a las ocho condensadas el 2026-10-27.
 
 **Páginas**: el español ocupa ~15% más que el inglés con el mismo contenido. `backend-ai-es`
 necesitó bajar de 25 a 20 bullets para volver a 2 páginas tras la regresión de `eb4c3ad`.
@@ -529,6 +534,39 @@ y Apple. No se hizo en este cambio: es trabajo de contenido, no de renombrado.
 
 ---
 
+## ADR — Indra reemplaza a Kruger en las ocho condensadas (2026-10-27)
+
+Decisión del candidato: **las ocho condensadas adoptan la conciliación del CUL en esa ventana**,
+igual que LATAM y USA. Antes cada idioma decía una cosa distinta, y las dos eran incompatibles:
+
+| | Decía antes | Dice ahora |
+|---|---|---|
+| Las cuatro EN | `INDRA \| Clients: BCP, RIMAC` | `Indra \| Client: RIMAC Seguros` |
+| Las cuatro ES | `Kruger Corp \| Cliente: BCP` | `Indra \| Cliente: RIMAC Seguros` |
+
+La versión EN era la peor de las dos: atribuía **BCP a Indra**, que es justo el error que el ADR
+del 2026-10-21 había corregido (BCP fue cliente de Kruger; RIMAC, de Indra). Las ES tenían el
+hecho bien pero el rol equivocado según el CUL.
+
+**BCP sale de estas ocho variantes**, porque su único respaldo era Kruger. Se retiró de donde
+figuraba como cliente: los *Logros Destacados* de `sections/`, `es/`, `react-native/`,
+`react-native-es/`, `backend-ai/` y `backend-ai-es/`, y los resúmenes de `techlead/`,
+`techlead-es/`, `backend-ai/` y `backend-ai-es/`. En su lugar va **RIMAC**, que es lo que la
+entrada nueva respalda. `sections/` listaba los dos: se quedó con RIMAC.
+
+Esto alinea los diez documentos en una sola versión del historial. Queda una sola discrepancia
+conocida: `extended/` y `extended-es/` siguen con Kruger, y con ellas `LINKEDIN.md`, que es su
+espejo. No se tocaron porque ya no se compilan; el pendiente de regenerar `LINKEDIN.md` desde
+`usa/experience.tex` cubre ese caso.
+
+**Las variantes condensadas no llevan bullets de Indra**, solo el `\cvMiniEntry`, así que no
+heredan los claims que la entrada completa sí sostiene (`PL/SQL`, Lambda con Node.js, S3). Sus
+archivos de skills no los listaban y se dejaron como estaban: ninguno quedó huérfano al salir
+Kruger — verificado que `PWA`, `WhatsApp Business API`, `Retrofit` y `Angular 10`, que en LATAM
+hubo que retirar por esto mismo, nunca estuvieron en estas ocho.
+
+---
+
 ## ADR — Apple Inc. en todas las variantes (2026-10-27)
 
 Decisión del candidato: **el encargo de Apple fue temporal y concurrente**, así que no compite con
@@ -664,4 +702,6 @@ make view       # abre PDF en macOS (Preview)
 - [ ] **Regenerar `LINKEDIN.md` desde la variante USA**, no desde la extendida: el ADR de
       LinkedIn la fijaba como espejo de la extendida, que ya no se compila (2026-10-27)
 - [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
+- [x] **INDRA vs Kruger en las ocho condensadas** — alineadas a **Indra / RIMAC** el
+      2026-10-27, con BCP retirado de esas variantes
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)
