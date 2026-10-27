@@ -38,13 +38,14 @@ Cada variante abre con el rol al que postula, no con el stack completo:
 
 | Variante | Título | Stack que resalta |
 |----------|--------|-------------------|
-| `resume` / `-es` | Senior Full Stack Engineer | Angular · React · Java · Node.js · AWS |
+| `resume-fullstack` / `-es` | Senior Full Stack Engineer | Angular · React · Java · Node.js · AWS |
 | `resume-backend-ai` / `-es` | Senior Backend Engineer | Java · Node.js · **Python** · AI Agents · AWS |
 | `resume-techlead` / `-es` | Tech Lead | sin cambios, ya tenía rol |
 | `resume-react-native` / `-es` | Senior React Native Engineer | Mobile · React · Java · Node.js |
-| `resume-extended` / `-es` | Full Stack · React Native | sin tocar por pedido del candidato |
+| `resume-extended` / `-es` | Full Stack · React Native | **retirada de la generación** (2026-10-27) |
 
-Ya no existe un CV "general" sin rol: el antiguo `resume.tex` pasó a ser el Full Stack.
+Ya no existe un CV "general" sin rol: el antiguo `resume.tex` pasó a ser el Full Stack y el
+2026-10-27 se renombró a `resume-fullstack.tex`, para que el nombre del PDF diga el rol.
 
 En Full Stack, `Frontend` subió de la quinta línea a la segunda, con la superficie real de Angular
 (6--15, micro frontends) y React 18 (Redux, Hooks, RxJS). En backend, Python tiene línea propia
@@ -82,12 +83,14 @@ Quedan **cero** ocurrencias de `RIMAC`, `HIPAA` y `LangChain` en los 50 archivos
 
 ## Verificación en CI (run 39689757650, 2026-10-21)
 
-Las diez variantes compilan. **Las ocho dirigidas en 2 páginas, las dos extendidas en 4.**
+Las diez variantes que se compilan hoy: las ocho dirigidas en 2 páginas y las dos conciliadas
+(LATAM y USA) en 4. **Las dos extendidas salieron de la generación el 2026-10-27**: las
+conciliadas las reemplazan.
 
 | PDF | Páginas |
 |-----|---------|
-| resume.pdf (Full Stack) | 2 |
-| resume-es.pdf (Full Stack) | 2 |
+| resume-fullstack.pdf | 2 |
+| resume-fullstack-es.pdf | 2 |
 | resume-backend-ai.pdf | 2 |
 | resume-backend-ai-es.pdf | 2 |
 | resume-techlead.pdf | 2 |

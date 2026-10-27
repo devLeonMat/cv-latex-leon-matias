@@ -19,17 +19,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile resume.tex (English — General)
+      - name: Compile resume-fullstack.tex (English — Full Stack)
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: resume.tex
+          root_file: resume-fullstack.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
-      - name: Compile resume-es.tex (Spanish — General)
+      - name: Compile resume-fullstack-es.tex (Spanish — Full Stack)
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: resume-es.tex
+          root_file: resume-fullstack-es.tex
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
@@ -75,20 +75,6 @@ jobs:
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
-      - name: Compile resume-extended.tex (English — Extended · full history)
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: resume-extended.tex
-          compiler: xelatex
-          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
-
-      - name: Compile resume-extended-es.tex (Spanish — Extended · historial completo)
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: resume-extended-es.tex
-          compiler: xelatex
-          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
-
       - name: Compile resume-latam-es.tex (Spanish — LATAM · historial conciliado)
         uses: xu-cheng/latex-action@v3
         with:
@@ -114,7 +100,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resume-roslin-leon-matias-en
-          path: resume.pdf
+          path: resume-fullstack.pdf
           if-no-files-found: error
           retention-days: 90
 
@@ -122,7 +108,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: resume-roslin-leon-matias-es
-          path: resume-es.pdf
+          path: resume-fullstack-es.pdf
           if-no-files-found: error
           retention-days: 90
 
@@ -174,22 +160,6 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
-      - name: Upload Extended English PDF as workflow artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: resume-roslin-leon-matias-extended-en
-          path: resume-extended.pdf
-          if-no-files-found: error
-          retention-days: 90
-
-      - name: Upload Extended Spanish PDF as workflow artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: resume-roslin-leon-matias-extended-es
-          path: resume-extended-es.pdf
-          if-no-files-found: error
-          retention-days: 90
-
       - name: Upload LATAM Spanish PDF as workflow artifact
         uses: actions/upload-artifact@v4
         with:
@@ -219,23 +189,21 @@ jobs:
 
             | Version | File |
             |---------|------|
-            | English — General | resume.pdf |
-            | Español — General | resume-es.pdf |
+            | English — Full Stack · Angular · React · Java · Node.js | resume-fullstack.pdf |
+            | Español — Full Stack · Angular · React · Java · Node.js | resume-fullstack-es.pdf |
             | English — Backend · Java · Node.js · AI Agents | resume-backend-ai.pdf |
             | Español — Backend · Java · Node.js · Agentes IA | resume-backend-ai-es.pdf |
             | English — Tech Lead | resume-techlead.pdf |
             | Español — Tech Lead | resume-techlead-es.pdf |
             | English — React Native · Full Stack | resume-react-native.pdf |
             | Español — React Native · Full Stack | resume-react-native-es.pdf |
-            | English — Extended · full career history (11 roles) | resume-extended.pdf |
-            | Español — Extendido · historial completo (11 roles) | resume-extended-es.pdf |
             | Español — LATAM · historial conciliado contra el Certificado Único Laboral | resume-latam-es.pdf |
             | English — USA · reconciled history, includes Apple Inc. | resume-usa.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
             - Compiled with: XeLaTeX
-          artifacts: "resume.pdf,resume-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-extended.pdf,resume-extended-es.pdf,resume-latam-es.pdf,resume-usa.pdf"
+          artifacts: "resume-fullstack.pdf,resume-fullstack-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-latam-es.pdf,resume-usa.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true

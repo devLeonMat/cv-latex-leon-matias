@@ -3,7 +3,7 @@
 # Compatible with: Overleaf, VS Code + LaTeX Workshop, MacTeX.
 #
 # Usage:
-#   latexmk              # compile resume.tex
+#   latexmk              # compile resume-fullstack.tex
 #   latexmk -pvc         # continuous watch mode
 #   latexmk -C           # clean all generated files
 
@@ -16,7 +16,7 @@ $dvi_mode = 0;
 $xelatex = 'xelatex -interaction=nonstopmode -halt-on-error -shell-escape %O %S';
 
 # Default root file
-@default_files = ('resume.tex');
+@default_files = ('resume-fullstack.tex');
 
 # Output directory (uncomment to put build artifacts in ./out/)
 # $out_dir = 'out';
