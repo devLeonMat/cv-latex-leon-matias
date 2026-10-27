@@ -430,10 +430,16 @@ Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `u
 - **AWS — corregido el 2026-10-26.** Primero omití el cloud razonando que Apple corre
   infraestructura propia. La premisa estaba mal: Apple es uno de los clientes más grandes de AWS y
   eso es público. El candidato confirmó que el proyecto trabajaba sobre el stack de AWS, así que
-  entra en la entrada y en el stack. **Faltan los servicios concretos**: «AWS» a secas aporta poco
-  en un CV y casi nada en un filtro ATS; lo que pesa son EKS/ECS, S3, RDS o Aurora, DynamoDB,
-  SQS/SNS, CloudWatch, API Gateway. No se inventan.
-- **PostgreSQL — inferido y aceptado** (2026-10-26). El candidato solo recordaba que era
+  entra en la entrada y en el stack. **Servicios concretos aportados el 2026-10-26**: **RDS, EKS,
+  API Gateway, CloudWatch y Secrets Manager**. Entran nombrados uno por uno, porque «AWS» a secas
+  aporta poco en un filtro ATS. **S3, SQS y Lambda quedan fuera** de esta entrada: son los
+  sospechosos de siempre en un stack así, pero el candidato no los nombró. En `usa/skills.tex` se
+  agregaron **API Gateway** y **Secrets Manager**, que antes no figuraban; su único respaldo es
+  Apple, así que **no van a `latam-es/`**, donde Apple no existe.
+- **PostgreSQL — inferido y aceptado**, con un refuerzo posterior (2026-10-26). El candidato
+  recuerda **RDS** entre los servicios, que es el servicio relacional gestionado de AWS: la
+  memoria del servicio concuerda con la del tipo de motor, aunque no es un recuerdo del motor en
+  sí. La entrada dice ahora «PostgreSQL on RDS». El candidato solo recordaba que era
   relacional, pidió investigar lo típico y aceptó el resultado: «dejalo en PostgreSQL, me suena
   correcto». Lo da por bueno, no lo recuerda — el matiz importa si alguien reabre el tema.
   Dos vías independientes apuntan al mismo motor: Apple
@@ -510,7 +516,8 @@ make view       # abre PDF en macOS (Preview)
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
 - [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
 - [ ] Confirmar la versión de Java de Apple: puesto 17 (LTS vigente) en lugar de 19
-- [ ] Listar los **servicios de AWS** concretos del proyecto de Apple (hoy dice solo «AWS»)
+- [x] **Servicios de AWS** del proyecto de Apple — RDS, EKS, API Gateway, CloudWatch y Secrets
+      Manager, aportados por el candidato 2026-10-26
 - [x] **PostgreSQL** en la entrada de Apple — inferido y aceptado por el candidato 2026-10-26
 - [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan

@@ -166,9 +166,9 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 %%      infraestructura propia; la premisa estaba mal. Apple es uno de los
 %%      clientes mas grandes de AWS y eso es publico. El candidato confirmo que
 %%      el proyecto trabajaba sobre el stack de AWS.
-%%      TODO: faltan los SERVICIOS concretos. "AWS" a secas vale poco en un CV
-%%      y en ATS; lo que pesa es EKS/ECS, S3, RDS o Aurora, DynamoDB, SQS/SNS,
-%%      CloudWatch, API Gateway. Sin la lista del candidato no se inventan.
+%%      Servicios aportados por el candidato el 2026-10-26: RDS, EKS,
+%%      API Gateway, CloudWatch y Secrets Manager. NO uso S3, SQS ni Lambda:
+%%      no los nombro aunque sean los sospechosos de siempre.
 %%    - PostgreSQL: ACEPTADO por el candidato el 2026-10-26 ("dejalo en
 %%      PostgreSQL, me suena correcto"). Ojo con el matiz: lo da por bueno,
 %%      no lo recuerda — lo unico que recordaba es que era relacional. Se
@@ -180,6 +180,10 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 %%           y Oracle aparece en equipos concretos como Ad Platforms.
 %%        b) Spring WebFlux con persistencia reactiva implica R2DBC, cuyo driver
 %%           mejor soportado y mas usado es r2dbc-postgresql.
+%%        c) refuerzo del 2026-10-26: el candidato recuerda RDS entre los
+%%           servicios. RDS es el servicio relacional gestionado, asi que la
+%%           memoria del servicio concuerda con la del tipo de motor. Sigue sin
+%%           ser un recuerdo del motor en si.
 %%      Riesgo bajo adicionalmente porque PostgreSQL ya esta respaldado en tres
 %%      roles mas de este CV (ExSquared, Bridge Social, Michael Page): si en una
 %%      entrevista le preguntan, puede sostener la conversacion.
@@ -205,8 +209,10 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
     design system component libraries.}
   \cvItem{Migrated existing registry records from the legacy system into the new platform,
     preserving identifier integrity across the catalog.}
-  \cvItem{Built and ran the platform on \textbf{AWS}, with \textbf{PostgreSQL} as the
-    relational store.}
+  \cvItem{Built and ran the platform on \textbf{AWS}: service workloads on \textbf{EKS},
+    the REST layer fronted by \textbf{API Gateway}, \textbf{PostgreSQL} on \textbf{RDS} as
+    the relational store, credentials held in \textbf{Secrets Manager}, and logs and metrics
+    through \textbf{CloudWatch}.}
   \cvItem{Maintained unit coverage with \textbf{JUnit} and \textbf{Mockito} on the backend and
     \textbf{Jest} on the front end, enforced through \textbf{SonarQube} quality gates.}
   \cvItem{Delivered inside the iTunes division's engineering process under Agile ceremonies.}
@@ -214,7 +220,7 @@ PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.}
 
 {\footnotesize\color{cvMuted}\textit{Stack:}~%
 Java 17, Spring Boot, Spring WebFlux, Reactive REST APIs, React 18, Jest, JUnit, Mockito,
-PostgreSQL, AWS, SonarQube, Git.}
+PostgreSQL, AWS (EKS, API Gateway, RDS, Secrets Manager, CloudWatch), SonarQube, Git.}
 
 \vspace{2pt}
 
