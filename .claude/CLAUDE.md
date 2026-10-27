@@ -423,7 +423,8 @@ Interpretaciones y decisiones mías sobre ese contenido, anotadas también en `u
   seis roles del CV.
 - **Java 17, no 19.** En oct 2022 – mar 2023 la versión más nueva era Java 19, pero era un release de
   seis meses sin soporte extendido; la LTS vigente y la que corre en producción era la 17. El
-  candidato pidió «la más actualizada»; 17 es la defendible. Si recuerda 19, se cambia.
+  candidato pidió «la más actualizada»; 17 es la defendible. **Cerrado el 2026-10-26**: el
+  candidato ratificó la 17. No reabrir el tema contra el pedido original de «la más nueva».
 - **React 18** — versión vigente en esa ventana (salió en marzo de 2022).
 - **Spring Boot sin número de versión.** El encargo arrancó cuando regía 2.7 y Spring Boot 3 salió en
   noviembre de 2022, a mitad del proyecto. Afirmar una de las dos sería inventar.
@@ -515,7 +516,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
 - [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
-- [ ] Confirmar la versión de Java de Apple: puesto 17 (LTS vigente) en lugar de 19
+- [x] Versión de Java de Apple — **17**, ratificada por el candidato 2026-10-26
 - [x] **Servicios de AWS** del proyecto de Apple — RDS, EKS, API Gateway, CloudWatch y Secrets
       Manager, aportados por el candidato 2026-10-26
 - [x] **PostgreSQL** en la entrada de Apple — inferido y aceptado por el candidato 2026-10-26
