@@ -1,10 +1,18 @@
 # LinkedIn — texto listo para pegar
 
-Generado el 2026-10-22. **Espejo del CV extendido** (`resume-extended.tex`): mismos roles, mismas
-fechas, mismos bullets y mismo orden. Si cambia la extendida, este archivo se regenera desde ella.
+Regenerado el 2026-10-27 desde **`usa/experience.tex`**, la variante conciliada en inglés
+(antes este archivo era espejo de `resume-extended.tex`, que salió de la generación el 2026-10-27).
+Mismos roles, mismas fechas, mismos bullets y mismo orden que ese CV, **con una excepción
+deliberada: Apple Inc. no figura acá** (ver la sección final).
 
-Fechas verificadas: cadena continua ene 2014 → presente, sin vacíos ni solapes, **12 años 10
-meses**, 11 roles.
+Fechas conciliadas contra el **Certificado Único Laboral** (MTPE, emitido el 2026-10-26): cada
+vínculo peruano en planilla calza con un registro oficial. Son **12 roles**, de **mayo 2014** a
+hoy.
+
+**La cadena no es continua y este archivo no finge que lo sea.** Hay una ventana abierta de
+**mar 2015 – jul 2017** que el candidato sustenta en conversación: estaba cerrando Ingeniería de
+Sistemas en la UNAC, y el rango de educación (2012–2018) la cubre. **Nunca escribas «12+ años de
+experiencia»** en el perfil: ese es el lapso, no el trabajo registrado.
 
 **Convención**: la empresa es el empleador; el cliente final va en la primera línea de la
 descripción. Es lo que LinkedIn espera para consultoras y staffing, y evita que parezca que
@@ -17,14 +25,19 @@ LinkedIn no renderiza Markdown. El carácter `•` sí funciona en las descripci
 ## Headline
 
 ```
-Senior Full Stack Engineer | Java · Spring Boot | React · Angular | Node.js | AWS | 12+ years
+Senior Full Stack Engineer | Java · Spring Boot | React · Angular | Node.js | AWS
 ```
 
 Alternativa si priorizas backend:
 
 ```
-Senior Backend Engineer | Java · Spring Boot | Node.js · NestJS | Python | AWS | 12+ years
+Senior Backend Engineer | Java · Spring Boot | Node.js · NestJS | Python | AWS
 ```
+
+> **Sin número de años.** El headline anterior decía `12+ years`. El lapso desde may 2014 llega a
+> eso, pero el trabajo con registro suma unos 10 a 1 m, y el perfil no debe afirmar lo que el
+> certificado no respalda. Si quieres una señal de seniority sin cifra, `Lead Software Engineer`
+> en el título del rol actual hace ese trabajo.
 
 ---
 
@@ -39,9 +52,9 @@ Senior Backend Engineer | Java · Spring Boot | Node.js · NestJS | Python | AWS
 | End | `Present` |
 | Location | `Lima, Peru` · `On-site` o `Hybrid` |
 
-> El CV ya no dice "contrato de 6 meses": empezó en mar 2026 y sigue activo, así que a los
-> 8 meses la etiqueta se contradecía. En LinkedIn basta `Contract` en Employment type. Si el
-> contrato se extendió o pasó a indefinido, cambia ese campo a `Full-time`.
+> El CV no dice "contrato de 6 meses": empezó en mar 2026 y sigue activo, así que a los 8 meses la
+> etiqueta se contradecía. En LinkedIn basta `Contract` en Employment type. Si el contrato se
+> extendió o pasó a indefinido, cambia ese campo a `Full-time`.
 
 ```
 Client: Scotiabank Peru — Dynamic QR Payments Platform
@@ -108,10 +121,10 @@ ExSquared (formerly Outcoding) — Client: SambaSafety — Qorta, Driver Manager
 • Developed and migrated frontend modules to micro frontends using Angular 15 and Tailwind CSS.
 • Built microservices with Java 17 and Spring Boot following hexagonal architecture.
 • Replaced legacy RabbitMQ listeners with Spring Cloud Stream across inherited microservices.
-• Built REST APIs and integrated motor vehicle record (MVR) data providers across U.S. jurisdictions; optimized PostgreSQL queries for large-scale driver datasets.
+• Implemented data processing workflows with Apache Kafka and Redis; built REST APIs and integrated motor vehicle record (MVR) data providers across U.S. jurisdictions; optimized PostgreSQL queries for large-scale driver datasets.
 • Maintained 95%+ code coverage on both frontend and backend with JUnit, Mockito, and Jest to satisfy CI/CD quality gates.
 
-Stack: Java 17, Spring Boot, Spring Cloud, Spring Data, Angular 15, TypeScript, Tailwind, Sass, Jest, PostgreSQL, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.
+Stack: Java 17, Spring Boot, Spring Cloud, Spring Data, Angular 15, TypeScript, Tailwind, Sass, Jest, PostgreSQL, Apache Kafka, Redis, JWT, AWS (EKS, SES, SNS, S3), Git, Bitbucket.
 ```
 
 ---
@@ -126,6 +139,9 @@ Stack: Java 17, Spring Boot, Spring Cloud, Spring Data, Angular 15, TypeScript, 
 | Start | `June 2022` |
 | End | `February 2023` ← **corregido, antes mayo 2023** |
 | Location | `Paraguay` · `Remote` |
+
+> El CUL registra hasta el 19/06/2023, pero ExSquared ocupa desde mar 2023. Febrero 2023 es el
+> cierre que usan las doce variantes del CV.
 
 ```
 Client: Banco GNB Paraguay — Personal and Corporate Digital Banking
@@ -170,31 +186,32 @@ Stack: Java 11, Spring Boot, Spring Cloud, Spring Data, Node.js, NestJS, Apache 
 
 ---
 
-## 6. Kruger Corp
+## 6. Indra Perú
 
 | Campo | Valor |
 |---|---|
 | Title | `Senior Full Stack Engineer` |
-| Company | `Kruger Corp` |
+| Company | `Indra` |
 | Employment type | `Full-time` |
-| Start | `July 2020` |
+| Start | `April 2020` |
 | End | `December 2020` |
 | Location | `Lima, Peru` |
 
-> **Añádela si no está en tu perfil.** Es el rol que respalda a BCP como cliente.
+> **Entrada nueva, y reemplaza a Kruger Corp.** La conciliación contra el CUL deja a Indra en esa
+> ventana (9 meses) y descarta Kruger (4 m 23 d, que cae entera dentro de Indra). Si tu perfil
+> tiene Kruger Corp, bórrala: ver la sección final.
+>
+> Con esto **RIMAC vuelve al perfil** como cliente, y **BCP sale**: su único respaldo era Kruger.
 
 ```
-Client: Banco de Crédito del Perú (BCP) — Tío Grou
+Client: RIMAC Seguros — Póliza Electrónica, New Product Development
 
-• Delivered Tío Grou, a PWA for small-business management with point-of-sale capabilities, reporting, metrics, and sales forecasting.
-• Led design and normalization of the SQL Server database supporting complex POS operations and reporting needs.
-• Built and maintained backend microservices with Java 11, Spring Boot, and Spring WebFlux for high-performance asynchronous communication.
-• Implemented inter-service communication with Feign and Retrofit for scalable integration.
-• Developed dynamic, responsive UI components in Angular 10 with Bootstrap and Angular Material.
-• Integrated third-party messaging services — Twilio and the WhatsApp Business API — for customer notifications and two-way messaging.
-• Automated microservice and frontend deployments through Jenkins pipelines on Azure Kubernetes Service (AKS); enforced coverage standards via SonarQube.
+• Built new insurance products for RIMAC Seguros, Peru's insurance market — among them Póliza Electrónica, digitizing policy issuance end to end.
+• Owned the full database layer in Oracle with PL/SQL: stored procedures, packages, views, and the data model behind policy issuance and product configuration.
+• Developed serverless services on AWS Lambda with Node.js, using S3 for document storage alongside additional AWS services.
+• Built the product front ends in React, covering policy configuration and issuance flows for internal and broker-facing users.
 
-Stack: Java 8/11, Spring Boot, Spring WebFlux, Angular 10, Bootstrap, Angular Material, SQL Server, Redis, Twilio, WhatsApp Business API, Azure AKS, Jenkins, SonarQube, Karma, Jasmine, GitLab.
+Stack: Oracle, PL/SQL, Node.js, React, AWS (Lambda, S3), REST APIs.
 ```
 
 ---
@@ -206,9 +223,13 @@ Stack: Java 8/11, Spring Boot, Spring WebFlux, Angular 10, Bootstrap, Angular Ma
 | Title | `Full Stack Engineer` |
 | Company | `Michael Page` (la página de empresa en LinkedIn; el CV usa el nombre completo) |
 | Employment type | `Contract` |
-| Start | `December 2019` |
-| End | `June 2020` ← **ampliado, antes abril 2020** |
+| Start | `January 2020` ← **corregido, antes diciembre 2019** |
+| End | `March 2020` ← **corregido, antes junio 2020** |
 | Location | `Lima, Peru` |
+
+> El CUL registra 26/12/2019 – 31/03/2020. Diciembre 2019 queda para Zoluxiones, y abril 2020 en
+> adelante para Indra. La versión anterior de este archivo estiraba el rol hasta jun 2020 para
+> tapar el hueco que dejaba la ausencia de Indra; con Indra dentro ya no hay nada que tapar.
 
 ```
 Michael Page International — Client: Intercorp Retail — Incident Tracking Platform
@@ -250,7 +271,34 @@ Stack: Java 8, Spring Boot, Node.js, Express, Ionic, Angular 8, Angular Material
 
 ---
 
-## 9. Experis / Manpower
+## 9. PSS Perú
+
+| Campo | Valor |
+|---|---|
+| Title | `Full Stack Engineer` |
+| Company | `PSS Perú` |
+| Employment type | `Full-time` |
+| Start | `April 2019` |
+| End | `July 2019` |
+| Location | `Lima, Peru` |
+
+> **Entrada nueva**: viene del CUL y no figuraba en la versión anterior de este archivo. Con ella,
+> **BanBif entra como cliente** del perfil.
+
+```
+Client: BanBif (Banco Interamericano de Finanzas) — Savings Products
+
+• Built new savings products for BanBif — Ahorro Programado (scheduled savings) and Ahorro Automático (automatic savings) — from product definition through to production.
+• Developed backend services in Java 11 with Spring Boot, exposing both REST and SOAP interfaces to integrate with the bank's existing systems.
+• Maintained and extended legacy web modules built on JSP and JSTL.
+• Developed the customer-facing front end in Angular with Angular Material.
+
+Stack: Java 11, Spring Boot, REST, SOAP, JSP, JSTL, Angular, Angular Material.
+```
+
+---
+
+## 10. Experis / Manpower
 
 | Campo | Valor |
 |---|---|
@@ -258,8 +306,10 @@ Stack: Java 8, Spring Boot, Node.js, Express, Ionic, Angular 8, Angular Material
 | Company | `Experis` (o `ManpowerGroup`, según cuál esté en tu perfil) |
 | Employment type | `Contract` |
 | Start | `July 2018` |
-| End | `September 2019` |
+| End | `April 2019` ← **corregido, antes septiembre 2019** |
 | Location | `Lima, Peru` |
+
+> El CUL registra 23/07/2018 – 12/04/2019 (8 m 21 d). PSS Perú ocupa abr 2019 en adelante.
 
 ```
 Experis / Manpower Professional Services — Client: Equifax — Digital Transformation (KATRINA)
@@ -275,24 +325,26 @@ Stack: Java 8, Spring Boot, Spring Cloud, Angular 6, Bootstrap, Docker, RabbitMQ
 
 ---
 
-## 10. Olva Courier
+## 11. Olva Courier
 
 | Campo | Valor |
 |---|---|
 | Title | `Java Developer` |
 | Company | `Olva Courier` |
 | Employment type | `Full-time` |
-| Start | `March 2015` ← **corregido, antes agosto 2017** |
-| End | `June 2018` |
+| Start | `August 2017` ← **corregido, antes marzo 2015** |
+| End | `May 2018` |
 | Location | `Lima, Peru` |
 
-> **El cambio más importante de todos.** Pasa de 10 meses a 3 años 4 meses y cierra el vacío de
-> 2015–2017. Tiene que coincidir con lo que diga una verificación de referencias.
+> **Cambio importante, y en dirección contraria a la versión anterior.** El archivo del 2026-10-22
+> estiraba este rol a mar 2015 – jun 2018 (3 a 4 m) para cerrar el vacío de 2015–2017. El CUL
+> registra **24/08/2017 – 31/05/2018 (9 m 8 d)**, así que esa versión no se sostiene ante una
+> verificación de referencias. El bullet que decía *"over a three-year tenure"* también se cayó.
 
 ```
 Project: Olva Corp ERP
 
-• Delivered and progressively owned new modules of the corporate ERP for one of Peru's largest private courier operators, over a three-year tenure spanning maintenance, new development, and systems integration.
+• Delivered and owned new modules of the corporate ERP for one of Peru's largest private courier operators, spanning maintenance, new development, and systems integration.
 • Migrated functionality from multiple legacy systems into the consolidated ERP platform, retiring fragmented tooling across operations.
 • Developed ERP modules in Java 8 with PrimeFaces.
 • Built SOAP and REST services integrating the ERP with internal and partner logistics systems.
@@ -305,16 +357,20 @@ Stack: Java 8, PrimeFaces, SOAP, REST, JasperReport, Kotlin (Android), GlassFish
 
 ---
 
-## 11. LimaW
+## 12. LimaW / WProducciones
 
 | Campo | Valor |
 |---|---|
 | Title | `Java Developer` |
-| Company | `LimaW` |
+| Company | `LimaW` (si tu perfil tiene `WProducciones`, es la misma empresa) |
 | Employment type | `Full-time` |
-| Start | `January 2014` |
+| Start | `May 2014` ← **corregido, antes enero 2014** |
 | End | `February 2015` |
 | Location | `Lima, Peru` |
+
+> **Una sola entrada, no dos.** El CUL trae dos registros de planilla de la misma empresa —
+> WProducciones S.A.C. 01/05/2014 – 31/01/2015 y LimaW S.A.C. 01/02/2015 – 28/02/2015 — que juntos
+> dan 10 meses continuos. Partirlo en dos entradas simula un cambio de empleador que no ocurrió.
 
 ```
 Project: Zircon Biometrics
@@ -340,6 +396,9 @@ Stack: Java 7/8, JSP, SOAP, REST, JasperReport, JBoss, MySQL, Mockito, JUnit, SV
 | Start | `2012` |
 | End | `2018` |
 
+> Este rango **no es decorativo**: es lo que respalda la ventana mar 2015 – jul 2017 sin que el
+> perfil afirme trabajo que no puede evidenciar. Déjalo tal cual.
+
 ## Licencias y certificaciones
 
 | Nombre | Emisor | Fecha |
@@ -351,36 +410,57 @@ Stack: Java 7/8, JSP, SOAP, REST, JasperReport, JBoss, MySQL, Mockito, JUnit, SV
 
 ---
 
-## INDRA: eliminar de LinkedIn
+## Apple Inc.: fuera de LinkedIn
 
-**Decisión del candidato, 2026-10-22: INDRA sale de LinkedIn.** El criterio es que el perfil sea
-lo más parecido posible al CV extendido, y la extendida no la incluye.
+**Decisión del candidato, 2026-10-27: Apple no se menciona en el perfil.** El CV sí lo lleva —
+entrada completa en `usa/experience.tex` y en `latam-es/`, mini-entry en las ocho condensadas —
+pero LinkedIn es público y persistente, y el candidato prefiere que ese nombre viaje solo en los
+documentos que él entrega.
 
-Entrada a borrar: **INDRA** — cliente RIMAC, proyecto Póliza Electrónica, abr–ago 2020.
+Es la única diferencia entre este archivo y `usa/experience.tex`. Dos consecuencias:
 
-Por qué tiene que salir y no basta con dejarla:
+- **No abre ningún hueco.** El encargo fue oct 2022 – mar 2023, ventana que Globant ya cubre
+  (jun 2022 – feb 2023). Quitarlo no deja vacío que explicar.
+- **Desaparece el único solape del CV.** En `usa/` las dos entradas corren en paralelo y la de
+  Apple lo declara como encargo por proyecto. Acá no hay nada que declarar: el perfil queda
+  estrictamente secuencial.
 
-- Se **solapa dos meses con Kruger Corp** (jul–dic 2020), que es la entrada que sostiene a BCP.
-- Se **solapa con Michael Page**, que ahora llega hasta jun 2020 precisamente para cubrir ese
-  período.
-- Contradice las fechas del CV en tres entradas a la vez.
+Si algún día entra al perfil, **tiene que entrar con la misma redacción que el CV** —
+`project-based engagement through Caleidos Media` en la descripción— y el empleador es
+**Caleidos Media**, no Apple. Sin eso, dos jornadas completas en paralelo levantan la pregunta de
+doble empleo, que es exactamente el flag que el CV evita.
 
-Al borrarla, **RIMAC desaparece como cliente** de tu perfil, igual que ya desapareció del CV.
-Es un cliente real: si algún día quieres recuperarlo, el camino es devolver INDRA al CV y a
-LinkedIn a la vez, nunca listar el cliente suelto en uno de los dos.
+---
+
+## Entradas a borrar del perfil
+
+| Entrada | Por qué sale |
+|---|---|
+| **Kruger Corp** — cliente BCP, proyecto Tío Grou, jul–dic 2020 | La reemplaza **Indra** (9 meses contra 4 m 23 d; Kruger cae entera dentro de Indra). Al salir, **BCP deja de figurar** en el perfil: era su único respaldo |
+| **Alternativa Tecnológica** — BCP soporte, dic 2016 – mar 2017, si está | Descartada por el candidato el 2026-10-26 |
+
+Lo que **no** se borra: nada más. Si tu perfil trae empleadores que el CUL registra pero el CV
+descarta por la regla del contrato más extenso (NTT Data, Tata, Neoris, Q System, AVLA, Quality &
+Development, Caleidos), déjalos como estén o quítalos, pero **no los agregues**: el CV no los
+sostiene y el perfil dejaría de calzar con él.
 
 ---
 
 ## Checklist
 
-- [ ] **Olva Courier**: inicio mar 2015, no ago 2017
+- [ ] **Headline**: actualizar, sin el `12+ years`
+- [ ] **Indra**: añadir (abr–dic 2020, cliente RIMAC Seguros)
+- [ ] **Kruger Corp**: borrar la entrada — y con ella BCP
+- [ ] **PSS Perú**: añadir (abr–jul 2019, cliente BanBif)
+- [ ] **Olva Courier**: inicio **ago 2017**, fin may 2018 — no mar 2015 – jun 2018
+- [ ] **Experis**: fin **abr 2019**, no sep 2019
+- [ ] **Michael Page**: **ene–mar 2020**, no dic 2019 – jun 2020
+- [ ] **LimaW / WProducciones**: una sola entrada, **may 2014** – feb 2015
 - [ ] **Globant**: fin feb 2023, no may 2023
-- [ ] **Michael Page**: fin jun 2020, no abr 2020
 - [ ] **The Bridge Social**: ubicación Jamaica, no Estados Unidos
 - [ ] **Outcoding** → renombrar a **ExSquared**, sin crear entrada nueva
-- [ ] **Kruger Corp**: añadir si no está (jul–dic 2020, cliente BCP)
-- [ ] **INDRA**: borrar la entrada
 - [ ] **IDM Technology**: Employment type `Contract`, sin mencionar duración
-- [ ] **Headline**: actualizar
+- [ ] **Apple / Caleidos Media**: no agregar
 - [ ] **Educación**: rango 2012–2018
 - [ ] **Certificaciones**: las 4 de la tabla
+- [ ] Revisar que no quede ninguna entrada con fechas que el CUL contradiga

@@ -275,13 +275,13 @@ en lugar del `2014` de `sections/education.tex`, y `extended/certifications.tex`
 Associate (BSG 2020), Angular y Java Advanced (Cibertec 2019), B.SOFT y la lista de Udemy.
 
 **LinkedIn = espejo del CV extendido** (2026-10-22). Decisión del candidato: el perfil debe
-parecerse lo más posible a `resume-extended.tex`. `LINKEDIN.md` reproduce sus 11 roles con los
-mismos bullets, fechas y orden — paridad verificada en 69 bullets. De ahí se desprende que
-**INDRA se elimina de LinkedIn**, no que vuelva al CV: la extendida no la incluye. Al borrarla,
-RIMAC deja de figurar también en el perfil. Para recuperar RIMAC habría que devolver INDRA al CV
-**y** a LinkedIn a la vez; nunca listar el cliente suelto en uno de los dos.
+parecerse lo más posible al CV extendido. En su momento el espejo era `resume-extended.tex`
+(11 roles, paridad verificada en 69 bullets), y de ahí salía que **INDRA se eliminaba de
+LinkedIn**: la extendida no la incluía.
 
-Si la extendida cambia, `LINKEDIN.md` se regenera desde ella.
+**Superado el 2026-10-27**: la extendida salió de la generación y `LINKEDIN.md` se regeneró desde
+`usa/experience.tex`. Indra está dentro y RIMAC con ella, tal como exigía la regla de «no listar
+el cliente suelto». Ver el ADR del 2026-10-27 más abajo.
 
 **Solape Globant / ExSquared: resuelto** (2026-10-21). Globant cerraba en may 2023 y pisaba
 3 meses a ExSquared (mar 2023 – dic 2024). Ahora cierra en **feb 2023** en las diez variantes,
@@ -534,6 +534,54 @@ y Apple. No se hizo en este cambio: es trabajo de contenido, no de renombrado.
 
 ---
 
+## ADR — LINKEDIN.md se regenera desde la variante USA (2026-10-27)
+
+El ADR del 2026-10-22 fijaba `LINKEDIN.md` como espejo de `resume-extended.tex`, que salió de la
+generación el 2026-10-27. El archivo quedó apuntando a un documento que ya no existe: traía Kruger,
+no traía Indra ni PSS, y estiraba Olva a mar 2015 – jun 2018 para tapar el vacío de 2015–2017.
+
+**Ahora el espejo es `usa/experience.tex`**, la conciliada en inglés. Paridad verificada por script:
+los **70 bullets** del archivo aparecen **verbatim** en el `.tex`, y las **12 líneas de stack**
+también. Los 7 bullets del `.tex` que no están son los de Apple, por la excepción de abajo.
+
+**Apple Inc. NO va en LinkedIn** (decisión del candidato, 2026-10-27). Es la única diferencia entre
+los dos documentos: el CV lo lleva, el perfil no. El candidato prefiere que ese nombre viaje solo en
+lo que él entrega, no en un perfil público y permanente. Dos consecuencias que el archivo anota:
+
+- **No abre hueco**: el encargo fue oct 2022 – mar 2023 y Globant ya cubre esa ventana
+  (jun 2022 – feb 2023).
+- **El perfil queda estrictamente secuencial**, porque el único solape del CV era justamente Apple
+  contra Globant.
+- Si algún día entra, el empleador es **Caleidos Media** y la descripción tiene que decir
+  `project-based engagement`, igual que el CV. Sin eso, dos jornadas en paralelo levantan la
+  pregunta de doble empleo.
+
+**Qué cambió en el archivo** respecto de la versión del 2026-10-22:
+
+| | Antes | Ahora |
+|---|---|---|
+| Roles | 11 | **12** |
+| Kruger Corp (cliente BCP) | Añadir al perfil | **Borrar del perfil** |
+| Indra (cliente RIMAC) | Borrar del perfil | **Añadir al perfil** |
+| PSS Perú (cliente BanBif) | No figuraba | **Añadir** |
+| Olva Courier | mar 2015 – jun 2018 | **ago 2017 – may 2018** |
+| Experis | jul 2018 – sep 2019 | **jul 2018 – abr 2019** |
+| Michael Page | dic 2019 – jun 2020 | **ene – mar 2020** |
+| LimaW | ene 2014 – feb 2015 | **may 2014 – feb 2015**, una entrada con los dos nombres |
+| Headline | `12+ years` | sin cifra de años |
+| Cadena | «continua, sin vacíos» | hueco **mar 2015 – jul 2017** declarado |
+
+**El headline perdió el `12+ years`** por la misma razón que los dos CV conciliados: el lapso llega
+a eso, el trabajo registrado suma unos 10 a 1 m, y el perfil no debe afirmar lo que el certificado
+no respalda.
+
+**BCP sale del perfil** junto con Kruger, y **BanBif entra** con PSS. El archivo también lista
+`Alternativa Tecnológica` entre las entradas a borrar, y advierte explícitamente que los nueve
+empleadores que el CUL registra pero la regla descarta (NTT Data, Tata, Neoris, Q System, AVLA,
+Quality & Development, Caleidos) **no se agregan**: el CV no los sostiene.
+
+---
+
 ## ADR — Indra reemplaza a Kruger en las ocho condensadas (2026-10-27)
 
 Decisión del candidato: **las ocho condensadas adoptan la conciliación del CUL en esa ventana**,
@@ -685,7 +733,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] Bloque **Freelance Web Developer** — **retirado** 2026-10-26. El hueco mar 2015 – jul 2017
       queda abierto y el candidato lo sustenta con el cierre de la carrera en la UNAC
 - [x] Java de PSS/BanBif — **Java 11**, confirmado por el candidato 2026-10-27
-- [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
+- [x] Indra/RIMAC en `LINKEDIN.md` — hecho 2026-10-27 al regenerarlo desde `usa/`
 - [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
 - [x] **Bullets de Apple Inc.** — aportados por el candidato 2026-10-26 (iTunes, registro de códigos únicos)
@@ -699,8 +747,8 @@ make view       # abre PDF en macOS (Preview)
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
-- [ ] **Regenerar `LINKEDIN.md` desde la variante USA**, no desde la extendida: el ADR de
-      LinkedIn la fijaba como espejo de la extendida, que ya no se compila (2026-10-27)
+- [x] **`LINKEDIN.md` regenerado desde la variante USA** (2026-10-27): 12 roles, paridad verbatim
+      en 70 bullets, **sin Apple** por decisión del candidato
 - [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
 - [x] **INDRA vs Kruger en las ocho condensadas** — alineadas a **Indra / RIMAC** el
       2026-10-27, con BCP retirado de esas variantes
