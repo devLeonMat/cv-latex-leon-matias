@@ -387,8 +387,10 @@ el lapso, no el trabajo registrado. El resto son traspasos de uno o dos meses en
   Senior Full Stack Engineer; el título exacto sigue sin confirmar.
 - **PSS Perú / BanBif** — nuevos productos de ahorro: **Ahorro Programado** y **Ahorro Automático**.
   **Java** con **Spring Boot**, servicios **REST** y **SOAP**, módulos legados en **JSP / JSTL**, y
-  front end en **Angular** con **Angular Material**. La versión de Java no está fijada: el candidato
-  recuerda una LTS vigente en 2019 (eran Java 8 y Java 11) pero no cuál.
+  front end en **Angular** con **Angular Material**. **Java 11**, confirmado por el candidato el
+  2026-10-27: la 11 salió en sep 2018 y era la LTS vigente en abr – jul 2019, así que la fecha
+  respalda el dato. Ya figuraba en la línea de lenguajes de skills; ahora tiene un rol que la
+  sostiene.
 
 **Claims agregados a `latam/skills.tex`** con ese contenido: **PL/SQL** (Indra), **JSP / JSTL**
 (PSS y LimaW) y **PrimeFaces** (Olva — ya estaba en los bullets pero nunca se listó en skills).
@@ -415,9 +417,26 @@ freelance también, pero se retiró después).
 **Apple rompe la propiedad de cero solapes, a propósito.** El CUL registra Caleidos Media
 17/10/2022 – 31/03/2023 **en paralelo** con Globant Perú 22/06/2022 – 19/06/2023. Los dos son reales
 y los dos están documentados, así que `usa/experience.tex` conserva las fechas del certificado en
-lugar de recortar una para fingir una secuencia limpia. Es el único solape del CV.
-Alternativa si se quiere estrictamente secuencial: cerrar Globant en oct 2022 (4 m en vez de 8 m 7 d)
-y correr Apple hasta feb 2023.
+lugar de recortar una para fingir una secuencia limpia. Es el único solape del CV: en el documento
+queda como **oct 2022 – feb 2023, cinco meses**.
+
+**Resuelto el 2026-10-27: declarado, no recortado.** Decisión del candidato, sobre dos datos que él
+aportó: Globant era la **jornada principal** y Caleidos un **encargo por proyecto**.
+
+- **No se recorta Globant** a oct 2022. Lo dejaría en 4 meses, que se lee como paso corto, y Apple
+  es la línea de más valor del CV. Nótese que el argumento «recortar inventa fechas» no aplica acá:
+  este documento ya recorta Globant de jun 2023 a feb 2023 por decisión del 2026-10-21.
+- **No se deja crudo.** Un solape sin explicar parece error de tipeo, y ante un lector
+  estadounidense dos jornadas completas en paralelo levantan la pregunta de doble empleo — más con
+  Apple, que tiene política estricta.
+- **Cómo queda**: el último bullet de la entrada dice «delivered as a **project-based engagement**
+  through Caleidos Media». Quien note el solape encuentra la respuesta en la misma entrada, sin
+  línea extra ni riesgo de desborde.
+- **Lo que el CV NO dice**: que corría junto a otro contrato. Nombrar el doble empleo es el flag que
+  se quiere evitar; el tipo de encargo alcanza. Si preguntan en entrevista, ahí se explica.
+
+La alternativa descartada era cerrar Globant en oct 2022 (4 m en vez de 8 m) y correr Apple hasta
+mar 2023.
 
 **Contenido de Apple aportado por el candidato** (2026-10-26): división **iTunes**; reemplazo del
 sistema legado de registro de contenido musical; digitalización del registro de **códigos únicos**
@@ -520,7 +539,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] Alternativa Tecnológica retirada (2026-10-26); el tramo queda como hueco declarado
 - [x] Bloque **Freelance Web Developer** — **retirado** 2026-10-26. El hueco mar 2015 – jul 2017
       queda abierto y el candidato lo sustenta con el cierre de la carrera en la UNAC
-- [ ] Fijar la versión de Java de PSS/BanBif (LTS de 2019: Java 8 u 11)
+- [x] Java de PSS/BanBif — **Java 11**, confirmado por el candidato 2026-10-27
 - [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
 - [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
@@ -529,7 +548,8 @@ make view       # abre PDF en macOS (Preview)
 - [x] **Servicios de AWS** del proyecto de Apple — RDS, EKS, API Gateway, CloudWatch y Secrets
       Manager, aportados por el candidato 2026-10-26
 - [x] **PostgreSQL** en la entrada de Apple — inferido y aceptado por el candidato 2026-10-26
-- [ ] Decidir si el solape Apple / Globant se conserva o se secuencia recortando Globant
+- [x] Solape Apple / Globant — **declarado, no recortado** (2026-10-27). Caleidos fue encargo
+      por proyecto; el último bullet de la entrada lo dice
 - [ ] Decidir si las diez variantes anteriores adoptan las fechas del CUL o se congelan
 - [x] Bullets de **React Native** (DaCodes, Globant, Bridge Social) — **confirmados por el
       candidato 2026-10-21**. Ver nota abajo: NO volver a cuestionarlos
