@@ -387,8 +387,10 @@ el lapso, no el trabajo registrado. El resto son traspasos de uno o dos meses en
   Senior Full Stack Engineer; el título exacto sigue sin confirmar.
 - **PSS Perú / BanBif** — nuevos productos de ahorro: **Ahorro Programado** y **Ahorro Automático**.
   **Java** con **Spring Boot**, servicios **REST** y **SOAP**, módulos legados en **JSP / JSTL**, y
-  front end en **Angular** con **Angular Material**. La versión de Java no está fijada: el candidato
-  recuerda una LTS vigente en 2019 (eran Java 8 y Java 11) pero no cuál.
+  front end en **Angular** con **Angular Material**. **Java 11**, confirmado por el candidato el
+  2026-10-27: la 11 salió en sep 2018 y era la LTS vigente en abr – jul 2019, así que la fecha
+  respalda el dato. Ya figuraba en la línea de lenguajes de skills; ahora tiene un rol que la
+  sostiene.
 
 **Claims agregados a `latam/skills.tex`** con ese contenido: **PL/SQL** (Indra), **JSP / JSTL**
 (PSS y LimaW) y **PrimeFaces** (Olva — ya estaba en los bullets pero nunca se listó en skills).
@@ -537,7 +539,7 @@ make view       # abre PDF en macOS (Preview)
 - [x] Alternativa Tecnológica retirada (2026-10-26); el tramo queda como hueco declarado
 - [x] Bloque **Freelance Web Developer** — **retirado** 2026-10-26. El hueco mar 2015 – jul 2017
       queda abierto y el candidato lo sustenta con el cierre de la carrera en la UNAC
-- [ ] Fijar la versión de Java de PSS/BanBif (LTS de 2019: Java 8 u 11)
+- [x] Java de PSS/BanBif — **Java 11**, confirmado por el candidato 2026-10-27
 - [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
 - [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
 - [x] LATAM en español, USA en inglés — hecho 2026-10-26
