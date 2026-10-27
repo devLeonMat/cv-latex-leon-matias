@@ -185,8 +185,8 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
 | ~~`resume-extended.tex`~~ | **Extendido** (11 roles) — *fuera de la generación* | EN | `extended/` | `sections/languages` |
 | ~~`resume-extended-es.tex`~~ | **Extendido** (11 roles) — *fuera de la generación* | ES | `extended-es/` | `es/languages-es` |
-| `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL + **Apple Inc.** (13 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
-| `resume-usa.tex` | **USA** — conciliado + **Apple Inc.** (13 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
+| `resume-latam-es.tex` | **LATAM · EXTENDIDO** — historial conciliado contra el CUL + **Apple Inc.** (13 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
+| `resume-usa.tex` | **USA · EXTENDED** — conciliado + **Apple Inc.** (13 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
 
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
 `summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
@@ -541,6 +541,35 @@ figuraba en ese variante.
 Las decisiones de contenido de la entrada (Java 17, React 18, Spring Boot sin versión, los cinco
 servicios de AWS, PostgreSQL inferido, SonarQube) siguen documentadas en `usa/experience.tex` y
 **no se reabren**; `latam-es/` apunta allí en lugar de duplicar el razonamiento.
+
+## ADR — Las conciliadas se declaran extendidas (2026-10-27)
+
+Decisión del candidato: **las dos conciliadas dicen en el documento que son la versión
+extendida**. Reemplazaron a `resume-extended*.tex` el 2026-10-27, así que el lector tiene que ver
+de entrada que está ante el historial completo y no ante una condensada que se fue de largo a
+4 páginas.
+
+Implementación: comando nuevo `\cvVariantTag{...}` en `styles/resume.sty`, una línea en negrita y
+color de acento bajo el bloque de contacto. Texto:
+
+- `resume-latam-es.tex` → «CV EXTENDIDO — historial laboral completo, conciliado contra el
+  Certificado Único Laboral (MTPE, 2026)»
+- `resume-usa.tex` → «EXTENDED CV — complete career history, reconciled against official Peruvian
+  payroll records (MTPE, 2026)»
+
+El texto de USA **no nombra el CUL**: para un reclutador estadounidense esa sigla no significa
+nada. Dice «official Peruvian payroll records», que es lo mismo en términos que sí se entienden.
+Es la misma razón por la que el summary de USA no lo menciona.
+
+La etiqueta también entró a los nombres de los pasos del workflow y a la tabla del Release, que
+ahora dicen **LATAM · EXTENDIDO** y **USA · EXTENDED**.
+
+**Corregido de paso**: `resume-latam-es.tex` conservaba un `\pagestyle{empty}` después de
+`\begin{document}`, que pisaba el `\pagestyle{fancy}` del `\AtBeginDocument` de la hoja de
+estilos — ese documento era el único de los diez sin el pie «Updated: …» que el commit `ddb5054`
+había puesto en todas las variantes. Se eliminó la línea.
+
+---
 
 ## Compilación
 
