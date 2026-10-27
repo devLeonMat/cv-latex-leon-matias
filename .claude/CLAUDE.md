@@ -185,8 +185,8 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | `resume-react-native-es.tex` | **Ingeniero React Native Senior** · Móvil | ES | `react-native-es/` | `es/` |
 | `resume-extended.tex` | **Extendido** — historial completo (11 roles) | EN | `extended/` | `sections/languages` |
 | `resume-extended-es.tex` | **Extendido** — historial completo (11 roles) | ES | `extended-es/` | `es/languages-es` |
-| `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL (13 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
-| `resume-usa.tex` | **USA** — conciliado + **Apple Inc.** (14 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
+| `resume-latam-es.tex` | **LATAM** — historial conciliado contra el CUL (12 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
+| `resume-usa.tex` | **USA** — conciliado + **Apple Inc.** (13 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
 
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
 `summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
@@ -359,14 +359,25 @@ planilla (WProducciones 01/05/2014 – 31/01/2015 y LimaW 01/02/2015 – 28/02/2
 sola entrada de **10 meses**, con los dos nombres en el encabezado para que calce línea a línea con
 el certificado. Esto resuelve el problema de que LimaW tenía 5 bullets para 28 días.
 
-**Freelance Web Developer, mar 2015 – jul 2017 (2 a 5 m).** Cubre la ventana entre LimaW y Olva,
-incluida la franja donde estaba Alternativa. **No puede aparecer en el CUL y eso no es una omisión**:
-las consideraciones del propio certificado establecen que no se presentan los casos de trabajadores
-que generan ingresos de **cuarta – quinta categoría**, que es exactamente la figura del trabajo
-independiente. El certificado calla ahí por diseño, no por vacío.
+**El hueco mar 2015 – jul 2017 se deja abierto a propósito** (decisión del candidato, 2026-10-26).
+Existió un bloque *Freelance Web Developer* que cubría esa ventana — incluida la franja donde estaba
+Alternativa — con un solo bullet genérico. Le pedí clientes, stack y algún proyecto nombrable para
+poder ampliarlo; eligió **retirar el bloque y sustentar los 2 a 5 m en la entrevista**: estaba
+cerrando la carrera de Ingeniería de Sistemas en la UNAC.
 
-Con esto el historial arranca en **may 2014**, no en ene 2014, y cubre **12 a 5 m** hasta oct 2026.
-Quedan solo traspasos de uno o dos meses entre contratos.
+La decisión es coherente con el resto del documento. `extended/education.tex` y
+`extended-es/education-es.tex` traen **2012 – 2018**, que abarca la ventana completa, así que el CV
+respalda esa respuesta sin afirmar trabajo que no puede evidenciar. Un bloque de 29 meses con un
+bullet vacío se lee como relleno para tapar un hueco, que es justo la lectura que el hueco declarado
+evita.
+
+**No rellenar esta ventana con freelance inventado.** Si el candidato aporta clientes y stack
+reales, el bloque vuelve; sin eso, se queda abierta.
+
+Consecuencia aritmética: el historial arranca en **may 2014**, no en ene 2014; **abarca 12 a 6 m**
+hasta oct 2026 pero las entradas dan cuenta de unos **10 a 1 m**. Los dos números son distintos y
+no son intercambiables: **nunca escribir «12+ años de experiencia»** en estos dos variantes — ese es
+el lapso, no el trabajo registrado. El resto son traspasos de uno o dos meses entre contratos.
 
 **Contenido aportado por el candidato** (2026-10-26):
 
@@ -382,11 +393,8 @@ Quedan solo traspasos de uno o dos meses entre contratos.
 **Claims agregados a `latam/skills.tex`** con ese contenido: **PL/SQL** (Indra), **JSP / JSTL**
 (PSS y LimaW) y **PrimeFaces** (Olva — ya estaba en los bullets pero nunca se listó en skills).
 
-**Pendiente de contenido** — un solo bloque, marcado con `TODO` en `latam/experience.tex`:
-
-- **Freelance Web Developer (mar 2015 – jul 2017)** — tiene un bullet genérico. Es el tramo más
-  largo de la carrera temprana, 2 a 5 m, y un revisor va a preguntar. Falta tipo y cantidad de
-  clientes, stack concreto y algún proyecto nombrable.
+**Sin pendientes de contenido.** El único que quedaba era el bloque freelance, retirado el
+2026-10-26 por la decisión de arriba.
 
 Por el ADR de LinkedIn, al entrar Indra al CV debe entrar también a `LINKEDIN.md`, y RIMAC con ella.
 
@@ -401,8 +409,8 @@ Decisión del candidato: **LATAM va en español, USA va en inglés**, y Apple en
 
 Los dos comparten la misma conciliación; `latam-es/` es espejo de `usa/` menos Apple. Las
 traducciones de los diez roles que ya existían se tomaron de `extended-es/experience-es.tex` para no
-retraducir y mantener la voz del repo; solo Indra, PSS y el bloque freelance se escribieron nuevos
-en español.
+retraducir y mantener la voz del repo; solo Indra y PSS se escribieron nuevos en español (el bloque
+freelance también, pero se retiró después).
 
 **Apple rompe la propiedad de cero solapes, a propósito.** El CUL registra Caleidos Media
 17/10/2022 – 31/03/2023 **en paralelo** con Globant Perú 22/06/2022 – 19/06/2023. Los dos son reales
@@ -509,8 +517,9 @@ make view       # abre PDF en macOS (Preview)
 - [x] Variante **LATAM** conciliada contra el CUL (`resume-latam-es.tex`) — hecha 2026-10-26
 - [x] Bullets de Indra/RIMAC y PSS/BanBif — aportados por el candidato 2026-10-26
 - [x] WProducciones = LimaW — confirmado y fusionado en una entrada de 10 meses (2026-10-26)
-- [x] Alternativa Tecnológica retirada; el tramo lo cubre el bloque freelance (2026-10-26)
-- [ ] Ampliar el bloque **Freelance Web Developer** (mar 2015 – jul 2017): clientes, stack, proyectos
+- [x] Alternativa Tecnológica retirada (2026-10-26); el tramo queda como hueco declarado
+- [x] Bloque **Freelance Web Developer** — **retirado** 2026-10-26. El hueco mar 2015 – jul 2017
+      queda abierto y el candidato lo sustenta con el cierre de la carrera en la UNAC
 - [ ] Fijar la versión de Java de PSS/BanBif (LTS de 2019: Java 8 u 11)
 - [ ] Llevar Indra/RIMAC a `LINKEDIN.md` si el variante LATAM se adopta
 - [x] Variante **USA** con Apple Inc. (`resume-usa.tex`) — hecha 2026-10-26
