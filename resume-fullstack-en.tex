@@ -1,0 +1,49 @@
+%% ============================================================
+%%  resume-fullstack-en.tex  —  Full Stack Engineer CV (Advanced English)
+%%
+%%  Engine   : XeLaTeX
+%%  Pages    : 2 (A4)
+%%  Sections : fullstack-en/ (summary, skills, experience)
+%%             sections/    (education, certifications, languages)
+%%
+%%  Compile  : latexmk resume-fullstack-en.tex
+%% ============================================================
+
+\documentclass[10pt, a4paper]{article}
+
+%% Load the resume style (styles/resume.sty)
+\usepackage{styles/resume}
+
+%% ============================================================
+%%  DOCUMENT
+%% ============================================================
+\begin{document}
+
+%% ── HEADER ──────────────────────────────────────────────────
+\cvName{LEON MATIAS ROSLIN}
+
+\cvHeadTitle{Senior Full Stack Engineer \enspace|\enspace Angular \enspace|\enspace React \enspace|\enspace Java \enspace|\enspace Node.js \enspace|\enspace AWS}
+
+\cvContact{%
+  Lima, Peru%
+  \cvSep%
+  \cvIcon{\faWhatsapp}+51 933 166 559%
+  \cvSep%
+  \cvIcon{\faEnvelope}\href{mailto:leonmatias1991@gmail.com}{leonmatias1991@gmail.com}%
+  \cvSep%
+  \cvIcon{\faLinkedin}\href{https://www.linkedin.com/in/fs-leon-matias/}{linkedin.com/in/fs-leon-matias}%
+  \cvSep%
+  \cvIcon{\faGithub}\href{https://github.com/devLeonMat}{github.com/devLeonMat}%
+}
+
+%% ── PAGE 1 SECTIONS ─────────────────────────────────────────
+\input{fullstack-en/summary}
+\input{fullstack-en/skills}
+\input{fullstack-en/experience}
+
+%% ── PAGE 2 SECTIONS ─────────────────────────────────────────
+\input{sections/education}
+\input{sections/certifications}
+\input{sections/languages}
+
+\end{document}
