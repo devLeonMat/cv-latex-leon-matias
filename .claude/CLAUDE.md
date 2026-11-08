@@ -751,6 +751,26 @@ traía desde siempre. Sin eso, la edición avanzada de esa variante no habría d
 inglés, que es justo el punto. Se le agregó `\input{es/languages-es}`. Esto cambia también el
 PDF B2 de esa variante, que ahora trae una línea más.
 
+**Costo de páginas en `resume-fullstack-es`.** Agregarle Idiomas lo pasó de 2 a 3 páginas
+(verificado en el run 42532945813). Para volver a 2 se recortó lo que ya estaba duplicado, sin
+perder ningún hecho:
+
+- `es/summary-es.tex` deja de enumerar las industrias en el primer párrafo — la franja de
+  industrias, tres líneas más abajo, las trae todas y además **Servicios Financieros**.
+- El cuarto párrafo pasa a forma nominal («Modernización… e integración…» en lugar de
+  «Experiencia modernizando… e integrando…»).
+- *Logros Destacados* pierde el bullet «Más de 12 años … en Salud, Banca, Seguros, Retail y
+  Logística», que repetía el primer párrafo del resumen **y** la franja.
+
+Los dos archivos tocados (`es/summary-es.tex`, `es/experience-es.tex`) los usa **solo**
+`resume-fullstack-es`, verificado contra las doce raíces: las demás variantes ES tienen sus
+propios directorios y no se ven afectadas.
+
+**Pendiente ajeno: `resume-fullstack-en` sale en 3 páginas.** Ya salía así en `main` antes de
+esta rama (run 42234509035), o sea que viene del PR #14, no de este cambio. Su propio encabezado
+dice `Pages : 2 (A4)`, así que se contradice. No se tocó acá: bajarlo a 2 es una decisión de
+contenido sobre `fullstack-en/`, que es prosa que el candidato aún no revisó.
+
 **Las dos extendidas (`resume-extended*.tex`) no tienen wrapper**, porque siguen fuera de la
 generación desde el ADR del 2026-10-27. El selector igual les funciona en local.
 
@@ -833,4 +853,6 @@ make view       # abre PDF en macOS (Preview)
       selector + wrappers `resume-*-adv.tex`. Sin sigla CEFR
 - [x] Target de `make` para `resume-fullstack-en` — agregado 2026-11-08 (el PR #14 no lo trajo)
 - [x] Sección de **Idiomas faltante en `resume-fullstack-es.tex`** — agregada 2026-11-08
+- [ ] **`resume-fullstack-en` desborda a 3 páginas** — viene del PR #14, no de la rama de inglés
+      avanzado. Su encabezado dice 2. Requiere recortar `fullstack-en/`
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)
