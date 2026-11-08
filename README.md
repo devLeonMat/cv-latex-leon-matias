@@ -28,6 +28,24 @@ Every variant shares `styles/resume.sty`. A targeted variant owns its `summary`,
 and `experience` files and reuses education / certifications / languages from `sections/`
 (English) or `es/` (Spanish). Build them all with `make all-versions`.
 
+### Advanced-English editions
+
+Every variant also ships a second edition whose languages line reads **Advanced — Professional
+Working Proficiency** instead of **Professional Working Proficiency (B2)**. Nothing else differs.
+
+Mind the two senses of *advanced*: `resume-fullstack-en.pdf` is the variant whose **prose** is
+written in a more advanced English register, and `-adv` is the **proficiency line**. So
+`resume-fullstack-en-adv.pdf` is both.
+
+| PDF | Build |
+|-----|-------|
+| `resume-<variant>-adv.pdf` | `make <variant>-adv` |
+| all eleven at once | `make all-versions-adv` |
+
+Each `resume-*-adv.tex` is a two-line wrapper: it defines `\cvEnglishAdvanced` and then
+`\input`s its root unchanged, so the CV text lives in exactly one place. Edit the root, never
+the wrapper.
+
 ---
 
 ## 🗂 Project structure
@@ -125,7 +143,8 @@ Every push to `main` triggers `.github/workflows/build-cv.yml`:
 | Work experience, highlights | `sections/experience.tex` |
 | Education | `sections/education.tex` |
 | Certifications | `sections/certifications.tex` |
-| Languages | `sections/languages.tex` |
+| Languages (selector) | `sections/languages.tex` |
+| Languages — advanced-English line | `sections/languages-advanced.tex` |
 | Layout, fonts, colors, spacing | `styles/resume.sty` |
 
 **Workflow:**

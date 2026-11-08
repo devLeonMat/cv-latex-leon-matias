@@ -190,6 +190,10 @@ Fuente: CV en Word del candidato. Expandidos con bullets completos solo en las v
 | `resume-latam-es.tex` | **LATAM · EXTENDIDO** — historial conciliado contra el CUL + **Apple Inc.** (13 roles) | ES | `latam-es/` | `extended-es/{education,certifications}-es` + `es/languages-es` |
 | `resume-usa.tex` | **USA · EXTENDED** — conciliado + **Apple Inc.** (13 roles) | EN | `usa/` | `extended/{education,certifications}` + `sections/languages` |
 
+Cada una de las diez variantes compiladas tiene además un `resume-*-adv.tex`: un wrapper de dos
+líneas que produce la misma variante con la línea de idiomas en **inglés avanzado**. Ver el ADR
+del 2026-11-08.
+
 Convención de variante dirigida: un `.tex` raíz + un directorio propio con
 `summary`, `skills` y `experience`; educación, certificaciones e idiomas se reutilizan
 de `sections/` (EN) o `es/` (ES). Todas comparten `styles/resume.sty`.
@@ -678,12 +682,85 @@ había puesto en todas las variantes. Se eliminó la línea.
 
 ---
 
+---
+
+## ADR — Edición con inglés avanzado (2026-11-08)
+
+Pedido del candidato: **un CV de cada variante que diga inglés avanzado**, conviviendo con las
+que dicen B2. No reemplazarlas.
+
+**El problema estructural que apareció al empezar.** No había un bloque de idiomas por CV: había
+**uno por idioma**, y los doce `.tex` raíz lo traían con `\input` — `sections/languages.tex` las
+seis EN, `es/languages-es.tex` las cinco ES. Editarlo cambiaba los doce documentos a la vez, y
+por lo mismo era imposible que un CV dijera avanzado y otro no. Decisión del candidato:
+**crear un archivo aparte para el nivel avanzado**, no editar el compartido.
+
+**Cómo quedó, sin duplicar contenido:**
+
+| Archivo | Rol |
+|---------|-----|
+| `sections/languages.tex` | **Selector** EN: lleva el `\section` y elige el nivel |
+| `sections/languages-advanced.tex` | Línea avanzada EN — **nuevo** |
+| `es/languages-es.tex` | **Selector** ES |
+| `es/languages-es-advanced.tex` | Línea avanzada ES — **nuevo** |
+| `resume-*-adv.tex` (×11) | Wrappers de dos líneas — **nuevos** |
+
+El selector hace `\ifdefined\cvEnglishAdvanced`. Cada wrapper define ese macro y luego hace
+`\input` de su raíz **sin tocarla**:
+
+```latex
+\def\cvEnglishAdvanced{}
+\input{resume-usa.tex}
+```
+
+**Por qué wrappers y no doce raíces duplicadas.** Una copia completa de cada raíz habría puesto
+dos versiones del mismo CV en el repo, que divergen al primer cambio de contenido que se aplique
+a una sola. El wrapper no tiene contenido: el CV vive en un único lugar y las dos ediciones
+salen de él. El costo es que el wrapper no puede alterar nada más que el macro — si alguna vez
+se quiere una edición avanzada que además cambie texto, ahí sí hace falta una raíz propia.
+
+**Se compilan 22 PDFs**, no 11. El Release los publica todos; el sufijo es `-adv`
+(`resume-usa-adv.pdf`). `make all-versions-adv` compila las once ediciones avanzadas.
+
+**Cuidado con los dos sentidos de «avanzado».** `resume-fullstack-en.tex`, que entró por el PR
+#14 el 2026-11-06 con su propio directorio `fullstack-en/`, es la variante cuya **prosa** está
+escrita en un registro de inglés más avanzado — su línea de idiomas seguía diciendo B2, porque
+hace `\input{sections/languages}` como todas. El sufijo `-adv` de este ADR es el **nivel
+declarado**, no el registro. Por eso existe `resume-fullstack-en-adv.tex`, que es las dos cosas,
+y por eso su encabezado lo aclara. Esta rama salió de un `main` anterior al PR #14 y hubo que
+rebasear: el workflow se regeneró sobre la versión nueva y la variante quedó incluida.
+
+El `Makefile` tampoco tenía target para `resume-fullstack-en` —el PR #14 solo tocó el
+workflow—, así que se agregaron los dos: `make fullstack-en` y `make fullstack-en-adv`.
+
+**Redacción: `Advanced --- Professional Working Proficiency`** / `Avanzado --- Competencia
+Profesional`. **Sin sigla CEFR, a propósito.** El candidato pidió «inglés avanzado» y nunca
+nombró C1. En CEFR avanzado **es** C1, y el repo venía afirmando B2, que es intermedio-alto:
+escribir «(C1)» habría puesto dos niveles medibles y contradictorios del mismo examen
+circulando en PDFs firmados por la misma persona. «Advanced» es una etiqueta cualitativa y
+conserva la frase que el CV ya usaba, así que el salto queda declarado sin inventar un
+resultado de examen. Si el candidato rinde o ya rindió un C1, la sigla entra en los dos
+archivos `*-advanced.tex` y en ningún otro lado.
+
+**Las dos ediciones se contradicen por diseño.** Son para postulaciones distintas; no deben
+viajar juntas a la misma empresa. Eso es responsabilidad de quien las manda, no del repo.
+
+**Corregido de paso: `resume-fullstack-es.tex` no tenía sección de Idiomas.** Terminaba en
+certificaciones. Era el único de los doce sin ella — omisión, no decisión: su gemelo EN sí la
+traía desde siempre. Sin eso, la edición avanzada de esa variante no habría dicho nada sobre el
+inglés, que es justo el punto. Se le agregó `\input{es/languages-es}`. Esto cambia también el
+PDF B2 de esa variante, que ahora trae una línea más.
+
+**Las dos extendidas (`resume-extended*.tex`) no tienen wrapper**, porque siguen fuera de la
+generación desde el ADR del 2026-10-27. El selector igual les funciona en local.
+
 ## Compilación
 
 ### GitHub Actions (automático)
 - Cada push a `main` dispara el workflow `.github/workflows/build-cv.yml`
-- Compila las **diez** variantes, imprime el número de páginas de cada PDF y las publica
-  en el Release `latest`
+- Compila **veinte** PDFs —las diez variantes en su edición B2 y en su edición de inglés
+  avanzado (`-adv`)—, imprime el número de páginas de cada uno y los publica en el Release
+  `latest`
 - Usa XeLaTeX con la imagen oficial de TeX Live
 - Instala `sourcesanspro` automáticamente
 - PDF publicado en Releases como `latest`
@@ -752,4 +829,8 @@ make view       # abre PDF en macOS (Preview)
 - [x] Solape Globant / ExSquared resuelto — Globant cierra en feb 2023 (2026-10-21)
 - [x] **INDRA vs Kruger en las ocho condensadas** — alineadas a **Indra / RIMAC** el
       2026-10-27, con BCP retirado de esas variantes
+- [x] **Edición con nivel de inglés avanzado de las once variantes** — hecha 2026-11-08 vía
+      selector + wrappers `resume-*-adv.tex`. Sin sigla CEFR
+- [x] Target de `make` para `resume-fullstack-en` — agregado 2026-11-08 (el PR #14 no lo trajo)
+- [x] Sección de **Idiomas faltante en `resume-fullstack-es.tex`** — agregada 2026-11-08
 - [ ] Integrar link del PDF del Release en el portfolio web (dev-leon-matias-profile)

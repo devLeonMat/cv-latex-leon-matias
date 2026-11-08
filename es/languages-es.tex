@@ -1,10 +1,22 @@
 %% ============================================================
-%%  es/languages-es.tex  —  Idiomas
+%%  es/languages-es.tex  —  Idiomas (selector)
+%%
+%%  Lleva el \section y elige el nivel de inglés:
+%%    \cvEnglishAdvanced definido → es/languages-es-advanced.tex
+%%    si no                       → la línea B2 de abajo
+%%
+%%  Los wrappers resume-*-adv.tex definen \cvEnglishAdvanced antes
+%%  del \input de su raíz, así que la misma raíz compila las dos
+%%  ediciones y no se duplica contenido del CV.
 %% ============================================================
 
 \section{Idiomas}
 
-{\small%
-  \textbf{Español:}\enspace Nativo\qquad%
-  \textbf{Inglés:}\enspace Competencia Profesional (B2)%
-}
+\ifdefined\cvEnglishAdvanced
+  \input{es/languages-es-advanced}%
+\else
+  {\small%
+    \textbf{Español:}\enspace Nativo\qquad%
+    \textbf{Inglés:}\enspace Competencia Profesional (B2)%
+  }%
+\fi

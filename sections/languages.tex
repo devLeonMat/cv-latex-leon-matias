@@ -1,10 +1,22 @@
 %% ============================================================
-%%  sections/languages.tex  —  Spoken Languages
+%%  sections/languages.tex  —  Spoken Languages (selector)
+%%
+%%  Owns the \section heading and picks the English level:
+%%    \cvEnglishAdvanced defined  → sections/languages-advanced.tex
+%%    otherwise                   → the B2 line below
+%%
+%%  The wrappers resume-*-adv.tex define \cvEnglishAdvanced before
+%%  \input of their root file, so the same root compiles both
+%%  editions and no CV content is duplicated.
 %% ============================================================
 
 \section{Languages}
 
-{\small%
-  \textbf{Spanish:}\enspace Native\qquad%
-  \textbf{English:}\enspace Professional Working Proficiency (B2)%
-}
+\ifdefined\cvEnglishAdvanced
+  \input{sections/languages-advanced}%
+\else
+  {\small%
+    \textbf{Spanish:}\enspace Native\qquad%
+    \textbf{English:}\enspace Professional Working Proficiency (B2)%
+  }%
+\fi
