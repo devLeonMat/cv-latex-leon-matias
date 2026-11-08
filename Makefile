@@ -10,6 +10,7 @@
 #   make latam-es     → LATAM CV, reconciled against the CUL (Spanish)
 #   make usa          → USA CV, reconciled + Apple Inc. (English)
 #   make all-versions → every CV variant
+#   make all-versions-adv → every variant, advanced-English edition
 #   make watch        → continuous rebuild on file changes
 #   make clean        → remove auxiliary files
 #   make cleanall     → remove auxiliary files + PDF
@@ -28,6 +29,20 @@ MAIN_EXT           = resume-extended
 MAIN_EXT_ES        = resume-extended-es
 MAIN_LATAM_ES      = resume-latam-es
 MAIN_USA           = resume-usa
+MAIN_FSEN          = resume-fullstack-en
+
+## Advanced-English editions — thin wrappers, see the ADR of 2026-11-08
+MAIN_ADV            = resume-fullstack-adv
+MAIN_ADV_ES         = resume-fullstack-es-adv
+MAIN_ADV_BAI        = resume-backend-ai-adv
+MAIN_ADV_BAI_ES     = resume-backend-ai-es-adv
+MAIN_ADV_TL         = resume-techlead-adv
+MAIN_ADV_TL_ES      = resume-techlead-es-adv
+MAIN_ADV_RN         = resume-react-native-adv
+MAIN_ADV_RN_ES      = resume-react-native-es-adv
+MAIN_ADV_LATAM_ES   = resume-latam-es-adv
+MAIN_ADV_USA        = resume-usa-adv
+MAIN_ADV_FSEN       = resume-fullstack-en-adv
 STYLES          = styles/resume.sty
 SECTIONS        = sections/*.tex
 SECTIONS_ES     = es/*.tex
@@ -41,6 +56,7 @@ SECTIONS_EXT    = extended/*.tex
 SECTIONS_EXT_ES = extended-es/*.tex
 SECTIONS_LATAM_ES = latam-es/*.tex
 SECTIONS_USA    = usa/*.tex
+SECTIONS_FSEN   = fullstack-en/*.tex
 VIEWER          = open   # macOS; change to 'evince' or 'zathura' on Linux
 DOCKER_IMG      = texlive/texlive:latest
 
@@ -48,6 +64,7 @@ DOCKER_IMG      = texlive/texlive:latest
         techlead techlead-es techlead-both \
         react-native react-native-es react-native-both \
         extended extended-es extended-both latam-es usa all-versions \
+        fullstack-adv fullstack-es-adv backend-ai-adv backend-ai-es-adv techlead-adv techlead-es-adv react-native-adv react-native-es-adv latam-es-adv usa-adv all-versions-adv fullstack-en fullstack-en-adv \
         clean cleanall view view-es view-backend-ai view-backend-ai-es \
         view-techlead view-techlead-es view-react-native view-react-native-es \
         view-extended view-extended-es view-latam-es view-usa \
@@ -143,6 +160,84 @@ usa: $(MAIN_USA).pdf
 $(MAIN_USA).pdf: $(MAIN_USA).tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT) $(SECTIONS_USA)
 	latexmk $(MAIN_USA).tex
 
+## Full Stack — prose written in a more advanced English register (PR #14)
+fullstack-en: $(MAIN_FSEN).pdf
+
+$(MAIN_FSEN).pdf: $(MAIN_FSEN).tex $(STYLES) $(SECTIONS) $(SECTIONS_FSEN)
+	latexmk $(MAIN_FSEN).tex
+
+## ── Advanced-English editions ───────────────────────────────
+##   Same CV content; the languages line says Advanced instead of (B2).
+
+## Full Stack, advanced English
+fullstack-adv: $(MAIN_ADV).pdf
+
+$(MAIN_ADV).pdf: $(MAIN_ADV).tex resume-fullstack.tex $(STYLES) $(SECTIONS)
+	latexmk $(MAIN_ADV).tex
+
+## Full Stack, ingles avanzado
+fullstack-es-adv: $(MAIN_ADV_ES).pdf
+
+$(MAIN_ADV_ES).pdf: $(MAIN_ADV_ES).tex resume-fullstack-es.tex $(STYLES) $(SECTIONS_ES)
+	latexmk $(MAIN_ADV_ES).tex
+
+## Backend + AI Agents, advanced English
+backend-ai-adv: $(MAIN_ADV_BAI).pdf
+
+$(MAIN_ADV_BAI).pdf: $(MAIN_ADV_BAI).tex resume-backend-ai.tex $(STYLES) $(SECTIONS) $(SECTIONS_BAI)
+	latexmk $(MAIN_ADV_BAI).tex
+
+## Backend + Agentes IA, ingles avanzado
+backend-ai-es-adv: $(MAIN_ADV_BAI_ES).pdf
+
+$(MAIN_ADV_BAI_ES).pdf: $(MAIN_ADV_BAI_ES).tex resume-backend-ai-es.tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_BAI_ES)
+	latexmk $(MAIN_ADV_BAI_ES).tex
+
+## Tech Lead, advanced English
+techlead-adv: $(MAIN_ADV_TL).pdf
+
+$(MAIN_ADV_TL).pdf: $(MAIN_ADV_TL).tex resume-techlead.tex $(STYLES) $(SECTIONS) $(SECTIONS_TL)
+	latexmk $(MAIN_ADV_TL).tex
+
+## Tech Lead, ingles avanzado
+techlead-es-adv: $(MAIN_ADV_TL_ES).pdf
+
+$(MAIN_ADV_TL_ES).pdf: $(MAIN_ADV_TL_ES).tex resume-techlead-es.tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_TL_ES)
+	latexmk $(MAIN_ADV_TL_ES).tex
+
+## React Native, advanced English
+react-native-adv: $(MAIN_ADV_RN).pdf
+
+$(MAIN_ADV_RN).pdf: $(MAIN_ADV_RN).tex resume-react-native.tex $(STYLES) $(SECTIONS) $(SECTIONS_RN)
+	latexmk $(MAIN_ADV_RN).tex
+
+## React Native, ingles avanzado
+react-native-es-adv: $(MAIN_ADV_RN_ES).pdf
+
+$(MAIN_ADV_RN_ES).pdf: $(MAIN_ADV_RN_ES).tex resume-react-native-es.tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_RN_ES)
+	latexmk $(MAIN_ADV_RN_ES).tex
+
+## LATAM extendido, ingles avanzado
+latam-es-adv: $(MAIN_ADV_LATAM_ES).pdf
+
+$(MAIN_ADV_LATAM_ES).pdf: $(MAIN_ADV_LATAM_ES).tex resume-latam-es.tex $(STYLES) $(SECTIONS_ES) $(SECTIONS_EXT_ES) $(SECTIONS_LATAM_ES)
+	latexmk $(MAIN_ADV_LATAM_ES).tex
+
+## USA extended, advanced English
+usa-adv: $(MAIN_ADV_USA).pdf
+
+$(MAIN_ADV_USA).pdf: $(MAIN_ADV_USA).tex resume-usa.tex $(STYLES) $(SECTIONS) $(SECTIONS_EXT) $(SECTIONS_USA)
+	latexmk $(MAIN_ADV_USA).tex
+
+## Full Stack, advanced prose + advanced level
+fullstack-en-adv: $(MAIN_ADV_FSEN).pdf
+
+$(MAIN_ADV_FSEN).pdf: $(MAIN_ADV_FSEN).tex $(MAIN_FSEN).tex $(STYLES) $(SECTIONS) $(SECTIONS_FSEN)
+	latexmk $(MAIN_ADV_FSEN).tex
+
+## All eleven advanced-level editions
+all-versions-adv: fullstack-en-adv fullstack-adv fullstack-es-adv backend-ai-adv backend-ai-es-adv techlead-adv techlead-es-adv react-native-adv react-native-es-adv latam-es-adv usa-adv
+
 ## All ten versions
 all-versions: en es backend-ai backend-ai-es techlead techlead-es react-native react-native-es \
               latam-es usa
@@ -234,6 +329,18 @@ clean:
 	latexmk -c $(MAIN_EXT_ES).tex
 	latexmk -c $(MAIN_LATAM_ES).tex
 	latexmk -c $(MAIN_USA).tex
+	latexmk -c $(MAIN_ADV).tex
+	latexmk -c $(MAIN_ADV_ES).tex
+	latexmk -c $(MAIN_ADV_BAI).tex
+	latexmk -c $(MAIN_ADV_BAI_ES).tex
+	latexmk -c $(MAIN_ADV_TL).tex
+	latexmk -c $(MAIN_ADV_TL_ES).tex
+	latexmk -c $(MAIN_ADV_RN).tex
+	latexmk -c $(MAIN_ADV_RN_ES).tex
+	latexmk -c $(MAIN_ADV_LATAM_ES).tex
+	latexmk -c $(MAIN_ADV_USA).tex
+	latexmk -c $(MAIN_FSEN).tex
+	latexmk -c $(MAIN_ADV_FSEN).tex
 
 ## Remove everything including PDFs
 cleanall:
@@ -249,6 +356,18 @@ cleanall:
 	latexmk -C $(MAIN_EXT_ES).tex
 	latexmk -C $(MAIN_LATAM_ES).tex
 	latexmk -C $(MAIN_USA).tex
+	latexmk -C $(MAIN_ADV).tex
+	latexmk -C $(MAIN_ADV_ES).tex
+	latexmk -C $(MAIN_ADV_BAI).tex
+	latexmk -C $(MAIN_ADV_BAI_ES).tex
+	latexmk -C $(MAIN_ADV_TL).tex
+	latexmk -C $(MAIN_ADV_TL_ES).tex
+	latexmk -C $(MAIN_ADV_RN).tex
+	latexmk -C $(MAIN_ADV_RN_ES).tex
+	latexmk -C $(MAIN_ADV_LATAM_ES).tex
+	latexmk -C $(MAIN_ADV_USA).tex
+	latexmk -C $(MAIN_FSEN).tex
+	latexmk -C $(MAIN_ADV_FSEN).tex
 
 ## Install MacTeX + required font (macOS + Homebrew)
 install-mac:

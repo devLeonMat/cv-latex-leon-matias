@@ -96,6 +96,83 @@ jobs:
           compiler: xelatex
           args: "-interaction=nonstopmode -halt-on-error -shell-escape"
 
+      - name: Compile resume-fullstack-adv.tex (English — Full Stack · advanced English level)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-fullstack-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-fullstack-es-adv.tex (Spanish — Full Stack · nivel de inglés avanzado)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-fullstack-es-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-fullstack-en-adv.tex (English — Full Stack · advanced prose + advanced level)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-fullstack-en-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-backend-ai-adv.tex (English — Backend + AI Agents · advanced English level)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-backend-ai-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-backend-ai-es-adv.tex (Spanish — Backend + Agentes IA · nivel de inglés avanzado)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-backend-ai-es-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-techlead-adv.tex (English — Tech Lead · advanced English level)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-techlead-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-techlead-es-adv.tex (Spanish — Tech Lead · nivel de inglés avanzado)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-techlead-es-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-react-native-adv.tex (English — React Native · advanced English level)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-react-native-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-react-native-es-adv.tex (Spanish — React Native · nivel de inglés avanzado)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-react-native-es-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-latam-es-adv.tex (Spanish — LATAM · extendido · nivel de inglés avanzado)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-latam-es-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
+      - name: Compile resume-usa-adv.tex (English — USA · extended · advanced English level)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume-usa-adv.tex
+          compiler: xelatex
+          args: "-interaction=nonstopmode -halt-on-error -shell-escape"
+
       - name: Report page count of each PDF
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
@@ -191,6 +268,94 @@ jobs:
           if-no-files-found: error
           retention-days: 90
 
+      - name: Upload English — Full Stack · advanced English level PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-en-adv
+          path: resume-fullstack-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Spanish — Full Stack · nivel de inglés avanzado PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-es-adv
+          path: resume-fullstack-es-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload English — Full Stack · advanced prose + advanced level PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-fullstack-en-adv
+          path: resume-fullstack-en-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload English — Backend + AI Agents · advanced English level PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-backend-ai-en-adv
+          path: resume-backend-ai-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Spanish — Backend + Agentes IA · nivel de inglés avanzado PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-backend-ai-es-adv
+          path: resume-backend-ai-es-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload English — Tech Lead · advanced English level PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-techlead-en-adv
+          path: resume-techlead-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Spanish — Tech Lead · nivel de inglés avanzado PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-techlead-es-adv
+          path: resume-techlead-es-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload English — React Native · advanced English level PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-react-native-en-adv
+          path: resume-react-native-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Spanish — React Native · nivel de inglés avanzado PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-react-native-es-adv
+          path: resume-react-native-es-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload Spanish — LATAM · extendido · nivel de inglés avanzado PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-latam-es-adv
+          path: resume-latam-es-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Upload English — USA · extended · advanced English level PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-roslin-leon-matias-usa-en-adv
+          path: resume-usa-adv.pdf
+          if-no-files-found: error
+          retention-days: 90
+
       - name: Create or update "latest" GitHub Release with all PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: ncipollo/release-action@v1
@@ -215,11 +380,22 @@ jobs:
             | Español — **LATAM · EXTENDIDO** · historial completo conciliado contra el Certificado Único Laboral | resume-latam-es.pdf |
             | English — **USA · EXTENDED** · complete reconciled history, includes Apple Inc. | resume-usa.pdf |
             | English — Full Stack · Advanced English | resume-fullstack-en.pdf |
+            | English — Full Stack · Angular · React · Java · Node.js · **advanced English level** | resume-fullstack-adv.pdf |
+            | Español — Full Stack · Angular · React · Java · Node.js · **nivel de inglés avanzado** | resume-fullstack-es-adv.pdf |
+            | English — Full Stack · **Advanced English prose** · **advanced English level** | resume-fullstack-en-adv.pdf |
+            | English — Backend · Java · Node.js · AI Agents · **advanced English level** | resume-backend-ai-adv.pdf |
+            | Español — Backend · Java · Node.js · Agentes IA · **nivel de inglés avanzado** | resume-backend-ai-es-adv.pdf |
+            | English — Tech Lead · **advanced English level** | resume-techlead-adv.pdf |
+            | Español — Tech Lead · **nivel de inglés avanzado** | resume-techlead-es-adv.pdf |
+            | English — React Native · Full Stack · **advanced English level** | resume-react-native-adv.pdf |
+            | Español — React Native · Full Stack · **nivel de inglés avanzado** | resume-react-native-es-adv.pdf |
+            | Español — **LATAM · EXTENDIDO** · historial conciliado · **nivel de inglés avanzado** | resume-latam-es-adv.pdf |
+            | English — **USA · EXTENDED** · reconciled history + Apple Inc. · **advanced English level** | resume-usa-adv.pdf |
 
             - Commit: `${{ github.sha }}`
             - Build: `${{ github.run_id }}`
             - Compiled with: XeLaTeX
-          artifacts: "resume-fullstack.pdf,resume-fullstack-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-latam-es.pdf,resume-usa.pdf,resume-fullstack-en.pdf"
+          artifacts: "resume-fullstack.pdf,resume-fullstack-es.pdf,resume-backend-ai.pdf,resume-backend-ai-es.pdf,resume-techlead.pdf,resume-techlead-es.pdf,resume-react-native.pdf,resume-react-native-es.pdf,resume-latam-es.pdf,resume-usa.pdf,resume-fullstack-en.pdf,resume-fullstack-adv.pdf,resume-fullstack-es-adv.pdf,resume-fullstack-en-adv.pdf,resume-backend-ai-adv.pdf,resume-backend-ai-es-adv.pdf,resume-techlead-adv.pdf,resume-techlead-es-adv.pdf,resume-react-native-adv.pdf,resume-react-native-es-adv.pdf,resume-latam-es-adv.pdf,resume-usa-adv.pdf"
           artifactContentType: "application/pdf"
           allowUpdates: true
           removeArtifacts: true
