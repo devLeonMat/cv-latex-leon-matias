@@ -762,6 +762,16 @@ perder ningún hecho:
 - *Logros Destacados* pierde el bullet «Más de 12 años … en Salud, Banca, Seguros, Retail y
   Logística», que repetía el primer párrafo del resumen **y** la franja.
 
+Ese primer recorte **no alcanzó** (run 42533646530: seguía en 3). Bajando el PDF se vio que la
+página 3 traía **solo la línea de Idiomas**: el encabezado IDIOMAS cerraba la página 2 y faltaban
+dos líneas. Segunda pasada, sin tocar hechos: se acortaron cuatro bullets que terminaban en
+**línea viuda** (`paraguayo.`, `Caribe.`, `croservicios cloud-native.`, `normativo.`) — uno de
+Globant y tres de *Logros Destacados*. Cada viuda eliminada devuelve una línea entera, así que
+cuatro dan margen de sobra sobre las dos que faltaban.
+
+El ancho útil es de unos **112 caracteres por línea** a 10pt en este estilo; sirve para estimar
+sin compilar si un bullet va a desbordar.
+
 Los dos archivos tocados (`es/summary-es.tex`, `es/experience-es.tex`) los usa **solo**
 `resume-fullstack-es`, verificado contra las doce raíces: las demás variantes ES tienen sus
 propios directorios y no se ven afectadas.
